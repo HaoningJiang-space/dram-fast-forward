@@ -1,0 +1,377 @@
+{
+  "version": 1,
+  "status": "compiled",
+  "input_kind": "affine DMA + static DRAM semantics",
+  "policy": {
+    "scheduler": "ready_then_oldest_stable",
+    "priorities": [
+      "active",
+      "maintenance",
+      "selected_read_or_write"
+    ],
+    "selected_queue": "hysteretic_read_write",
+    "region_entry": "active_and_maintenance_empty",
+    "fallback": "original_exact_controller"
+  },
+  "regions": [
+    {
+      "command": "RD",
+      "command_id": 3,
+      "shared_self_latency": 8,
+      "private_self_latency": 8,
+      "guards": [
+        {
+          "kind": "first_winner",
+          "lhs": "max(now+1, shared_ready, private_ready[b])",
+          "relation": ">=",
+          "rhs": "first",
+          "for_each": "present bank b"
+        },
+        {
+          "kind": "first_visit_ready",
+          "lhs": "private_ready[b]",
+          "relation": "<=",
+          "rhs": "first + first_position[b] * 8",
+          "for_each": "present bank b"
+        }
+      ],
+      "patterns": [
+        {
+          "stride": 0,
+          "period": 1,
+          "banks": [
+            0
+          ]
+        },
+        {
+          "stride": 256,
+          "period": 32,
+          "banks": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5,
+            6,
+            6,
+            6,
+            6,
+            7,
+            7,
+            7,
+            7
+          ]
+        },
+        {
+          "stride": 1024,
+          "period": 8,
+          "banks": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        }
+      ],
+      "induction": {
+        "first_visit": {
+          "counterexample_set": "{ [f,r,p,i] : 0<=p<=i and r<=f+8*p and r>f+8*i }",
+          "empty": true
+        },
+        "private_recurrence": {
+          "counterexample_set": "{ [f,j,i] : 0<=j<i and f+8*j+8>f+8*i }",
+          "empty": true
+        },
+        "shared_exclusion": {
+          "counterexample_set": "{ [f,i,t] : i>=1 and t>=f+8*(i-1)+8 and t<f+8*i }",
+          "empty": true
+        }
+      },
+      "recurrence": "issue(i) = first + i * shared_self_latency",
+      "state_summary": "last issue per physical resource; max-plus monotonicity",
+      "static_obligations": [
+        "command preserves row state (checked by adapter)",
+        "all outgoing timing windows are one and have no sibling effects",
+        "shared self-edge dominates private self-edge"
+      ],
+      "boundary_obligations": [
+        "selected queue remains selected",
+        "no active/maintenance request",
+        "no unvalidated arrival",
+        "stop at refresh and externally observable callbacks"
+      ]
+    },
+    {
+      "command": "WR",
+      "command_id": 4,
+      "shared_self_latency": 8,
+      "private_self_latency": 8,
+      "guards": [
+        {
+          "kind": "first_winner",
+          "lhs": "max(now+1, shared_ready, private_ready[b])",
+          "relation": ">=",
+          "rhs": "first",
+          "for_each": "present bank b"
+        },
+        {
+          "kind": "first_visit_ready",
+          "lhs": "private_ready[b]",
+          "relation": "<=",
+          "rhs": "first + first_position[b] * 8",
+          "for_each": "present bank b"
+        }
+      ],
+      "patterns": [
+        {
+          "stride": 0,
+          "period": 1,
+          "banks": [
+            0
+          ]
+        },
+        {
+          "stride": 256,
+          "period": 32,
+          "banks": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            2,
+            2,
+            2,
+            2,
+            3,
+            3,
+            3,
+            3,
+            4,
+            4,
+            4,
+            4,
+            5,
+            5,
+            5,
+            5,
+            6,
+            6,
+            6,
+            6,
+            7,
+            7,
+            7,
+            7
+          ]
+        },
+        {
+          "stride": 1024,
+          "period": 8,
+          "banks": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        }
+      ],
+      "induction": {
+        "first_visit": {
+          "counterexample_set": "{ [f,r,p,i] : 0<=p<=i and r<=f+8*p and r>f+8*i }",
+          "empty": true
+        },
+        "private_recurrence": {
+          "counterexample_set": "{ [f,j,i] : 0<=j<i and f+8*j+8>f+8*i }",
+          "empty": true
+        },
+        "shared_exclusion": {
+          "counterexample_set": "{ [f,i,t] : i>=1 and t>=f+8*(i-1)+8 and t<f+8*i }",
+          "empty": true
+        }
+      },
+      "recurrence": "issue(i) = first + i * shared_self_latency",
+      "state_summary": "last issue per physical resource; max-plus monotonicity",
+      "static_obligations": [
+        "command preserves row state (checked by adapter)",
+        "all outgoing timing windows are one and have no sibling effects",
+        "shared self-edge dominates private self-edge"
+      ],
+      "boundary_obligations": [
+        "selected queue remains selected",
+        "no active/maintenance request",
+        "no unvalidated arrival",
+        "stop at refresh and externally observable callbacks"
+      ]
+    }
+  ],
+  "oracle_inputs": [],
+  "resource_words": [
+    [
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      3,
+      3,
+      4,
+      4,
+      4,
+      4,
+      5,
+      5,
+      5,
+      5,
+      6,
+      6,
+      6,
+      6,
+      7,
+      7,
+      7,
+      7
+    ],
+    [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      3,
+      3
+    ]
+  ],
+  "resource_source": {
+    "tiles_path": "/Orion/jian/jhn/astra/runs/dense_compile_speed_20261023_002/ffn_fixture/attention_frontier_benchmark/base/native/tiles.bin",
+    "tiles_sha256": "a9c2049b06de5b7f8ac1497c9aab9b78dfcdc48a81926f35d5e49fd993117e76",
+    "tile": {
+      "core": 0,
+      "reads": [
+        [
+          29360128,
+          4096,
+          32,
+          16384
+        ],
+        [
+          0,
+          4096,
+          128,
+          16384
+        ]
+      ],
+      "writes": [
+        [
+          30212096,
+          512,
+          32,
+          512
+        ]
+      ],
+      "scratchpad_bytes": 671744,
+      "compute_cycles": 2110,
+      "sa_busy_cycles": 8440,
+      "vpu_cycles": 0,
+      "execution": {
+        "id": "upgate/tile0",
+        "after_outputs": [],
+        "after_external": [
+          "upgate"
+        ]
+      },
+      "live": {
+        "stage": "upgate",
+        "objects": [
+          "w0"
+        ],
+        "overlap_next": true
+      },
+      "shape": [
+        32,
+        128,
+        2048
+      ],
+      "partial_accumulation": {
+        "group": [
+          "upgate",
+          0,
+          0
+        ],
+        "k_begin": 0,
+        "k_end": 2048,
+        "compute_order": "fixed native per-core FIFO",
+        "load_policy": "independent"
+      }
+    },
+    "scope": "First actual native Up/Gate tile, before DRAM simulation; request structure only"
+  },
+  "projection_cpu_s": 0.006778506000000004,
+  "scope": "Automatic sufficient conditions for homogeneous row-preserving regions; cross-row and mixed-command regions use exact fallback",
+  "compiler_cpu_s": 0.003872416,
+  "program_sha256": "9c7722b45c96dcf29015b61f6932bc9a1cf10b5f6db28bcf8a71dab53e0b7491",
+  "model_sha256": "aca9045c7a994e4145eb9e25977100a95895a1a83b4a566b7d2843502702e16c",
+  "compiler_sha256": "fc0cb2ba22adcd8e5bd410f10fb05d07519abadabc3c67ee9ecefd56d2bea050",
+  "generated_header_sha256": "c221eeb6bba08b419c48cfa721a92a55a25dfb42405c40ad0b830a686cc14e06"
+}

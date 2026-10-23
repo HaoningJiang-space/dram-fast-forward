@@ -1,0 +1,34 @@
+{
+  "status": "rejected",
+  "first_record": 857,
+  "fast": [
+    2,
+    0,
+    0,
+    3905,
+    3,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "reference": [
+    2,
+    0,
+    0,
+    3905,
+    2,
+    0,
+    0,
+    -1,
+    -1,
+    -1,
+    -1,
+    0
+  ],
+  "cause": "Refresh boundary was checked before determining jump destination; fixed by materializing before the refresh tick",
+  "fixed_build": "v3 and later"
+}

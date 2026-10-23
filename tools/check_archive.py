@@ -31,6 +31,18 @@ def main():
         assert graph['with_policy']['mismatches']==0
         assert graph['bus_omitted_negative_control']['mismatches']>0
         print('PASS: frozen interference matrix, exact policy graph, shared-bus negative control')
+    compiler=root/'results/compiler_20261023/evidence'
+    if compiler.exists():
+        manifest=json.loads((compiler/'evidence_manifest.json').read_text())
+        for relative,expected in manifest.items():
+            assert hashlib.sha256((compiler/relative).read_bytes()).hexdigest()==expected,relative
+        summary=json.loads((compiler/'summary_v5.json').read_text())
+        assert summary['status']=='pass' and summary['cases']==39 and summary['comparisons']==117
+        certificate=json.loads((compiler/'generated_v2/certificate.json').read_text())
+        assert certificate['oracle_inputs']==[]
+        for region in certificate['regions']:
+            assert all(x['empty'] for x in region['induction'].values())
+        print('PASS: frozen compiler evidence, 117 differential comparisons and conditional proof certificates')
     print('PASS: immutable 40-case archive hashes'+('; extracted solver identity' if args.check_extracted_source else ''))
 
 

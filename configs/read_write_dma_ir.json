@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "name": "parameterized-affine-dma",
+  "description": "Request structure only; no command order, issue times or expected results.",
+  "parameters": ["base_aligned_256", "count", "release_cycle"],
+  "mapper": {"line_bytes": 256, "bank_row_bytes": 1024, "banks": 8},
+  "loops": [
+    {"operation": "READ", "address": "base + i * stride", "strides_bytes": [0, 256, 1024]},
+    {"operation": "WRITE", "address": "base + i * stride", "strides_bytes": [0, 256, 1024]}
+  ],
+  "controller": {
+    "scheduler": "ready_then_oldest_stable",
+    "priorities": ["active", "maintenance", "selected_read_or_write"],
+    "selected_queue": "hysteretic_read_write",
+    "region_entry": "active_and_maintenance_empty",
+    "fallback": "original_exact_controller"
+  }
+}

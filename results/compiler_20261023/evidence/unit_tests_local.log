@@ -1,0 +1,10 @@
+test_guards_against_independent_ready_scheduler (test_schedule_compile.ScheduleCompilation.test_guards_against_independent_ready_scheduler) ... ok
+test_induction_and_negative_control (test_schedule_compile.ScheduleCompilation.test_induction_and_negative_control) ... ok
+test_model_changes_recompile_effects (test_schedule_compile.ScheduleCompilation.test_model_changes_recompile_effects) ... ok
+test_nonlocal_and_history_effects_are_rejected (test_schedule_compile.ScheduleCompilation.test_nonlocal_and_history_effects_are_rejected) ... ok
+test_parameterized_resource_projection (test_schedule_compile.ScheduleCompilation.test_parameterized_resource_projection) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.125s
+
+OK

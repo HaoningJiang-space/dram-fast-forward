@@ -1,0 +1,13 @@
+{
+  "status": "pass",
+  "compiled_source_hashes": {
+    "src/dram_fast_forward/build.py": "e3a50ea158e0183b603ed5a395cc5a711e78143575819f7a4905c1b35e7b3bd9",
+    "src/dram_fast_forward/native/poc_hooks.hh": "284946e70752afc3b06c57923c2299cece5d6654dd7bd62dada6353ec3af5814",
+    "src/dram_fast_forward/native/poc.cc": "ba9a9d45116f5a3a84028992d5fb20a07bf631503ebbe41efbad3c94cab0448c",
+    "src/dram_fast_forward/native/bank_symbolic.hh": "c7de1ede44c1d7f4eef42d8cf0197b240cd8ef702ab0822b0485bad5b56a51f0",
+    "src/dram_fast_forward/native/shared_mapper.hh": "3c08bbfc41ee9346918a0be877b646084646accfd4a202393fb7faf3ba8f9d0d",
+    "src/dram_fast_forward/profile_patch.py": "ce3d6a6efa0436f2a01a88eb836e286b7194f8498e0e69318982304d25f7ecd0",
+    "src/dram_fast_forward/native/compiler_adapter.hh": "51c8f79a3b8276da66a9a1ca94d30ff4950186cbe9fcffb56c116730f115755d"
+  },
+  "regenerated_header_identical": true
+}

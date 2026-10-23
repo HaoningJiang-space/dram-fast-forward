@@ -129,6 +129,9 @@ struct Engine {
 };
 
 #include "bank_symbolic.hh"
+#ifdef ENABLE_SCHEDULE_COMPILER
+#include "compiler_adapter.hh"
+#endif
 
 struct PocStats {
   bool keep_intervals=false;
@@ -213,7 +216,7 @@ int main(int argc,char**argv) {
   try {
     if(argc!=4)throw std::runtime_error("Usage: dram_poc CONFIG.json MODE OUTPUT");
     auto config=read_json(argv[1]);std::string mode=argv[2];fs::path out=argv[3];fs::create_directory(out);
-    if(mode!="reference"&&mode!="event"&&mode!="incremental"&&mode!="symbolic"&&mode!="bank_symbolic")throw std::runtime_error("Unknown mode");
+    if(mode!="reference"&&mode!="event"&&mode!="incremental"&&mode!="symbolic"&&mode!="bank_symbolic"&&mode!="compiled")throw std::runtime_error("Unknown mode");
     spdlog::set_level(spdlog::level::off);
     std::vector<std::unique_ptr<Engine>> engines;
     for(unsigned i=0;i<config.value("devices",1u);++i){
@@ -233,6 +236,13 @@ int main(int argc,char**argv) {
     std::vector<std::vector<BankPlan>> plans;std::vector<std::vector<bool>> observe_banks;
     for(auto& e:engines){plans.emplace_back(e->ctrls.size());observe_banks.emplace_back(e->ctrls.size(),false);}
     BankStats bank_stats;
+    const bool compiled=mode=="compiled";
+#ifdef ENABLE_SCHEDULE_COMPILER
+    std::vector<CompiledPlan> compiled_plans(engines.size());CompiledStats compiled_stats;
+    if(compiled)for(auto& e:engines)validate_compiler_model(*e);
+#else
+    if(compiled)throw std::runtime_error("Build with --compiled-header first");
+#endif
     if(bank_symbolic)for(auto& e:engines){if(e->shared_bus)continue;
       if(e->dram->m_organization.count[e->dram->m_levels("pseudochannel")]!=1||
          e->dram->m_organization.count[e->dram->m_levels("bankgroup")]!=1||
@@ -265,6 +275,12 @@ int main(int argc,char**argv) {
     uint64_t accepted=0,completed=0,rejected=0;auto total=arrivals.size();
     auto enqueue=[&](Input item){
       auto& local=*engines.at(item.device);
+#ifdef ENABLE_SCHEDULE_COMPILER
+      if(compiled){auto& p=compiled_plans[item.device];
+        if(retain_compiled_arrival(local,p,item.address,item.type)){p.populated=false;++compiled_stats.retained_arrivals;}
+        else if(finish_compiled(local,p,compiled_stats,"arrival"))observe_banks[item.device][0]=true;
+      }
+#endif
       if(bank_symbolic){size_t ci=(item.address/1024)%local.ctrls.size();
         auto& plan=plans[item.device][ci];
         bool retain=false;
@@ -315,6 +331,42 @@ int main(int argc,char**argv) {
       Clk_t horizon=arrivals.empty()?std::numeric_limits<Clk_t>::max()/4:std::max(engine.clock()+1,arrivals.front().at);
       if(!checkpoints.empty())horizon=std::min(horizon,*checkpoints.begin()+1);
       bool jumped=false;
+#ifdef ENABLE_SCHEDULE_COMPILER
+      if(compiled){
+        for(size_t d=0;d<engines.size();++d){auto& e=*engines[d];auto& p=compiled_plans[d];
+          if(p.active&&e.clock()+1>=e.refresh[0]->m_next_refresh_cycle)
+            if(finish_compiled(e,p,compiled_stats,"refresh"))observe_banks[d][0]=true;
+          if(e.clock()+1<e.refresh[0]->m_next_refresh_cycle)prepare_compiled(e,p,compiled_stats,config.value("compiler_match_mode",2));
+        }
+        Clk_t next=horizon;
+        if(!checkpoints.empty())next=std::min(next,*checkpoints.begin());
+        if(!bank_checkpoints.empty())next=std::min(next,bank_checkpoints.begin()->first);
+        for(size_t d=0;d<engines.size();++d){auto& e=*engines[d];auto& p=compiled_plans[d];
+          if(p.active){
+            next=std::min(next,p.first+Clk_t(p.issued)*p.spacing);
+            next=std::min(next,e.refresh[0]->m_next_refresh_cycle);
+            if(!e.ctrls[0]->pending.empty())next=std::min(next,std::max(e.clock()+1,e.ctrls[0]->pending.front().depart));
+          }else next=std::min(next,e.next_event(horizon));
+        }
+        // A jump may REACH refresh even when it was not next-cycle at entry.
+        // Materialize before ticking that boundary; refresh gets its original
+        // priority and may replace the planned data command on this same tick.
+        for(size_t d=0;d<engines.size();++d)
+          if(compiled_plans[d].active&&next>=engines[d]->refresh[0]->m_next_refresh_cycle)
+            if(finish_compiled(*engines[d],compiled_plans[d],compiled_stats,"refresh"))observe_banks[d][0]=true;
+        if(next>engine.clock()+1){stats.skipped_cycles+=next-engine.clock()-1;world_clock(next-1);}
+        for(size_t d=0;d<engines.size();++d){auto& e=*engines[d];
+          e.memory->m_clk++;e.dram->tick();
+          if(tick_compiled(e,compiled_plans[d],compiled_stats))observe_banks[d][0]=true;
+        }
+        ++stats.normal_ticks;
+        if(audit)for(size_t d=0;d<engines.size();++d)if(observe_banks[d][0]){
+          if(compiled_plans[d].active)materialize_compiled(*engines[d],compiled_plans[d],compiled_stats);
+          record_bank(d,0);observe_banks[d][0]=false;
+        }
+        jumped=true;
+      }
+#endif
       if(bank_symbolic){
         for(size_t d=0;d<engines.size();++d){auto& e=*engines[d];
           for(size_t ci=0;ci<e.ctrls.size();++ci){
@@ -349,7 +401,7 @@ int main(int argc,char**argv) {
           jumped=bulk(*candidate,horizon,closed,stats);if(jumped)world_clock(candidate->clock());
         }else stats.fail("other_device_work_or_unsettled");
       }
-      if(jumped){if(audit&&!bank_symbolic)record_checkpoint();}
+      if(jumped){if(audit&&!bank_symbolic&&!compiled)record_checkpoint();}
       else {
         if(event_driven){
           Clk_t next=horizon;
@@ -372,6 +424,9 @@ int main(int argc,char**argv) {
     if(!bank_checkpoints.empty())throw std::runtime_error("Missed bank checkpoint");
     for(size_t d=0;d<engines.size();++d)for(size_t ci=0;ci<engines[d]->ctrls.size();++ci)
       if(plans[d][ci].active)finish_bank(*engines[d],plans[d][ci],bank_stats,"drain");
+#ifdef ENABLE_SCHEDULE_COMPILER
+    if(compiled)for(size_t d=0;d<engines.size();++d)finish_compiled(*engines[d],compiled_plans[d],compiled_stats,"drain");
+#endif
     write_json(out/"state.json",world_state());write_json(out/"checkpoints.json",checkpoint_rows);
     write_json(out/"intervals.json",stats.intervals);
     write_json(out/"bank_checkpoints.json",bank_checkpoint_rows);
@@ -399,6 +454,12 @@ int main(int argc,char**argv) {
         {"retained_arrival_attempts",bank_stats.retained_arrival_attempts},
         {"reads_while_plans_coexist",bank_stats.reads_while_plans_coexist}}},
       {"command_ids",{{"RD",engine.dram->m_commands("RD")},{"WR",engine.dram->m_commands("WR")},{"ACT",engine.dram->m_commands("ACT")},{"PRE",engine.dram->m_commands("PRE")},{"REFab",engine.dram->m_commands("REFab")}}}};
+#ifdef ENABLE_SCHEDULE_COMPILER
+    if(compiled)report["compiled"]={{"attempts",compiled_stats.attempts},{"admitted",compiled_stats.admitted},
+      {"commands",compiled_stats.commands},{"segments",compiled_stats.segments},{"fallback_ticks",compiled_stats.fallback_ticks},
+      {"retained_arrivals",compiled_stats.retained_arrivals},{"timing_materializations",compiled_stats.timing_materializations},
+      {"rejections",compiled_stats.rejection},{"exits",compiled_stats.exits},{"lengths",compiled_stats.lengths}};
+#endif
     write_json(out/"summary.json",report);std::cout<<report.dump()<<'\n';return 0;
   }catch(const std::exception& e){std::cerr<<e.what()<<'\n';return 1;}
 }

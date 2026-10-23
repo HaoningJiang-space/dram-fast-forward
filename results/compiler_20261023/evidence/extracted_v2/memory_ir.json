@@ -1,0 +1,181 @@
+{
+  "version": 1,
+  "name": "parameterized-affine-dma",
+  "description": "Request structure only; no command order, issue times or expected results.",
+  "parameters": [
+    "base_aligned_256",
+    "count",
+    "release_cycle"
+  ],
+  "mapper": {
+    "line_bytes": 256,
+    "bank_row_bytes": 1024,
+    "banks": 8
+  },
+  "loops": [
+    {
+      "operation": "READ",
+      "address": "base + i * stride",
+      "strides_bytes": [
+        0,
+        256,
+        1024
+      ]
+    },
+    {
+      "operation": "WRITE",
+      "address": "base + i * stride",
+      "strides_bytes": [
+        0,
+        256,
+        1024
+      ]
+    }
+  ],
+  "controller": {
+    "scheduler": "ready_then_oldest_stable",
+    "priorities": [
+      "active",
+      "maintenance",
+      "selected_read_or_write"
+    ],
+    "selected_queue": "hysteretic_read_write",
+    "region_entry": "active_and_maintenance_empty",
+    "fallback": "original_exact_controller"
+  },
+  "resource_regions": [
+    {
+      "base": 29360128,
+      "width": 4096,
+      "rows": 32,
+      "stride": 16384,
+      "projection": {
+        "backend": "isl-0.24-GMP\n",
+        "joint_relation": "[R, B] -> { [r, l] -> [bank, row] : B >= 0 and 0 <= r < R and 0 <= l <= 15 and 0 <= bank <= 7 and -3 + 32B + 64r + l - 4bank <= 32row <= 32B + 64r + l - 4bank }",
+        "bank_projection": "[R, B] -> { [r, l] -> [bank] : B >= 0 and 0 <= r < R and 0 <= l <= 15 and 0 <= bank <= 7 and 32*floor((-4 + l - 4bank)/32) <= -32 + l - 4bank }",
+        "bank_period_proved_for_all_R": true,
+        "parameters": {
+          "R": 32,
+          "B": 3584
+        },
+        "word": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          2,
+          2,
+          2,
+          2,
+          3,
+          3,
+          3,
+          3
+        ]
+      }
+    },
+    {
+      "base": 0,
+      "width": 4096,
+      "rows": 128,
+      "stride": 16384,
+      "projection": {
+        "backend": "isl-0.24-GMP\n",
+        "joint_relation": "[R, B] -> { [r, l] -> [bank, row] : B >= 0 and 0 <= r < R and 0 <= l <= 15 and 0 <= bank <= 7 and -3 + 32B + 64r + l - 4bank <= 32row <= 32B + 64r + l - 4bank }",
+        "bank_projection": "[R, B] -> { [r, l] -> [bank] : B >= 0 and 0 <= r < R and 0 <= l <= 15 and 0 <= bank <= 7 and 32*floor((-4 + l - 4bank)/32) <= -32 + l - 4bank }",
+        "bank_period_proved_for_all_R": true,
+        "parameters": {
+          "R": 128,
+          "B": 0
+        },
+        "word": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          2,
+          2,
+          2,
+          2,
+          3,
+          3,
+          3,
+          3
+        ]
+      }
+    }
+  ],
+  "source": {
+    "tiles_path": "/Orion/jian/jhn/astra/runs/dense_compile_speed_20261023_002/ffn_fixture/attention_frontier_benchmark/base/native/tiles.bin",
+    "tiles_sha256": "a9c2049b06de5b7f8ac1497c9aab9b78dfcdc48a81926f35d5e49fd993117e76",
+    "tile": {
+      "core": 0,
+      "reads": [
+        [
+          29360128,
+          4096,
+          32,
+          16384
+        ],
+        [
+          0,
+          4096,
+          128,
+          16384
+        ]
+      ],
+      "writes": [
+        [
+          30212096,
+          512,
+          32,
+          512
+        ]
+      ],
+      "scratchpad_bytes": 671744,
+      "compute_cycles": 2110,
+      "sa_busy_cycles": 8440,
+      "vpu_cycles": 0,
+      "execution": {
+        "id": "upgate/tile0",
+        "after_outputs": [],
+        "after_external": [
+          "upgate"
+        ]
+      },
+      "live": {
+        "stage": "upgate",
+        "objects": [
+          "w0"
+        ],
+        "overlap_next": true
+      },
+      "shape": [
+        32,
+        128,
+        2048
+      ],
+      "partial_accumulation": {
+        "group": [
+          "upgate",
+          0,
+          0
+        ],
+        "k_begin": 0,
+        "k_end": 2048,
+        "compute_order": "fixed native per-core FIFO",
+        "load_policy": "independent"
+      }
+    },
+    "scope": "First actual native Up/Gate tile, before DRAM simulation; request structure only"
+  },
+  "projection_cpu_s": 0.006778506000000004
+}

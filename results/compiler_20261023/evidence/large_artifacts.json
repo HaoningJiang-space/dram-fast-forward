@@ -1,0 +1,17 @@
+{
+  "root": "/Orion/jian/jhn/dram-fast-forward/runs/compiler_001",
+  "artifacts": {
+    "benchmarks_v5/E/compiled_dynamic_events.bin.gz": {
+      "bytes": 5903001,
+      "sha256": "6dbce51422e95baaf61bcfc7280dcb3ac512f24a839dc0a6b68d193925d06bd6"
+    },
+    "benchmarks_v5/E/compiled_resource_events.bin.gz": {
+      "bytes": 5903002,
+      "sha256": "2e0e0645162634a70b9632fc5adb8922de570dc7b2ba7e70fac002715c8f0986"
+    },
+    "benchmarks_v5/E/compiled_stride_events.bin.gz": {
+      "bytes": 5903000,
+      "sha256": "8354e63c63bd81383f894cc1b1b109b1a07d0f8616676778cfa87909aaef2312"
+    }
+  }
+}

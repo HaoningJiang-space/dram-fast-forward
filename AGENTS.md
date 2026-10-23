@@ -1,7 +1,12 @@
 # Research contract
 
-- 2026-10-23: Repository is explicitly public at the user's request. New research
-  is on `research/interference-aware-symbolic`; keep original result archives.
+- 2026-10-23: Repository is explicitly public at the user's request. Active work
+  is on `research/schedule-compiler`; incremental/hybrid remain baselines.
+- Compile structured request/resource semantics, never oracle command order.
+  Distinguish automatic instantiation of a supported proof rule from general
+  controller synthesis. Include stride/RLE and non-polyhedral resource controls.
+- Account for extraction, proof, code generation and C++ compilation costs;
+  report a break-even count only when measured per-run savings are positive.
 - Current study must include shared command/data bus contention, read/write
   turnaround, activation windows and refresh, not only independent-bank speedups.
 - Keep fixed-order oracle graph diagnostics separate from online certification.
