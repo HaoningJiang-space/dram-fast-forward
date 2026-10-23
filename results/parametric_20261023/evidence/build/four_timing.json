@@ -1,0 +1,21 @@
+{
+  "command": [
+    "/home/jian/miniconda3/envs/pytorchsim_env/bin/python",
+    "-m",
+    "dram_fast_forward.build",
+    "--source",
+    "/Orion/jian/jhn/dram-fast-forward/dependencies/direct400-linux",
+    "--ramulator",
+    "/Orion/jian/jhn/dram-fast-forward/dependencies/direct400-linux/ramulator",
+    "--compiled-header",
+    "/Orion/jian/jhn/dram-fast-forward/runs/compiler_001/generated_v2/generated_schedule.hh",
+    "--parametric-header",
+    "../four_schedule.hh",
+    "--output",
+    "../build_four_v3"
+  ],
+  "returncode": 0,
+  "wall_s": 23.253176825819537,
+  "cpu_s": 14.395211999999999,
+  "maximum_child_rss_kib": 1024596
+}

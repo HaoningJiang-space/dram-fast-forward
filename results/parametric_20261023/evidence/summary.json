@@ -1,0 +1,62 @@
+{
+  "status": "pass",
+  "cases": 474,
+  "compiled": 283,
+  "fallback": 191,
+  "families": [
+    {
+      "name": "two",
+      "cases": 120,
+      "compiled": 120,
+      "fallback": 0,
+      "region_exit_state_comparisons": 120,
+      "symbolic_cpu_s": 439.394819,
+      "regions": 940,
+      "unresolved_domains": 0
+    },
+    {
+      "name": "three",
+      "cases": 289,
+      "compiled": 98,
+      "fallback": 191,
+      "region_exit_state_comparisons": 98,
+      "symbolic_cpu_s": 11.855364000000002,
+      "regions": 80,
+      "unresolved_domains": 4
+    },
+    {
+      "name": "four",
+      "cases": 65,
+      "compiled": 65,
+      "fallback": 0,
+      "region_exit_state_comparisons": 65,
+      "symbolic_cpu_s": 108.299333,
+      "regions": 65,
+      "unresolved_domains": 0
+    }
+  ],
+  "bus_checks": {
+    "commands": 13859,
+    "window1_checks": 11259,
+    "data_commands": 8988,
+    "cross_bank_data_transitions": 5483,
+    "window4_checks": 1718
+  },
+  "fallback_boundary_cases": 5,
+  "native_execution_platform": {
+    "platform": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+    "processor": "Intel Core i9-12900"
+  },
+  "symbolic_compiler_platform": "Apple M3/macOS; CPU costs are not a same-machine sum with Linux C++ compilation",
+  "scope": "Finite producer prefixes and controlled arrivals; not full FFN performance",
+  "interrupted_runs": [
+    "study_three_v2: IO wait, superseded by v3",
+    "study_two_v3: partial exhaustive run, superseded by explicit boundary sample v4; not counted"
+  ],
+  "raw_root": "/Orion/jian/jhn/dram-fast-forward/runs/parametric_001",
+  "validation_drivers": {
+    "two": "source_v4",
+    "three": "source_v3",
+    "four": "source_v3"
+  }
+}

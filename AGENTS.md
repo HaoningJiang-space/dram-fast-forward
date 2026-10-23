@@ -1,7 +1,11 @@
 # Research contract
 
 - 2026-10-23: Repository is explicitly public at the user's request. Active work
-  is on `research/schedule-compiler`; incremental/hybrid remain baselines.
+  is on `research/parametric-producers`; incremental/hybrid remain baselines.
+- Current decision experiment is bounded multi-producer schedule compilation.
+  Do not conflate finite unrolling with an arbitrary-length induction theorem.
+  Treat region explosion and total cost as rejection criteria; reference command
+  traces are validation outputs only. Whole-process CPU includes entry dispatch.
 - Compile structured request/resource semantics, never oracle command order.
   Distinguish automatic instantiation of a supported proof rule from general
   controller synthesis. Include stride/RLE and non-polyhedral resource controls.

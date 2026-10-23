@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "dram-fast-forward"
-version = "0.3.0a1"
+version = "0.4.0a1"
 description = "Guarded schedule compilation and exact DRAM simulation research"
 requires-python = ">=3.10"
 dependencies = []
@@ -18,6 +18,9 @@ dram-ff-oracle-graph = "dram_fast_forward.oracle_graph:main"
 dram-ff-compile = "dram_fast_forward.schedule_compile:main"
 dram-ff-extract-dma = "dram_fast_forward.extract_dma_ir:main"
 dram-ff-compiler-study = "dram_fast_forward.compiler_study:main"
+dram-ff-producers = "dram_fast_forward.producer_ir:main"
+dram-ff-parametric = "dram_fast_forward.parametric:main"
+dram-ff-parametric-study = "dram_fast_forward.parametric_study:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

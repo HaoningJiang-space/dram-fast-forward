@@ -1,0 +1,150 @@
+{
+  "status": "pass",
+  "scope": "Independently check finite guard coverage and overlap, not scheduling policy.",
+  "variants": [
+    {
+      "length": 4,
+      "profile": "closed",
+      "parameter_points": {
+        "regions": 129
+      },
+      "regions": 29,
+      "distinct_orders": 7,
+      "first_compiled_parameters": [
+        0
+      ]
+    },
+    {
+      "length": 4,
+      "profile": "hit",
+      "parameter_points": {
+        "regions": 129
+      },
+      "regions": 27,
+      "distinct_orders": 4,
+      "first_compiled_parameters": [
+        0
+      ]
+    },
+    {
+      "length": 4,
+      "profile": "conflict",
+      "parameter_points": {
+        "regions": 129
+      },
+      "regions": 42,
+      "distinct_orders": 12,
+      "first_compiled_parameters": [
+        0
+      ]
+    },
+    {
+      "length": 8,
+      "profile": "closed",
+      "parameter_points": {
+        "regions": 129
+      },
+      "regions": 68,
+      "distinct_orders": 22,
+      "first_compiled_parameters": [
+        0
+      ]
+    },
+    {
+      "length": 8,
+      "profile": "hit",
+      "parameter_points": {
+        "regions": 129
+      },
+      "regions": 65,
+      "distinct_orders": 8,
+      "first_compiled_parameters": [
+        0
+      ]
+    },
+    {
+      "length": 8,
+      "profile": "conflict",
+      "parameter_points": {
+        "regions": 129
+      },
+      "regions": 74,
+      "distinct_orders": 39,
+      "first_compiled_parameters": [
+        0
+      ]
+    },
+    {
+      "length": 12,
+      "profile": "closed",
+      "parameter_points": {
+        "regions": 129
+      },
+      "regions": 88,
+      "distinct_orders": 54,
+      "first_compiled_parameters": [
+        0
+      ]
+    },
+    {
+      "length": 12,
+      "profile": "hit",
+      "parameter_points": {
+        "regions": 129
+      },
+      "regions": 81,
+      "distinct_orders": 28,
+      "first_compiled_parameters": [
+        0
+      ]
+    },
+    {
+      "length": 12,
+      "profile": "conflict",
+      "parameter_points": {
+        "regions": 129
+      },
+      "regions": 94,
+      "distinct_orders": 53,
+      "first_compiled_parameters": [
+        0
+      ]
+    },
+    {
+      "length": 16,
+      "profile": "closed",
+      "parameter_points": {
+        "regions": 129
+      },
+      "regions": 126,
+      "distinct_orders": 78,
+      "first_compiled_parameters": [
+        0
+      ]
+    },
+    {
+      "length": 16,
+      "profile": "hit",
+      "parameter_points": {
+        "regions": 129
+      },
+      "regions": 119,
+      "distinct_orders": 72,
+      "first_compiled_parameters": [
+        0
+      ]
+    },
+    {
+      "length": 16,
+      "profile": "conflict",
+      "parameter_points": {
+        "regions": 129
+      },
+      "regions": 127,
+      "distinct_orders": 76,
+      "first_compiled_parameters": [
+        0
+      ]
+    }
+  ]
+}

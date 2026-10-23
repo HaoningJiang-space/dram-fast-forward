@@ -1,0 +1,18 @@
+{
+  "status": "pass",
+  "scope": "Independently check finite guard coverage and overlap, not scheduling policy.",
+  "variants": [
+    {
+      "length": 12,
+      "profile": "closed",
+      "parameter_points": {
+        "regions": 65
+      },
+      "regions": 65,
+      "distinct_orders": 59,
+      "first_compiled_parameters": [
+        0
+      ]
+    }
+  ]
+}

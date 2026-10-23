@@ -132,6 +132,9 @@ struct Engine {
 #ifdef ENABLE_SCHEDULE_COMPILER
 #include "compiler_adapter.hh"
 #endif
+#ifdef ENABLE_PARAMETRIC_COMPILER
+#include "parametric_adapter.hh"
+#endif
 
 struct PocStats {
   bool keep_intervals=false;
@@ -216,7 +219,7 @@ int main(int argc,char**argv) {
   try {
     if(argc!=4)throw std::runtime_error("Usage: dram_poc CONFIG.json MODE OUTPUT");
     auto config=read_json(argv[1]);std::string mode=argv[2];fs::path out=argv[3];fs::create_directory(out);
-    if(mode!="reference"&&mode!="event"&&mode!="incremental"&&mode!="symbolic"&&mode!="bank_symbolic"&&mode!="compiled")throw std::runtime_error("Unknown mode");
+    if(mode!="reference"&&mode!="event"&&mode!="incremental"&&mode!="symbolic"&&mode!="bank_symbolic"&&mode!="compiled"&&mode!="parametric")throw std::runtime_error("Unknown mode");
     spdlog::set_level(spdlog::level::off);
     std::vector<std::unique_ptr<Engine>> engines;
     for(unsigned i=0;i<config.value("devices",1u);++i){
@@ -224,6 +227,21 @@ int main(int argc,char**argv) {
       poc::device(dynamic_cast<void*>(engines.back()->dram));
     }
     auto& engine=*engines.at(0);
+    // Legal quiescent entry-state fixture: an opened row with all previous
+    // timing obligations elapsed. Identical in reference and compiled modes.
+    if(config.contains("initial_rows")) {
+      if(engines.size()!=1||!engine.shared_bus||config["initial_rows"].size()!=8)throw std::runtime_error("Invalid row fixture");
+      for(int b=0;b<8;++b)if(config["initial_rows"][b].get<int>()>=0){
+        Request r(b*1024,Request::Type::Read,-1,{});engine.memory->m_addr_mapper->apply(r);
+        for(auto* node:engine.path(r.addr_vec))if(node->m_level==3){node->m_state=D::m_states["Opened"];node->m_row_state[config["initial_rows"][b].get<int>()]=D::m_states["Opened"];}
+      }
+    }
+#ifdef ENABLE_PARAMETRIC_COMPILER
+    ParametricPlan parametric_plan;
+    if(mode=="parametric")admit_parametric(engine,config,parametric_plan);
+#else
+    if(mode=="parametric")throw std::runtime_error("Build with --parametric-header");
+#endif
     auto world_state=[&](){J out=J::array();for(auto& e:engines)out.push_back(e->state());return out;};
     auto world_busy=[&](){for(auto& e:engines)if(e->busy())return true;return false;};
     auto world_clock=[&](Clk_t t){for(auto& e:engines)e->set_clock(t);};
@@ -323,6 +341,7 @@ int main(int argc,char**argv) {
       auto state=world_state();checkpoint_rows.push_back(J::array({engine.clock(),digest(state)}));
       state_stream<<J({{"cycle",engine.clock()},{"state",state}}).dump()<<'\n';
     };
+    bool parametric_exit_observed=false;
     const auto start=std::chrono::steady_clock::now();auto cpu_start=std::clock();
     while(!arrivals.empty()||world_busy()){
       while(!arrivals.empty()&&arrivals.front().at<=engine.clock()){
@@ -331,6 +350,16 @@ int main(int argc,char**argv) {
       Clk_t horizon=arrivals.empty()?std::numeric_limits<Clk_t>::max()/4:std::max(engine.clock()+1,arrivals.front().at);
       if(!checkpoints.empty())horizon=std::min(horizon,*checkpoints.begin()+1);
       bool jumped=false;
+#ifdef ENABLE_PARAMETRIC_COMPILER
+      if(mode=="parametric" && parametric_plan.admitted && parametric_plan.cursor<parametric_plan.commands.size()){
+        Clk_t next=std::min(horizon,Clk_t(parametric_plan.commands[parametric_plan.cursor].cycle));
+        if(!engine.ctrls[0]->pending.empty())next=std::min(next,std::max(engine.clock()+1,engine.ctrls[0]->pending.front().depart));
+        if(!checkpoints.empty())next=std::min(next,*checkpoints.begin());
+        if(!bank_checkpoints.empty())next=std::min(next,bank_checkpoints.begin()->first);
+        if(next>engine.clock()+1){stats.skipped_cycles+=next-engine.clock()-1;world_clock(next-1);}
+        engine.memory->tick();++stats.normal_ticks;jumped=true;
+      }
+#endif
 #ifdef ENABLE_SCHEDULE_COMPILER
       if(compiled){
         for(size_t d=0;d<engines.size();++d){auto& e=*engines[d];auto& p=compiled_plans[d];
@@ -401,7 +430,7 @@ int main(int argc,char**argv) {
           jumped=bulk(*candidate,horizon,closed,stats);if(jumped)world_clock(candidate->clock());
         }else stats.fail("other_device_work_or_unsettled");
       }
-      if(jumped){if(audit&&!bank_symbolic&&!compiled)record_checkpoint();}
+      if(jumped){if(audit&&!bank_symbolic&&!compiled&&mode!="parametric")record_checkpoint();}
       else {
         if(event_driven){
           Clk_t next=horizon;
@@ -412,6 +441,12 @@ int main(int argc,char**argv) {
         for(auto& e:engines)e->memory->tick();++stats.normal_ticks;
       }
       if(checkpoints.erase(engine.clock()))record_checkpoint();
+#ifdef ENABLE_PARAMETRIC_COMPILER
+      if(audit&&mode=="parametric"&&parametric_plan.admitted&&!parametric_exit_observed&&
+         parametric_plan.cursor==parametric_plan.commands.size()){
+        record_checkpoint();parametric_exit_observed=true;
+      }
+#endif
       auto banks_at=bank_checkpoints.equal_range(engine.clock());
       for(auto it=banks_at.first;it!=banks_at.second;++it)record_bank(it->second.first,it->second.second);
       bank_checkpoints.erase(banks_at.first,banks_at.second);
@@ -459,6 +494,10 @@ int main(int argc,char**argv) {
       {"commands",compiled_stats.commands},{"segments",compiled_stats.segments},{"fallback_ticks",compiled_stats.fallback_ticks},
       {"retained_arrivals",compiled_stats.retained_arrivals},{"timing_materializations",compiled_stats.timing_materializations},
       {"rejections",compiled_stats.rejection},{"exits",compiled_stats.exits},{"lengths",compiled_stats.lengths}};
+#endif
+#ifdef ENABLE_PARAMETRIC_COMPILER
+    if(mode=="parametric")report["parametric"]={{"admitted",parametric_plan.admitted},{"reason",parametric_plan.reason},
+      {"generated_commands",parametric_plan.commands.size()},{"executed_commands",parametric_plan.scheduler_selections}};
 #endif
     write_json(out/"summary.json",report);std::cout<<report.dump()<<'\n';return 0;
   }catch(const std::exception& e){std::cerr<<e.what()<<'\n';return 1;}

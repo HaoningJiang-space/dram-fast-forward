@@ -1,0 +1,8 @@
+{
+  "status": "pass",
+  "addresses": 10128,
+  "source_sha256": "d805284060b3bd54437aeec10466157f8ec2cfc7a824e6ed1eca5f03c11e8fa9",
+  "excerpt_sha256": "b3004e118a4eff144873b6055b6b749f7e05e5144dfe20c220b2512fbe0dc22d",
+  "program_sha256": "d85ab8e84084a2205d247e2d9868c4379e49ef44a213346ab81892c0e550f6c0",
+  "scope": "Native CRC endpoint and local-address transform; fixed 512-byte stripe, no coloring. Not the full accelerator producer scheduler."
+}

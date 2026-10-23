@@ -43,6 +43,19 @@ def main():
         for region in certificate['regions']:
             assert all(x['empty'] for x in region['induction'].values())
         print('PASS: frozen compiler evidence, 117 differential comparisons and conditional proof certificates')
+    parametric=root/'results/parametric_20261023/evidence'
+    if parametric.exists():
+        manifest=json.loads((parametric/'manifest.json').read_text())
+        for relative,expected in manifest.items():
+            assert hashlib.sha256((parametric/relative).read_bytes()).hexdigest()==expected,relative
+        summary=json.loads((parametric/'summary.json').read_text())
+        assert (summary['cases'],summary['compiled'],summary['fallback'])==(474,283,191)
+        for name in ('two','three','four'):
+            result=json.loads((parametric/f'measurements/{name}.json').read_text())
+            assert result['status']=='pass'
+            for row in result['comparisons']:
+                if row['fast']['parametric']['admitted']:assert row['fast']['preq_scans']==0
+        print('PASS: parametric evidence; 474 exact comparisons, 283 compiled and 191 fallback')
     print('PASS: immutable 40-case archive hashes'+('; extracted solver identity' if args.check_extracted_source else ''))
 
 

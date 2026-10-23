@@ -1,0 +1,14 @@
+test_budget_returns_explicit_uncovered_domains (test_parametric.ParametricCompilation.test_budget_returns_explicit_uncovered_domains) ... ok
+test_nontrivial_paths_partition_all_integer_parameters (test_parametric.ParametricCompilation.test_nontrivial_paths_partition_all_integer_parameters) ... ok
+test_original_mapping_is_not_identity (test_parametric.ParametricCompilation.test_original_mapping_is_not_identity) ... ok
+test_unsupported_effect_rejected (test_parametric.ParametricCompilation.test_unsupported_effect_rejected) ... ok
+test_guards_against_independent_ready_scheduler (test_schedule_compile.ScheduleCompilation.test_guards_against_independent_ready_scheduler) ... ok
+test_induction_and_negative_control (test_schedule_compile.ScheduleCompilation.test_induction_and_negative_control) ... ok
+test_model_changes_recompile_effects (test_schedule_compile.ScheduleCompilation.test_model_changes_recompile_effects) ... ok
+test_nonlocal_and_history_effects_are_rejected (test_schedule_compile.ScheduleCompilation.test_nonlocal_and_history_effects_are_rejected) ... ok
+test_parameterized_resource_projection (test_schedule_compile.ScheduleCompilation.test_parameterized_resource_projection) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.222s
+
+OK

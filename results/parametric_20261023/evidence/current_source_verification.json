@@ -1,0 +1,47 @@
+{
+  "two": {
+    "generated_header_sha256": "a9a34edba8ab187f5dfd9b2fff5abcd473d106b28ec67e81447711a555b27916",
+    "measured_sources_match": {
+      "src/dram_fast_forward/build.py": "ed35c57ee1507e56490ff0d749757cb9f14416ccb51b27043c1a6c0a4f8d9031",
+      "src/dram_fast_forward/native/poc_hooks.hh": "702c1f566f737ee6040bc74647f54f67aa7d2c0a271d634c9550e19de15e51ed",
+      "src/dram_fast_forward/native/poc.cc": "fb1107df4b7d6a0f1d6cf19d1372ab99c8ed2d15146646f5a766065c6e52367e",
+      "src/dram_fast_forward/native/bank_symbolic.hh": "c7de1ede44c1d7f4eef42d8cf0197b240cd8ef702ab0822b0485bad5b56a51f0",
+      "src/dram_fast_forward/native/shared_mapper.hh": "3c08bbfc41ee9346918a0be877b646084646accfd4a202393fb7faf3ba8f9d0d",
+      "src/dram_fast_forward/profile_patch.py": "ce3d6a6efa0436f2a01a88eb836e286b7194f8498e0e69318982304d25f7ecd0",
+      "src/dram_fast_forward/native/compiler_adapter.hh": "51c8f79a3b8276da66a9a1ca94d30ff4950186cbe9fcffb56c116730f115755d",
+      "src/dram_fast_forward/native/parametric_adapter.hh": "08c99bd88fe2348bfd8e8caeacce4dcadcedebb9e089cfe844a161204ae74868"
+    }
+  },
+  "three": {
+    "generated_header_sha256": "d88cf0b9ad52903e6978a99874e5c2bf5a426c1e3c34250775f696dca18a6ea3",
+    "measured_sources_match": {
+      "src/dram_fast_forward/build.py": "ed35c57ee1507e56490ff0d749757cb9f14416ccb51b27043c1a6c0a4f8d9031",
+      "src/dram_fast_forward/native/poc_hooks.hh": "702c1f566f737ee6040bc74647f54f67aa7d2c0a271d634c9550e19de15e51ed",
+      "src/dram_fast_forward/native/poc.cc": "fb1107df4b7d6a0f1d6cf19d1372ab99c8ed2d15146646f5a766065c6e52367e",
+      "src/dram_fast_forward/native/bank_symbolic.hh": "c7de1ede44c1d7f4eef42d8cf0197b240cd8ef702ab0822b0485bad5b56a51f0",
+      "src/dram_fast_forward/native/shared_mapper.hh": "3c08bbfc41ee9346918a0be877b646084646accfd4a202393fb7faf3ba8f9d0d",
+      "src/dram_fast_forward/profile_patch.py": "ce3d6a6efa0436f2a01a88eb836e286b7194f8498e0e69318982304d25f7ecd0",
+      "src/dram_fast_forward/native/compiler_adapter.hh": "51c8f79a3b8276da66a9a1ca94d30ff4950186cbe9fcffb56c116730f115755d",
+      "src/dram_fast_forward/native/parametric_adapter.hh": "08c99bd88fe2348bfd8e8caeacce4dcadcedebb9e089cfe844a161204ae74868"
+    }
+  },
+  "four": {
+    "generated_header_sha256": "03195fdd4185c647114973bf2bf8e5c730ed74c6ea49b875167b4e1572c6aa5b",
+    "measured_sources_match": {
+      "src/dram_fast_forward/build.py": "ed35c57ee1507e56490ff0d749757cb9f14416ccb51b27043c1a6c0a4f8d9031",
+      "src/dram_fast_forward/native/poc_hooks.hh": "702c1f566f737ee6040bc74647f54f67aa7d2c0a271d634c9550e19de15e51ed",
+      "src/dram_fast_forward/native/poc.cc": "fb1107df4b7d6a0f1d6cf19d1372ab99c8ed2d15146646f5a766065c6e52367e",
+      "src/dram_fast_forward/native/bank_symbolic.hh": "c7de1ede44c1d7f4eef42d8cf0197b240cd8ef702ab0822b0485bad5b56a51f0",
+      "src/dram_fast_forward/native/shared_mapper.hh": "3c08bbfc41ee9346918a0be877b646084646accfd4a202393fb7faf3ba8f9d0d",
+      "src/dram_fast_forward/profile_patch.py": "ce3d6a6efa0436f2a01a88eb836e286b7194f8498e0e69318982304d25f7ecd0",
+      "src/dram_fast_forward/native/compiler_adapter.hh": "51c8f79a3b8276da66a9a1ca94d30ff4950186cbe9fcffb56c116730f115755d",
+      "src/dram_fast_forward/native/parametric_adapter.hh": "08c99bd88fe2348bfd8e8caeacce4dcadcedebb9e089cfe844a161204ae74868"
+    }
+  },
+  "local_validation": {
+    "platform": "macOS-15.1-arm64-arm-64bit-Mach-O",
+    "python": "3.14.2 (main, Dec  5 2025, 16:49:16) [Clang 17.0.0 (clang-1700.4.4.1)]",
+    "tests_passed": 9,
+    "test_log_sha256": "f89eb8d5b5d6f05d442616ac6a71f2925894bf0a90f5c89f2be363dc38a3849b"
+  }
+}

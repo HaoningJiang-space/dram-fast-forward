@@ -4,9 +4,10 @@
 本地独立目录：`/Users/haoning/project/dram-fast-forward`。
 
 当前主线：**结构化访存与资源语义 → 条件调度区域 → 精确时序代码**。
-研究分支`research/schedule-compiler`，从真实tile描述出发，使用系统libisl分析资源关系。
+研究分支`research/parametric-producers`，从真实tile描述出发，使用系统libisl分析竞争条件。
 incremental/hybrid保留为基线；增加stride/RLE及不依赖多面体的资源分类对照。
-[编译器合同与边界](docs/SCHEDULE_COMPILER.md)、[当前实验](docs/COMPILER_RESULTS_20261023.md)。
+[多生产者实验合同](docs/PARAMETRIC_PRODUCERS.md)、[本轮结果](docs/PARAMETRIC_RESULTS_20261023.md)。上一轮：
+[FIFO规则编译的边界](docs/SCHEDULE_COMPILER.md)、[真实窗口负结果](docs/COMPILER_RESULTS_20261023.md)。
 
 上一阶段入口：[方法论](docs/RESEARCH_METHOD.md)、[第二轮实验](docs/INTERFERENCE_20261023.md)。
 首轮隔离守卫的0%不能否定多面体路线；固定顺序oracle图求值也不能当成在线加速。
@@ -43,6 +44,9 @@ src/dram_fast_forward/
   extract_dma_ir.py       从模拟前tile描述提取二维DMA循环
   schedule_compile.py     条件/递推/状态代码生成
   compiler_study.py       编译器、stride/RLE与动态资源对照
+  producer_ir.py          真实CRC endpoint映射后的有限producer范围
+  parametric.py           路径敏感的参数条件推导，区域预算与精确回退
+  parametric_study.py     多生产者/Row状态/到达参数的严格差分
 configs/                  独立TSV和共享总线两个显式配置
 docs/                     方法、报告、来源与迁移说明
 results/                  按实验冻结的小型证据

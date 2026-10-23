@@ -19,7 +19,7 @@ def change(text,old,new):
     return text.replace(old,new,1)
 
 
-def build(source,ramulator,output,compiled_header=None):
+def build(source,ramulator,output,compiled_header=None,parametric_header=None):
     output=output.resolve();output.mkdir(exist_ok=False,parents=True)
     # A standalone frozen-input bundle uses a relocatable root token. Legacy
     # native manifests remain supported for reproducing the original experiment.
@@ -77,9 +77,21 @@ def build(source,ramulator,output,compiled_header=None):
         source_file=here/'native/compiler_adapter.hh'
         shutil.copy2(source_file,output/source_file.name)
         dependencies[str(source_file.resolve())]=sha(source_file)
+    if parametric_header:
+        shutil.copy2(parametric_header,output/'parametric_schedule.hh')
+        dependencies[str(parametric_header.resolve())]=sha(parametric_header)
+        source_file=here/'native/parametric_adapter.hh'
+        shutil.copy2(source_file,output/source_file.name)
+        dependencies[str(source_file.resolve())]=sha(source_file)
+        controller=output/'controller.cpp'
+        text=controller.read_text()
+        text=change(text,'      bool request_found = false;',
+                    '      if(poc::scheduler_override) { int answer=poc::scheduler_override(dynamic_cast<void*>(m_dram),m_channel_id,m_clk,m_active_buffer,m_read_buffer,req_it,req_buffer); if(answer>=0){ if(!answer || req_buffer!=&m_active_buffer)set_write_mode(); return answer; } }\n      bool request_found = false;')
+        controller.write_text(text)
     cmd=prior['commands'][0];prefix=cmd[:cmd.index('-c')]
     prefix=[x for x in prefix if not (x.startswith('-I') and x[2:]==str(source))]
     if compiled_header:prefix.append('-DENABLE_SCHEDULE_COMPILER')
+    if parametric_header:prefix.append('-DENABLE_PARAMETRIC_COMPILER')
     command=prefix+['-I'+str(output),'-MMD','-MF',str(output/'dependencies.d'),'-c',str(output/'poc.cc'),'-o',str(output/'poc.o')]
     link=prior['commands'][-1]
     excluded=('domain.o','dram.o','generic_DRAM_system.cpp.o','generic_dram_controller.cpp.o','all_bank_refresh.cpp.o','generic_scheduler.cpp.o')
@@ -105,7 +117,8 @@ def main():
     p=argparse.ArgumentParser(description=__doc__)
     for key in ('source','ramulator','output'):p.add_argument('--'+key,type=Path,required=True)
     p.add_argument('--compiled-header',type=Path)
-    a=p.parse_args();build(a.source,a.ramulator,a.output,a.compiled_header)
+    p.add_argument('--parametric-header',type=Path)
+    a=p.parse_args();build(a.source,a.ramulator,a.output,a.compiled_header,a.parametric_header)
 
 
 if __name__=='__main__':main()

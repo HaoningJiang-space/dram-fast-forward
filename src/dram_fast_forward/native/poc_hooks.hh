@@ -23,6 +23,11 @@ inline std::function<void(void*,Ramulator::Clk_t,int,const Ramulator::AddrVec_t&
 inline std::function<void(void*,int,Ramulator::Clk_t,const Ramulator::Request&,int)> selected_observer;
 inline std::function<void(void*,int,Ramulator::Clk_t,const Ramulator::Request&)> priority_observer;
 inline std::function<void(void*,int,Ramulator::Clk_t,bool,const std::vector<int>&,const std::vector<int>&)> policy_observer;
+// Optional compiled-region ABI: -1 uses the unchanged controller; 0/1 are a
+// proved idle/selected outcome. Admission, issue/state updates and callbacks
+// remain in the original controller. Only explicit parametric mode installs it.
+inline std::function<int(void*,int,Ramulator::Clk_t,Ramulator::ReqBuffer&,Ramulator::ReqBuffer&,
+                        Ramulator::ReqBuffer::iterator&,Ramulator::ReqBuffer*&)> scheduler_override;
 inline unsigned device(const void* p) {
   auto [it,inserted]=devices.emplace(p,devices.size());return it->second;
 }
