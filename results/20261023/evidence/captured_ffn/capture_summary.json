@@ -1,0 +1,16 @@
+{
+  "status": "pass",
+  "accepted": 224896,
+  "attempts": 224896,
+  "commands": 307436,
+  "callbacks": 224896,
+  "devices": 64,
+  "scope": "Replay one owned completed real accelerator program; capture actual DRAM IO.",
+  "native_sha256": "ba436f68cc608cc50a259d08d885728bf6bb02693f3d3e73447e757471c9d39d",
+  "source": "/Orion/jian/jhn/astra/runs/dense_compile_speed_20261023_002/ffn_fixture/attention_frontier_benchmark/base",
+  "exact": [
+    "native stage replies",
+    "native result/summary",
+    "all native events/lifetimes"
+  ]
+}

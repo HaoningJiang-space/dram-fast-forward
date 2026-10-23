@@ -1,0 +1,20 @@
+{
+  "platform": {
+    "system": "Linux",
+    "machine": "x86_64",
+    "release": "6.8.0-138-generic"
+  },
+  "cpu_model": "12th Gen Intel(R) Core(TM) i9-12900",
+  "logical_cpus": 24,
+  "compiler": "c++ (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0\nCopyright (C) 2021 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+  "python": "Python 3.10.20\n",
+  "experiment_cpu_affinity": {
+    "10k": 0,
+    "100k": 2,
+    "1m": 4,
+    "real_window": 6,
+    "fuzz": 8
+  },
+  "priority": "own new jobs only: nice +15, bulk jobs ionice idle",
+  "scope": "No complete environment dump; existing tasks unchanged"
+}

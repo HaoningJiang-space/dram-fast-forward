@@ -1,0 +1,1458 @@
+{
+  "status": "pass",
+  "scope": "Collect completed PoC evidence without reading or scanning large traces.",
+  "root": "/Orion/jian/jhn/astra/runs/dram_fast_forward_poc_20261023_001",
+  "cases": [
+    {
+      "pattern": "A",
+      "count": 10000,
+      "status": "pass",
+      "binary_sha256": "ccde090cb89f4faa8370ab216c9c663f166d680d5849ce8f9aceba0b7e699bb0",
+      "config_sha256": "02c80704816c4dc6d321df5b0ebfdc674d067ba61ed1e8a172ac693383e919ed",
+      "median_cpu_s": {
+        "reference": 0.121235,
+        "event": 0.057652,
+        "incremental": 0.057588,
+        "symbolic": 0.023194
+      },
+      "cpu_speedups": {
+        "reference": 1.0,
+        "event": 2.102875875945327,
+        "incremental": 2.1052128915746335,
+        "symbolic": 5.226998361645253
+      },
+      "median_whole_process_cpu_s": {
+        "reference": 0.12984100000000004,
+        "event": 0.06857599999999991,
+        "incremental": 0.06659900000000007,
+        "symbolic": 0.033698000000000033
+      },
+      "whole_process_cpu_speedups": {
+        "reference": 1.0,
+        "event": 1.89338835744284,
+        "incremental": 1.94959383774531,
+        "symbolic": 3.853077333966405
+      },
+      "safe_read_coverage": 0.9939194577352473,
+      "average_segment_length": 57.63583815028902,
+      "raw_trace_sha256": "b4636b15faf395a297e3dbc3f7741a8f75dbc8ce4bf84e2235d08e9330ca5acd",
+      "group": "strict_v10_10k",
+      "reference_end_cycle": 125260,
+      "commands": 10496,
+      "accepted": 10064,
+      "rejected_attempts": 0,
+      "symbolic_segments": 173,
+      "literal_exit_states": 173,
+      "median_scope": "Three fresh-process runs per mode, alternating order, audit off",
+      "loop_cpu_range_s": {
+        "reference": [
+          0.115196,
+          0.12125
+        ],
+        "event": [
+          0.053005,
+          0.058688
+        ],
+        "incremental": [
+          0.057567,
+          0.060792
+        ],
+        "symbolic": [
+          0.02312,
+          0.025499
+        ]
+      },
+      "audit_invariants": [
+        "command kinds/order/cycles",
+        "every admission/rejection attempt",
+        "every actual callback cycle",
+        "all fast-exit device/timing/history/controller/queue/refresh states",
+        "final state after paid recovery suffix"
+      ],
+      "validation_reference": {
+        "directory": "/Orion/jian/jhn/astra/runs/dram_fast_forward_poc_20261023_001/strict_v9_10k/A_10000",
+        "binary_sha256": "8b9fbb9a5efbc32d805976382be5d35a4d1b025308ae5f858ded6f79e2674b49",
+        "scope": "Literal archived reference bytes and state, not reused benchmark timings"
+      }
+    },
+    {
+      "pattern": "B",
+      "count": 10000,
+      "status": "pass",
+      "binary_sha256": "ccde090cb89f4faa8370ab216c9c663f166d680d5849ce8f9aceba0b7e699bb0",
+      "config_sha256": "02c80704816c4dc6d321df5b0ebfdc674d067ba61ed1e8a172ac693383e919ed",
+      "median_cpu_s": {
+        "reference": 0.286188,
+        "event": 0.072912,
+        "incremental": 0.190283,
+        "symbolic": 0.282079
+      },
+      "cpu_speedups": {
+        "reference": 1.0,
+        "event": 3.925115207373272,
+        "incremental": 1.5040124446219578,
+        "symbolic": 1.0145668412040598
+      },
+      "median_whole_process_cpu_s": {
+        "reference": 0.29605899999999996,
+        "event": 0.08365899999999979,
+        "incremental": 0.20085900000000012,
+        "symbolic": 0.29322000000000037
+      },
+      "whole_process_cpu_speedups": {
+        "reference": 1.0,
+        "event": 3.5388780645238493,
+        "incremental": 1.4739643232317188,
+        "symbolic": 1.0096821499215591
+      },
+      "safe_read_coverage": 0.0,
+      "average_segment_length": 0.0,
+      "raw_trace_sha256": "954836aa2c0fff90fc8ac9d7f4b43030ba57a5cd6bf64b300187f1df793c6d0c",
+      "group": "strict_v10_10k",
+      "reference_end_cycle": 639066,
+      "commands": 21516,
+      "accepted": 10064,
+      "rejected_attempts": 0,
+      "symbolic_segments": 0,
+      "literal_exit_states": 0,
+      "median_scope": "Three fresh-process runs per mode, alternating order, audit off",
+      "loop_cpu_range_s": {
+        "reference": [
+          0.280658,
+          0.290557
+        ],
+        "event": [
+          0.072417,
+          0.079792
+        ],
+        "incremental": [
+          0.185757,
+          0.194611
+        ],
+        "symbolic": [
+          0.2819,
+          0.289169
+        ]
+      },
+      "audit_invariants": [
+        "command kinds/order/cycles",
+        "every admission/rejection attempt",
+        "every actual callback cycle",
+        "all fast-exit device/timing/history/controller/queue/refresh states",
+        "final state after paid recovery suffix"
+      ],
+      "validation_reference": {
+        "directory": "/Orion/jian/jhn/astra/runs/dram_fast_forward_poc_20261023_001/strict_v9_10k/B_10000",
+        "binary_sha256": "8b9fbb9a5efbc32d805976382be5d35a4d1b025308ae5f858ded6f79e2674b49",
+        "scope": "Literal archived reference bytes and state, not reused benchmark timings"
+      }
+    },
+    {
+      "pattern": "C",
+      "count": 10000,
+      "status": "pass",
+      "binary_sha256": "ccde090cb89f4faa8370ab216c9c663f166d680d5849ce8f9aceba0b7e699bb0",
+      "config_sha256": "02c80704816c4dc6d321df5b0ebfdc674d067ba61ed1e8a172ac693383e919ed",
+      "median_cpu_s": {
+        "reference": 0.047965,
+        "event": 0.02155,
+        "incremental": 0.037465,
+        "symbolic": 0.048254
+      },
+      "cpu_speedups": {
+        "reference": 1.0,
+        "event": 2.2257540603248263,
+        "incremental": 1.2802615774723076,
+        "symbolic": 0.9940108592033822
+      },
+      "median_whole_process_cpu_s": {
+        "reference": 0.05737199999999974,
+        "event": 0.032065999999999165,
+        "incremental": 0.04802600000000033,
+        "symbolic": 0.057495999999999686
+      },
+      "whole_process_cpu_speedups": {
+        "reference": 1.0,
+        "event": 1.7891848063369686,
+        "incremental": 1.194602923416469,
+        "symbolic": 0.9978433282315301
+      },
+      "safe_read_coverage": 0.0,
+      "average_segment_length": 0.0,
+      "raw_trace_sha256": "43abf1904d7bbebf926a5551b77cc47dd64cb952f00ca1b83892797d087b8ef5",
+      "group": "strict_v10_10k",
+      "reference_end_cycle": 93066,
+      "commands": 10700,
+      "accepted": 10064,
+      "rejected_attempts": 0,
+      "symbolic_segments": 0,
+      "literal_exit_states": 0,
+      "median_scope": "Three fresh-process runs per mode, alternating order, audit off",
+      "loop_cpu_range_s": {
+        "reference": [
+          0.047376,
+          0.048428
+        ],
+        "event": [
+          0.019355,
+          0.02577
+        ],
+        "incremental": [
+          0.037039,
+          0.038698
+        ],
+        "symbolic": [
+          0.046493,
+          0.051909
+        ]
+      },
+      "audit_invariants": [
+        "command kinds/order/cycles",
+        "every admission/rejection attempt",
+        "every actual callback cycle",
+        "all fast-exit device/timing/history/controller/queue/refresh states",
+        "final state after paid recovery suffix"
+      ],
+      "validation_reference": {
+        "directory": "/Orion/jian/jhn/astra/runs/dram_fast_forward_poc_20261023_001/strict_v9_10k/C_10000",
+        "binary_sha256": "8b9fbb9a5efbc32d805976382be5d35a4d1b025308ae5f858ded6f79e2674b49",
+        "scope": "Literal archived reference bytes and state, not reused benchmark timings"
+      }
+    },
+    {
+      "pattern": "D",
+      "count": 10000,
+      "status": "pass",
+      "binary_sha256": "ccde090cb89f4faa8370ab216c9c663f166d680d5849ce8f9aceba0b7e699bb0",
+      "config_sha256": "02c80704816c4dc6d321df5b0ebfdc674d067ba61ed1e8a172ac693383e919ed",
+      "median_cpu_s": {
+        "reference": 0.076475,
+        "event": 0.062033,
+        "incremental": 0.05633,
+        "symbolic": 0.07506
+      },
+      "cpu_speedups": {
+        "reference": 1.0,
+        "event": 1.2328115680363678,
+        "incremental": 1.357624711521392,
+        "symbolic": 1.018851585398348
+      },
+      "median_whole_process_cpu_s": {
+        "reference": 0.08643400000000023,
+        "event": 0.0727949999999992,
+        "incremental": 0.06673100000000012,
+        "symbolic": 0.08520599999999948
+      },
+      "whole_process_cpu_speedups": {
+        "reference": 1.0,
+        "event": 1.187361769352307,
+        "incremental": 1.2952600740285636,
+        "symbolic": 1.0144121306011404
+      },
+      "safe_read_coverage": 0.0,
+      "average_segment_length": 0.0,
+      "raw_trace_sha256": "05163e98a29f2abe7645c2292a557d0c1c6a74e270c2e550235c2d52c3b50cb7",
+      "group": "strict_v10_10k",
+      "reference_end_cycle": 93066,
+      "commands": 27464,
+      "accepted": 10064,
+      "rejected_attempts": 0,
+      "symbolic_segments": 0,
+      "literal_exit_states": 0,
+      "median_scope": "Three fresh-process runs per mode, alternating order, audit off",
+      "loop_cpu_range_s": {
+        "reference": [
+          0.076061,
+          0.080132
+        ],
+        "event": [
+          0.061287,
+          0.063249
+        ],
+        "incremental": [
+          0.050776,
+          0.057313
+        ],
+        "symbolic": [
+          0.07498,
+          0.079764
+        ]
+      },
+      "audit_invariants": [
+        "command kinds/order/cycles",
+        "every admission/rejection attempt",
+        "every actual callback cycle",
+        "all fast-exit device/timing/history/controller/queue/refresh states",
+        "final state after paid recovery suffix"
+      ],
+      "validation_reference": {
+        "directory": "/Orion/jian/jhn/astra/runs/dram_fast_forward_poc_20261023_001/strict_v9_10k/D_10000",
+        "binary_sha256": "8b9fbb9a5efbc32d805976382be5d35a4d1b025308ae5f858ded6f79e2674b49",
+        "scope": "Literal archived reference bytes and state, not reused benchmark timings"
+      }
+    },
+    {
+      "pattern": "E",
+      "count": 10000,
+      "status": "pass",
+      "binary_sha256": "ccde090cb89f4faa8370ab216c9c663f166d680d5849ce8f9aceba0b7e699bb0",
+      "config_sha256": "02c80704816c4dc6d321df5b0ebfdc674d067ba61ed1e8a172ac693383e919ed",
+      "median_cpu_s": {
+        "reference": 0.131644,
+        "event": 0.140686,
+        "incremental": 0.088039,
+        "symbolic": 0.140228
+      },
+      "cpu_speedups": {
+        "reference": 1.0,
+        "event": 0.9357292125726796,
+        "incremental": 1.495291859289633,
+        "symbolic": 0.938785406623499
+      },
+      "median_whole_process_cpu_s": {
+        "reference": 0.18956000000000145,
+        "event": 0.19957499999999995,
+        "incremental": 0.15218899999999919,
+        "symbolic": 0.2019789999999999
+      },
+      "whole_process_cpu_speedups": {
+        "reference": 1.0,
+        "event": 0.9498183640235576,
+        "incremental": 1.2455565119686867,
+        "symbolic": 0.9385134098099384
+      },
+      "safe_read_coverage": 0.0,
+      "average_segment_length": 0.0,
+      "raw_trace_sha256": "2c88c07802d370767019ca9ea1b51774de4adb5e5a8e4033da817e95e76a240e",
+      "group": "strict_v10_10k",
+      "reference_end_cycle": 506,
+      "commands": 10255,
+      "accepted": 10000,
+      "rejected_attempts": 0,
+      "symbolic_segments": 0,
+      "literal_exit_states": 0,
+      "median_scope": "Three fresh-process runs per mode, alternating order, audit off",
+      "loop_cpu_range_s": {
+        "reference": [
+          0.130288,
+          0.137003
+        ],
+        "event": [
+          0.136508,
+          0.143999
+        ],
+        "incremental": [
+          0.085463,
+          0.093158
+        ],
+        "symbolic": [
+          0.139589,
+          0.140779
+        ]
+      },
+      "audit_invariants": [
+        "command kinds/order/cycles",
+        "every admission/rejection attempt",
+        "every actual callback cycle",
+        "all fast-exit device/timing/history/controller/queue/refresh states",
+        "final full device/controller state"
+      ],
+      "validation_reference": {
+        "directory": "/Orion/jian/jhn/astra/runs/dram_fast_forward_poc_20261023_001/strict_v9_10k/E_10000",
+        "binary_sha256": "8b9fbb9a5efbc32d805976382be5d35a4d1b025308ae5f858ded6f79e2674b49",
+        "scope": "Literal archived reference bytes and state, not reused benchmark timings"
+      }
+    },
+    {
+      "pattern": "A_affine4",
+      "count": 10000,
+      "status": "pass",
+      "binary_sha256": "ccde090cb89f4faa8370ab216c9c663f166d680d5849ce8f9aceba0b7e699bb0",
+      "config_sha256": "02c80704816c4dc6d321df5b0ebfdc674d067ba61ed1e8a172ac693383e919ed",
+      "median_cpu_s": {
+        "reference": 0.117214,
+        "event": 0.055529,
+        "incremental": 0.060806,
+        "symbolic": 0.030401
+      },
+      "cpu_speedups": {
+        "reference": 1.0,
+        "event": 2.1108609915539627,
+        "incremental": 1.9276716113541428,
+        "symbolic": 3.8555968553665996
+      },
+      "median_whole_process_cpu_s": {
+        "reference": 0.1278030000000001,
+        "event": 0.06562200000000062,
+        "incremental": 0.07075300000000018,
+        "symbolic": 0.04113499999999881
+      },
+      "whole_process_cpu_speedups": {
+        "reference": 1.0,
+        "event": 1.9475633171801972,
+        "incremental": 1.806326233516597,
+        "symbolic": 3.106916251367541
+      },
+      "safe_read_coverage": 0.993122009569378,
+      "average_segment_length": 3.972488038277512,
+      "raw_trace_sha256": "664289836901eb292268f0b278ca22abed18e354bf3f31d7b4a754e5a3b7916f",
+      "group": "strict_v10_10k",
+      "reference_end_cycle": 125260,
+      "commands": 10496,
+      "accepted": 10064,
+      "rejected_attempts": 0,
+      "symbolic_segments": 2508,
+      "literal_exit_states": 2508,
+      "median_scope": "Three fresh-process runs per mode, alternating order, audit off",
+      "loop_cpu_range_s": {
+        "reference": [
+          0.114517,
+          0.120118
+        ],
+        "event": [
+          0.055186,
+          0.056984
+        ],
+        "incremental": [
+          0.05961,
+          0.064827
+        ],
+        "symbolic": [
+          0.026773,
+          0.031194
+        ]
+      },
+      "audit_invariants": [
+        "command kinds/order/cycles",
+        "every admission/rejection attempt",
+        "every actual callback cycle",
+        "all fast-exit device/timing/history/controller/queue/refresh states",
+        "final state after paid recovery suffix"
+      ],
+      "validation_reference": {
+        "directory": "/Orion/jian/jhn/astra/runs/dram_fast_forward_poc_20261023_001/strict_v9_10k/A_affine4_10000",
+        "binary_sha256": "8b9fbb9a5efbc32d805976382be5d35a4d1b025308ae5f858ded6f79e2674b49",
+        "scope": "Literal archived reference bytes and state, not reused benchmark timings"
+      }
+    },
+    {
+      "pattern": "A_interrupt",
+      "count": 10000,
+      "status": "pass",
+      "binary_sha256": "ccde090cb89f4faa8370ab216c9c663f166d680d5849ce8f9aceba0b7e699bb0",
+      "config_sha256": "02c80704816c4dc6d321df5b0ebfdc674d067ba61ed1e8a172ac693383e919ed",
+      "median_cpu_s": {
+        "reference": 0.122156,
+        "event": 0.059051,
+        "incremental": 0.057777,
+        "symbolic": 0.027146
+      },
+      "cpu_speedups": {
+        "reference": 1.0,
+        "event": 2.0686525207024435,
+        "incremental": 2.114266922823961,
+        "symbolic": 4.499963162160171
+      },
+      "median_whole_process_cpu_s": {
+        "reference": 0.13240600000000025,
+        "event": 0.06957099999999944,
+        "incremental": 0.06713400000000086,
+        "symbolic": 0.03770199999999996
+      },
+      "whole_process_cpu_speedups": {
+        "reference": 1.0,
+        "event": 1.9031780483247518,
+        "incremental": 1.9722644263711167,
+        "symbolic": 3.511909182536746
+      },
+      "safe_read_coverage": 0.9904306220095693,
+      "average_segment_length": 57.433526011560694,
+      "raw_trace_sha256": "0fe45d64a4d8714c8df3eacbe472f8f8d86adc6621345f8bcab949b47183f845",
+      "group": "strict_v10_10k",
+      "reference_end_cycle": 125260,
+      "commands": 10501,
+      "accepted": 10065,
+      "rejected_attempts": 0,
+      "symbolic_segments": 173,
+      "literal_exit_states": 173,
+      "median_scope": "Three fresh-process runs per mode, alternating order, audit off",
+      "loop_cpu_range_s": {
+        "reference": [
+          0.118869,
+          0.124628
+        ],
+        "event": [
+          0.054669,
+          0.059738
+        ],
+        "incremental": [
+          0.057672,
+          0.062676
+        ],
+        "symbolic": [
+          0.023685,
+          0.027291
+        ]
+      },
+      "audit_invariants": [
+        "command kinds/order/cycles",
+        "every admission/rejection attempt",
+        "every actual callback cycle",
+        "all fast-exit device/timing/history/controller/queue/refresh states",
+        "final state after paid recovery suffix"
+      ],
+      "validation_reference": {
+        "directory": "/Orion/jian/jhn/astra/runs/dram_fast_forward_poc_20261023_001/strict_v9_10k/A_interrupt_10000",
+        "binary_sha256": "8b9fbb9a5efbc32d805976382be5d35a4d1b025308ae5f858ded6f79e2674b49",
+        "scope": "Literal archived reference bytes and state, not reused benchmark timings"
+      }
+    },
+    {
+      "pattern": "A_closed",
+      "count": 10000,
+      "status": "pass",
+      "binary_sha256": "ccde090cb89f4faa8370ab216c9c663f166d680d5849ce8f9aceba0b7e699bb0",
+      "config_sha256": "02c80704816c4dc6d321df5b0ebfdc674d067ba61ed1e8a172ac693383e919ed",
+      "median_cpu_s": {
+        "reference": 0.12443,
+        "event": 0.05909,
+        "incremental": 0.060186,
+        "symbolic": 0.139777
+      },
+      "cpu_speedups": {
+        "reference": 1.0,
+        "event": 2.1057708580132,
+        "incremental": 2.067424317947695,
+        "symbolic": 0.8902036815785143
+      },
+      "median_whole_process_cpu_s": {
+        "reference": 0.13334100000000126,
+        "event": 0.06832600000000066,
+        "incremental": 0.07088999999999945,
+        "symbolic": 0.14949000000000034
+      },
+      "whole_process_cpu_speedups": {
+        "reference": 1.0,
+        "event": 1.9515411410004972,
+        "incremental": 1.8809564113415473,
+        "symbolic": 0.8919727072045017
+      },
+      "safe_read_coverage": 0.04924242424242424,
+      "average_segment_length": 2.8554913294797686,
+      "raw_trace_sha256": "07e81650d092742e81fa01ee9ed3e3bd865d305345da3a7744ce3e5fff96799b",
+      "group": "strict_v10_10k",
+      "reference_end_cycle": 125260,
+      "commands": 10574,
+      "accepted": 10128,
+      "rejected_attempts": 0,
+      "symbolic_segments": 173,
+      "literal_exit_states": 173,
+      "median_scope": "Three fresh-process runs per mode, alternating order, audit off",
+      "loop_cpu_range_s": {
+        "reference": [
+          0.115519,
+          0.12478
+        ],
+        "event": [
+          0.052459,
+          0.060109
+        ],
+        "incremental": [
+          0.059891,
+          0.061327
+        ],
+        "symbolic": [
+          0.135173,
+          0.140313
+        ]
+      },
+      "audit_invariants": [
+        "command kinds/order/cycles",
+        "every admission/rejection attempt",
+        "every actual callback cycle",
+        "all fast-exit device/timing/history/controller/queue/refresh states",
+        "final state after paid recovery suffix"
+      ],
+      "validation_reference": {
+        "directory": "/Orion/jian/jhn/astra/runs/dram_fast_forward_poc_20261023_001/strict_v9_10k/A_closed_10000",
+        "binary_sha256": "8b9fbb9a5efbc32d805976382be5d35a4d1b025308ae5f858ded6f79e2674b49",
+        "scope": "Literal archived reference bytes and state, not reused benchmark timings"
+      }
+    },
+    {
+      "pattern": "A_pressure",
+      "count": 10000,
+      "status": "pass",
+      "binary_sha256": "ccde090cb89f4faa8370ab216c9c663f166d680d5849ce8f9aceba0b7e699bb0",
+      "config_sha256": "02c80704816c4dc6d321df5b0ebfdc674d067ba61ed1e8a172ac693383e919ed",
+      "median_cpu_s": {
+        "reference": 0.238542,
+        "event": 0.23685,
+        "incremental": 0.132768,
+        "symbolic": 0.266368
+      },
+      "cpu_speedups": {
+        "reference": 1.0,
+        "event": 1.0071437618746042,
+        "incremental": 1.7966829356471439,
+        "symbolic": 0.8955354997597309
+      },
+      "median_whole_process_cpu_s": {
+        "reference": 0.2486650000000038,
+        "event": 0.24592000000000025,
+        "incremental": 0.14204000000000272,
+        "symbolic": 0.27536299999999914
+      },
+      "whole_process_cpu_speedups": {
+        "reference": 1.0,
+        "event": 1.0111621665582446,
+        "incremental": 1.7506688256828995,
+        "symbolic": 0.9030443451008472
+      },
+      "safe_read_coverage": 0.0,
+      "average_segment_length": 0.0,
+      "raw_trace_sha256": "e7628e789136fb396e28b6f6f46872bbf58566141139f043a24490445a605f57",
+      "group": "strict_v10_10k",
+      "reference_end_cycle": 83399,
+      "commands": 10391,
+      "accepted": 10064,
+      "rejected_attempts": 82777,
+      "symbolic_segments": 0,
+      "literal_exit_states": 0,
+      "median_scope": "Three fresh-process runs per mode, alternating order, audit off",
+      "loop_cpu_range_s": {
+        "reference": [
+          0.22359,
+          0.2396
+        ],
+        "event": [
+          0.231475,
+          0.244396
+        ],
+        "incremental": [
+          0.132467,
+          0.136918
+        ],
+        "symbolic": [
+          0.262694,
+          0.268053
+        ]
+      },
+      "audit_invariants": [
+        "command kinds/order/cycles",
+        "every admission/rejection attempt",
+        "every actual callback cycle",
+        "all fast-exit device/timing/history/controller/queue/refresh states",
+        "final state after paid recovery suffix"
+      ],
+      "validation_reference": {
+        "directory": "/Orion/jian/jhn/astra/runs/dram_fast_forward_poc_20261023_001/strict_v9_10k/A_pressure_10000",
+        "binary_sha256": "8b9fbb9a5efbc32d805976382be5d35a4d1b025308ae5f858ded6f79e2674b49",
+        "scope": "Literal archived reference bytes and state, not reused benchmark timings"
+      }
+    },
+    {
+      "pattern": "A",
+      "count": 100000,
+      "status": "pass",
+      "binary_sha256": "ccde090cb89f4faa8370ab216c9c663f166d680d5849ce8f9aceba0b7e699bb0",
+      "config_sha256": "02c80704816c4dc6d321df5b0ebfdc674d067ba61ed1e8a172ac693383e919ed",
+      "median_cpu_s": {
+        "reference": 0.648504,
+        "event": 0.30857,
+        "incremental": 0.319883,
+        "symbolic": 0.104784
+      },
+      "cpu_speedups": {
+        "reference": 1.0,
+        "event": 2.1016430631623293,
+        "incremental": 2.0273162374993356,
+        "symbolic": 6.188960146587265
+      },
+      "median_whole_process_cpu_s": {
+        "reference": 0.6933780000000004,
+        "event": 0.353224,
+        "incremental": 0.3646409999999999,
+        "symbolic": 0.15136199999999994
+      },
+      "whole_process_cpu_speedups": {
+        "reference": 1.0,
+        "event": 1.9629979842819298,
+        "incremental": 1.9015360313294463,
+        "symbolic": 4.580925199191347
+      },
+      "safe_read_coverage": 0.9968710012795905,
+      "average_segment_length": 57.8752176436448,
+      "raw_trace_sha256": "fb1dc0e8ef3b1e0c72ed7d6a77b0ccb0eaad6da65c475985eefb25e7e4daa5ed",
+      "group": "strict_v10_100k",
+      "reference_end_cycle": 1109466,
+      "commands": 103014,
+      "accepted": 100064,
+      "rejected_attempts": 0,
+      "symbolic_segments": 1723,
+      "literal_exit_states": 1723,
+      "median_scope": "Three fresh-process runs per mode, alternating order, audit off",
+      "loop_cpu_range_s": {
+        "reference": [
+          0.643679,
+          0.664717
+        ],
+        "event": [
+          0.301037,
+          0.324797
+        ],
+        "incremental": [
+          0.304998,
+          0.326613
+        ],
+        "symbolic": [
+          0.102342,
+          0.10822
+        ]
+      },
+      "audit_invariants": [
+        "command kinds/order/cycles",
+        "every admission/rejection attempt",
+        "every actual callback cycle",
+        "all fast-exit device/timing/history/controller/queue/refresh states",
+        "final state after paid recovery suffix"
+      ],
+      "validation_reference": {
+        "directory": "/Orion/jian/jhn/astra/runs/dram_fast_forward_poc_20261023_001/strict_v9_100k/A_100000",
+        "binary_sha256": "8b9fbb9a5efbc32d805976382be5d35a4d1b025308ae5f858ded6f79e2674b49",
+        "scope": "Literal archived reference bytes and state, not reused benchmark timings"
+      }
+    },
+    {
+      "pattern": "B",
+      "count": 100000,
+      "status": "pass",
+      "binary_sha256": "ccde090cb89f4faa8370ab216c9c663f166d680d5849ce8f9aceba0b7e699bb0",
+      "config_sha256": "02c80704816c4dc6d321df5b0ebfdc674d067ba61ed1e8a172ac693383e919ed",
+      "median_cpu_s": {
+        "reference": 1.607435,
+        "event": 0.41582,
+        "incremental": 1.052678,
+        "symbolic": 1.634821
+      },
+      "cpu_speedups": {
+        "reference": 1.0,
+        "event": 3.8656991005723627,
+        "incremental": 1.5269959094803918,
+        "symbolic": 0.9832483189291059
+      },
+      "median_whole_process_cpu_s": {
+        "reference": 1.6553740000000028,
+        "event": 0.4621259999999979,
+        "incremental": 1.099975000000003,
+        "symbolic": 1.680984
+      },
+      "whole_process_cpu_speedups": {
+        "reference": 1.0,
+        "event": 3.5820836741494966,
+        "incremental": 1.5049196572649362,
+        "symbolic": 0.9847648758108363
+      },
+      "safe_read_coverage": 0.0,
+      "average_segment_length": 0.0,
+      "raw_trace_sha256": "204e31a80a644b970374f32142059d7319c9c802d1417968b3bcd2a0f0963bcd",
+      "group": "strict_v10_100k",
+      "reference_end_cycle": 6263066,
+      "commands": 213340,
+      "accepted": 100064,
+      "rejected_attempts": 0,
+      "symbolic_segments": 0,
+      "literal_exit_states": 0,
+      "median_scope": "Three fresh-process runs per mode, alternating order, audit off",
+      "loop_cpu_range_s": {
+        "reference": [
+          1.565857,
+          1.626728
+        ],
+        "event": [
+          0.4132,
+          0.423913
+        ],
+        "incremental": [
+          1.031692,
+          1.060934
+        ],
+        "symbolic": [
+          1.606748,
+          1.667069
+        ]
+      },
+      "audit_invariants": [
+        "command kinds/order/cycles",
+        "every admission/rejection attempt",
+        "every actual callback cycle",
+        "all fast-exit device/timing/history/controller/queue/refresh states",
+        "final state after paid recovery suffix"
+      ],
+      "validation_reference": {
+        "directory": "/Orion/jian/jhn/astra/runs/dram_fast_forward_poc_20261023_001/strict_v9_100k/B_100000",
+        "binary_sha256": "8b9fbb9a5efbc32d805976382be5d35a4d1b025308ae5f858ded6f79e2674b49",
+        "scope": "Literal archived reference bytes and state, not reused benchmark timings"
+      }
+    },
+    {
+      "pattern": "C",
+      "count": 100000,
+      "status": "pass",
+      "binary_sha256": "ccde090cb89f4faa8370ab216c9c663f166d680d5849ce8f9aceba0b7e699bb0",
+      "config_sha256": "02c80704816c4dc6d321df5b0ebfdc674d067ba61ed1e8a172ac693383e919ed",
+      "median_cpu_s": {
+        "reference": 0.264478,
+        "event": 0.110561,
+        "incremental": 0.185865,
+        "symbolic": 0.263171
+      },
+      "cpu_speedups": {
+        "reference": 1.0,
+        "event": 2.3921455124320508,
+        "incremental": 1.4229575229333118,
+        "symbolic": 1.0049663526756367
+      },
+      "median_whole_process_cpu_s": {
+        "reference": 0.31122899999999937,
+        "event": 0.15686599999999884,
+        "incremental": 0.23200800000000243,
+        "symbolic": 0.3094319999999995
+      },
+      "whole_process_cpu_speedups": {
+        "reference": 1.0,
+        "event": 1.9840437060931093,
+        "incremental": 1.3414580531705635,
+        "symbolic": 1.005807414876289
+      },
+      "safe_read_coverage": 0.0,
+      "average_segment_length": 0.0,
+      "raw_trace_sha256": "d5f980f52caec4cfa1d1522f8abeb2d8fde016f662b005f8408f2da76a302edd",
+      "group": "strict_v10_100k",
+      "reference_end_cycle": 796060,
+      "commands": 105030,
+      "accepted": 100064,
+      "rejected_attempts": 0,
+      "symbolic_segments": 0,
+      "literal_exit_states": 0,
+      "median_scope": "Three fresh-process runs per mode, alternating order, audit off",
+      "loop_cpu_range_s": {
+        "reference": [
+          0.262439,
+          0.26575
+        ],
+        "event": [
+          0.107082,
+          0.111011
+        ],
+        "incremental": [
+          0.183792,
+          0.187956
+        ],
+        "symbolic": [
+          0.225948,
+          0.264948
+        ]
+      },
+      "audit_invariants": [
+        "command kinds/order/cycles",
+        "every admission/rejection attempt",
+        "every actual callback cycle",
+        "all fast-exit device/timing/history/controller/queue/refresh states",
+        "final state after paid recovery suffix"
+      ],
+      "validation_reference": {
+        "directory": "/Orion/jian/jhn/astra/runs/dram_fast_forward_poc_20261023_001/strict_v9_100k/C_100000",
+        "binary_sha256": "8b9fbb9a5efbc32d805976382be5d35a4d1b025308ae5f858ded6f79e2674b49",
+        "scope": "Literal archived reference bytes and state, not reused benchmark timings"
+      }
+    },
+    {
+      "pattern": "D",
+      "count": 100000,
+      "status": "pass",
+      "binary_sha256": "ccde090cb89f4faa8370ab216c9c663f166d680d5849ce8f9aceba0b7e699bb0",
+      "config_sha256": "02c80704816c4dc6d321df5b0ebfdc674d067ba61ed1e8a172ac693383e919ed",
+      "median_cpu_s": {
+        "reference": 0.453611,
+        "event": 0.346615,
+        "incremental": 0.310705,
+        "symbolic": 0.443339
+      },
+      "cpu_speedups": {
+        "reference": 1.0,
+        "event": 1.3086883141237395,
+        "incremental": 1.4599411016880963,
+        "symbolic": 1.0231696286588818
+      },
+      "median_whole_process_cpu_s": {
+        "reference": 0.5013260000000024,
+        "event": 0.389350000000001,
+        "incremental": 0.35712699999999886,
+        "symbolic": 0.4908199999999997
+      },
+      "whole_process_cpu_speedups": {
+        "reference": 1.0,
+        "event": 1.287597277513808,
+        "incremental": 1.4037751276156774,
+        "symbolic": 1.0214049957214513
+      },
+      "safe_read_coverage": 0.0,
+      "average_segment_length": 0.0,
+      "raw_trace_sha256": "2a93304fe0c4e788261b59edaf0d3cb3b789fe79a008715bc3c1922824ce6c11",
+      "group": "strict_v10_100k",
+      "reference_end_cycle": 796066,
+      "commands": 273215,
+      "accepted": 100064,
+      "rejected_attempts": 0,
+      "symbolic_segments": 0,
+      "literal_exit_states": 0,
+      "median_scope": "Three fresh-process runs per mode, alternating order, audit off",
+      "loop_cpu_range_s": {
+        "reference": [
+          0.390824,
+          0.454631
+        ],
+        "event": [
+          0.334036,
+          0.376415
+        ],
+        "incremental": [
+          0.284681,
+          0.315297
+        ],
+        "symbolic": [
+          0.427018,
+          0.443971
+        ]
+      },
+      "audit_invariants": [
+        "command kinds/order/cycles",
+        "every admission/rejection attempt",
+        "every actual callback cycle",
+        "all fast-exit device/timing/history/controller/queue/refresh states",
+        "final state after paid recovery suffix"
+      ],
+      "validation_reference": {
+        "directory": "/Orion/jian/jhn/astra/runs/dram_fast_forward_poc_20261023_001/strict_v9_100k/D_100000",
+        "binary_sha256": "8b9fbb9a5efbc32d805976382be5d35a4d1b025308ae5f858ded6f79e2674b49",
+        "scope": "Literal archived reference bytes and state, not reused benchmark timings"
+      }
+    },
+    {
+      "pattern": "E",
+      "count": 100000,
+      "status": "pass",
+      "binary_sha256": "ccde090cb89f4faa8370ab216c9c663f166d680d5849ce8f9aceba0b7e699bb0",
+      "config_sha256": "02c80704816c4dc6d321df5b0ebfdc674d067ba61ed1e8a172ac693383e919ed",
+      "median_cpu_s": {
+        "reference": 0.653476,
+        "event": 0.663632,
+        "incremental": 0.509453,
+        "symbolic": 0.647665
+      },
+      "cpu_speedups": {
+        "reference": 1.0,
+        "event": 0.9846963377293438,
+        "incremental": 1.2827012501643917,
+        "symbolic": 1.0089722310144904
+      },
+      "median_whole_process_cpu_s": {
+        "reference": 0.7438670000000028,
+        "event": 0.7539559999999981,
+        "incremental": 0.6007499999999992,
+        "symbolic": 0.7383480000000038
+      },
+      "whole_process_cpu_speedups": {
+        "reference": 1.0,
+        "event": 0.9866185825167579,
+        "incremental": 1.2382305451518998,
+        "symbolic": 1.007474795083076
+      },
+      "safe_read_coverage": 0.0,
+      "average_segment_length": 0.0,
+      "raw_trace_sha256": "7606d8b912c6ddc1e4fcdd5edf407260b3a9dc0ba95b07d6413219dc612feb9f",
+      "group": "strict_v10_100k",
+      "reference_end_cycle": 2727,
+      "commands": 141750,
+      "accepted": 100000,
+      "rejected_attempts": 0,
+      "symbolic_segments": 0,
+      "literal_exit_states": 0,
+      "median_scope": "Three fresh-process runs per mode, alternating order, audit off",
+      "loop_cpu_range_s": {
+        "reference": [
+          0.653351,
+          0.657319
+        ],
+        "event": [
+          0.645368,
+          0.671045
+        ],
+        "incremental": [
+          0.467961,
+          0.510052
+        ],
+        "symbolic": [
+          0.635087,
+          0.648157
+        ]
+      },
+      "audit_invariants": [
+        "command kinds/order/cycles",
+        "every admission/rejection attempt",
+        "every actual callback cycle",
+        "all fast-exit device/timing/history/controller/queue/refresh states",
+        "final full device/controller state"
+      ],
+      "validation_reference": {
+        "directory": "/Orion/jian/jhn/astra/runs/dram_fast_forward_poc_20261023_001/strict_v9_100k/E_100000",
+        "binary_sha256": "8b9fbb9a5efbc32d805976382be5d35a4d1b025308ae5f858ded6f79e2674b49",
+        "scope": "Literal archived reference bytes and state, not reused benchmark timings"
+      }
+    },
+    {
+      "pattern": "A",
+      "count": 1000000,
+      "status": "pass",
+      "binary_sha256": "ccde090cb89f4faa8370ab216c9c663f166d680d5849ce8f9aceba0b7e699bb0",
+      "config_sha256": "02c80704816c4dc6d321df5b0ebfdc674d067ba61ed1e8a172ac693383e919ed",
+      "median_cpu_s": {
+        "reference": 5.638707,
+        "event": 2.825652,
+        "incremental": 2.933037,
+        "symbolic": 0.968384
+      },
+      "cpu_speedups": {
+        "reference": 1.0,
+        "event": 1.9955419138662511,
+        "incremental": 1.9224806915153132,
+        "symbolic": 5.822800665851563
+      },
+      "median_whole_process_cpu_s": {
+        "reference": 6.040373000000001,
+        "event": 3.2640009999999995,
+        "incremental": 3.362013,
+        "symbolic": 1.375645000000001
+      },
+      "whole_process_cpu_speedups": {
+        "reference": 1.0,
+        "event": 1.8506039060649802,
+        "incremental": 1.796653671475988,
+        "symbolic": 4.390938795982973
+      },
+      "safe_read_coverage": 0.997163090781095,
+      "average_segment_length": 57.88558657920706,
+      "raw_trace_sha256": "77acf6da15a0bb3f334c9129b314430266fe44ff01cad5ab134e19a2d5db2d14",
+      "group": "strict_v10_1m",
+      "reference_end_cycle": 10952866,
+      "commands": 1028255,
+      "accepted": 1000064,
+      "rejected_attempts": 0,
+      "symbolic_segments": 17227,
+      "literal_exit_states": 17227,
+      "median_scope": "Three fresh-process runs per mode, alternating order, audit off",
+      "loop_cpu_range_s": {
+        "reference": [
+          5.616968,
+          6.133491
+        ],
+        "event": [
+          2.520226,
+          2.923288
+        ],
+        "incremental": [
+          2.604028,
+          3.012497
+        ],
+        "symbolic": [
+          0.901609,
+          1.016179
+        ]
+      },
+      "audit_invariants": [
+        "command kinds/order/cycles",
+        "every admission/rejection attempt",
+        "every actual callback cycle",
+        "all fast-exit device/timing/history/controller/queue/refresh states",
+        "final state after paid recovery suffix"
+      ],
+      "validation_reference": {
+        "directory": "/Orion/jian/jhn/astra/runs/dram_fast_forward_poc_20261023_001/strict_v9_1m/A_1000000",
+        "binary_sha256": "8b9fbb9a5efbc32d805976382be5d35a4d1b025308ae5f858ded6f79e2674b49",
+        "scope": "Literal archived reference bytes and state, not reused benchmark timings"
+      }
+    },
+    {
+      "pattern": "B",
+      "count": 1000000,
+      "status": "pass",
+      "binary_sha256": "ccde090cb89f4faa8370ab216c9c663f166d680d5849ce8f9aceba0b7e699bb0",
+      "config_sha256": "02c80704816c4dc6d321df5b0ebfdc674d067ba61ed1e8a172ac693383e919ed",
+      "median_cpu_s": {
+        "reference": 13.85813,
+        "event": 3.440169,
+        "incremental": 8.628388,
+        "symbolic": 13.214319
+      },
+      "cpu_speedups": {
+        "reference": 1.0,
+        "event": 4.028328259454695,
+        "incremental": 1.6061088119820295,
+        "symbolic": 1.048720709708915
+      },
+      "median_whole_process_cpu_s": {
+        "reference": 14.274268999999983,
+        "event": 3.8570839999999946,
+        "incremental": 9.041393999999995,
+        "symbolic": 13.62626300000001
+      },
+      "whole_process_cpu_speedups": {
+        "reference": 1.0,
+        "event": 3.70079287876541,
+        "incremental": 1.5787686058145447,
+        "symbolic": 1.0475556651152242
+      },
+      "safe_read_coverage": 0.0,
+      "average_segment_length": 0.0,
+      "raw_trace_sha256": "5a9c4a8cc432dde484b428f0d0b0af93e6446f87cf7bf6cd7f3dfde2397f06cb",
+      "group": "strict_v10_1m",
+      "reference_end_cycle": 62511066,
+      "commands": 2131604,
+      "accepted": 1000064,
+      "rejected_attempts": 0,
+      "symbolic_segments": 0,
+      "literal_exit_states": 0,
+      "median_scope": "Three fresh-process runs per mode, alternating order, audit off",
+      "loop_cpu_range_s": {
+        "reference": [
+          13.584089,
+          13.895481
+        ],
+        "event": [
+          3.404646,
+          3.55157
+        ],
+        "incremental": [
+          8.5308,
+          8.9967
+        ],
+        "symbolic": [
+          13.20731,
+          13.371138
+        ]
+      },
+      "audit_invariants": [
+        "command kinds/order/cycles",
+        "every admission/rejection attempt",
+        "every actual callback cycle",
+        "all fast-exit device/timing/history/controller/queue/refresh states",
+        "final state after paid recovery suffix"
+      ],
+      "validation_reference": {
+        "directory": "/Orion/jian/jhn/astra/runs/dram_fast_forward_poc_20261023_001/strict_v9_1m/B_1000000",
+        "binary_sha256": "8b9fbb9a5efbc32d805976382be5d35a4d1b025308ae5f858ded6f79e2674b49",
+        "scope": "Literal archived reference bytes and state, not reused benchmark timings"
+      }
+    },
+    {
+      "pattern": "C",
+      "count": 1000000,
+      "status": "pass",
+      "binary_sha256": "ccde090cb89f4faa8370ab216c9c663f166d680d5849ce8f9aceba0b7e699bb0",
+      "config_sha256": "02c80704816c4dc6d321df5b0ebfdc674d067ba61ed1e8a172ac693383e919ed",
+      "median_cpu_s": {
+        "reference": 2.129417,
+        "event": 0.930804,
+        "incremental": 1.621676,
+        "symbolic": 2.200445
+      },
+      "cpu_speedups": {
+        "reference": 1.0,
+        "event": 2.2877179298756776,
+        "incremental": 1.3130964508323488,
+        "symbolic": 0.9677210746008194
+      },
+      "median_whole_process_cpu_s": {
+        "reference": 2.538421000000019,
+        "event": 1.3339239999999966,
+        "incremental": 2.0432630000000307,
+        "symbolic": 2.5948160000000007
+      },
+      "whole_process_cpu_speedups": {
+        "reference": 1.0,
+        "event": 1.9029727330792652,
+        "incremental": 1.242336889573188,
+        "symbolic": 0.9782662816939692
+      },
+      "safe_read_coverage": 0.0,
+      "average_segment_length": 0.0,
+      "raw_trace_sha256": "fb2daad646c04a33af6fbea81a53afb21794ddf423de737b805c17027aa30157",
+      "group": "strict_v10_1m",
+      "reference_end_cycle": 7827066,
+      "commands": 1048292,
+      "accepted": 1000064,
+      "rejected_attempts": 0,
+      "symbolic_segments": 0,
+      "literal_exit_states": 0,
+      "median_scope": "Three fresh-process runs per mode, alternating order, audit off",
+      "loop_cpu_range_s": {
+        "reference": [
+          2.110439,
+          2.212878
+        ],
+        "event": [
+          0.920938,
+          0.987573
+        ],
+        "incremental": [
+          1.490309,
+          1.658473
+        ],
+        "symbolic": [
+          2.126867,
+          2.338682
+        ]
+      },
+      "audit_invariants": [
+        "command kinds/order/cycles",
+        "every admission/rejection attempt",
+        "every actual callback cycle",
+        "all fast-exit device/timing/history/controller/queue/refresh states",
+        "final state after paid recovery suffix"
+      ],
+      "validation_reference": {
+        "directory": "/Orion/jian/jhn/astra/runs/dram_fast_forward_poc_20261023_001/strict_v9_1m/C_1000000",
+        "binary_sha256": "8b9fbb9a5efbc32d805976382be5d35a4d1b025308ae5f858ded6f79e2674b49",
+        "scope": "Literal archived reference bytes and state, not reused benchmark timings"
+      }
+    },
+    {
+      "pattern": "D",
+      "count": 1000000,
+      "status": "pass",
+      "binary_sha256": "ccde090cb89f4faa8370ab216c9c663f166d680d5849ce8f9aceba0b7e699bb0",
+      "config_sha256": "02c80704816c4dc6d321df5b0ebfdc674d067ba61ed1e8a172ac693383e919ed",
+      "median_cpu_s": {
+        "reference": 3.602229,
+        "event": 2.997378,
+        "incremental": 2.513713,
+        "symbolic": 3.473639
+      },
+      "cpu_speedups": {
+        "reference": 1.0,
+        "event": 1.2017933674031103,
+        "incremental": 1.4330311376040143,
+        "symbolic": 1.0370188151388213
+      },
+      "median_whole_process_cpu_s": {
+        "reference": 4.009890999999999,
+        "event": 3.426491999999964,
+        "incremental": 2.9499999999999797,
+        "symbolic": 3.8785390000000337
+      },
+      "whole_process_cpu_speedups": {
+        "reference": 1.0,
+        "event": 1.1702613051482509,
+        "incremental": 1.3592850847457716,
+        "symbolic": 1.0338663605032627
+      },
+      "safe_read_coverage": 0.0,
+      "average_segment_length": 0.0,
+      "raw_trace_sha256": "a03c9064ec34fec17897f9d024a641729e33eb083d2b88390390c84322187839",
+      "group": "strict_v10_1m",
+      "reference_end_cycle": 7827066,
+      "commands": 2732408,
+      "accepted": 1000064,
+      "rejected_attempts": 0,
+      "symbolic_segments": 0,
+      "literal_exit_states": 0,
+      "median_scope": "Three fresh-process runs per mode, alternating order, audit off",
+      "loop_cpu_range_s": {
+        "reference": [
+          3.397625,
+          3.729691
+        ],
+        "event": [
+          2.951571,
+          3.176521
+        ],
+        "incremental": [
+          2.464893,
+          2.6174
+        ],
+        "symbolic": [
+          3.451921,
+          3.561357
+        ]
+      },
+      "audit_invariants": [
+        "command kinds/order/cycles",
+        "every admission/rejection attempt",
+        "every actual callback cycle",
+        "all fast-exit device/timing/history/controller/queue/refresh states",
+        "final state after paid recovery suffix"
+      ],
+      "validation_reference": {
+        "directory": "/Orion/jian/jhn/astra/runs/dram_fast_forward_poc_20261023_001/strict_v9_1m/D_1000000",
+        "binary_sha256": "8b9fbb9a5efbc32d805976382be5d35a4d1b025308ae5f858ded6f79e2674b49",
+        "scope": "Literal archived reference bytes and state, not reused benchmark timings"
+      }
+    },
+    {
+      "pattern": "E",
+      "count": 1000000,
+      "status": "pass",
+      "binary_sha256": "ccde090cb89f4faa8370ab216c9c663f166d680d5849ce8f9aceba0b7e699bb0",
+      "config_sha256": "02c80704816c4dc6d321df5b0ebfdc674d067ba61ed1e8a172ac693383e919ed",
+      "median_cpu_s": {
+        "reference": 8.493445,
+        "event": 8.212443,
+        "incremental": 5.901633,
+        "symbolic": 8.575432
+      },
+      "cpu_speedups": {
+        "reference": 1.0,
+        "event": 1.034216614958545,
+        "incremental": 1.4391686165507072,
+        "symbolic": 0.9904393154770512
+      },
+      "median_whole_process_cpu_s": {
+        "reference": 9.122686999999978,
+        "event": 8.823749999999983,
+        "incremental": 6.4733179999999715,
+        "symbolic": 9.144476000000004
+      },
+      "whole_process_cpu_speedups": {
+        "reference": 1.0,
+        "event": 1.0338786796996737,
+        "incremental": 1.4092752742874701,
+        "symbolic": 0.9976172500206653
+      },
+      "safe_read_coverage": 0.0,
+      "average_segment_length": 0.0,
+      "raw_trace_sha256": "517e57706670d262b5526d43a694f986e434373f848ac5cefcf7307857c7496d",
+      "group": "strict_v10_1m",
+      "reference_end_cycle": 46115,
+      "commands": 1374525,
+      "accepted": 1000000,
+      "rejected_attempts": 0,
+      "symbolic_segments": 0,
+      "literal_exit_states": 0,
+      "median_scope": "Three fresh-process runs per mode, alternating order, audit off",
+      "loop_cpu_range_s": {
+        "reference": [
+          7.064945,
+          8.594183
+        ],
+        "event": [
+          7.287884,
+          8.593046
+        ],
+        "incremental": [
+          5.570866,
+          6.344961
+        ],
+        "symbolic": [
+          8.470744,
+          8.579347
+        ]
+      },
+      "audit_invariants": [
+        "command kinds/order/cycles",
+        "every admission/rejection attempt",
+        "every actual callback cycle",
+        "all fast-exit device/timing/history/controller/queue/refresh states",
+        "final full device/controller state"
+      ],
+      "validation_reference": {
+        "directory": "/Orion/jian/jhn/astra/runs/dram_fast_forward_poc_20261023_001/strict_v9_1m/E_1000000",
+        "binary_sha256": "8b9fbb9a5efbc32d805976382be5d35a4d1b025308ae5f858ded6f79e2674b49",
+        "scope": "Literal archived reference bytes and state, not reused benchmark timings"
+      }
+    },
+    {
+      "pattern": "E",
+      "count": 224896,
+      "status": "pass",
+      "binary_sha256": "ccde090cb89f4faa8370ab216c9c663f166d680d5849ce8f9aceba0b7e699bb0",
+      "config_sha256": "02c80704816c4dc6d321df5b0ebfdc674d067ba61ed1e8a172ac693383e919ed",
+      "median_cpu_s": {
+        "reference": 1.516888,
+        "event": 1.460278,
+        "incremental": 1.17477,
+        "symbolic": 1.496252
+      },
+      "cpu_speedups": {
+        "reference": 1.0,
+        "event": 1.0387665910189703,
+        "incremental": 1.2912212603318096,
+        "symbolic": 1.01379179443035
+      },
+      "median_whole_process_cpu_s": {
+        "reference": 1.676435000000002,
+        "event": 1.6325910000000001,
+        "incremental": 1.3408299999999986,
+        "symbolic": 1.6650650000000007
+      },
+      "whole_process_cpu_speedups": {
+        "reference": 1.0,
+        "event": 1.0268554708435864,
+        "incremental": 1.2502964581639757,
+        "symbolic": 1.0068285622483213
+      },
+      "safe_read_coverage": 0.0,
+      "average_segment_length": 0.0,
+      "raw_trace_sha256": "77670200f1ea946844ef878c9f66ca444d317fa222413975d0ea3326929dd74f",
+      "group": "strict_v10_real_window",
+      "reference_end_cycle": 9878,
+      "commands": 307436,
+      "accepted": 224896,
+      "rejected_attempts": 0,
+      "symbolic_segments": 0,
+      "literal_exit_states": 0,
+      "median_scope": "Three fresh-process runs per mode, alternating order, audit off",
+      "loop_cpu_range_s": {
+        "reference": [
+          1.511912,
+          1.53135
+        ],
+        "event": [
+          1.458893,
+          1.490584
+        ],
+        "incremental": [
+          1.161444,
+          1.201303
+        ],
+        "symbolic": [
+          1.489688,
+          1.513677
+        ]
+      },
+      "audit_invariants": [
+        "command kinds/order/cycles",
+        "every admission/rejection attempt",
+        "every actual callback cycle",
+        "all fast-exit device/timing/history/controller/queue/refresh states",
+        "final full device/controller state"
+      ],
+      "validation_reference": {
+        "directory": "/Orion/jian/jhn/astra/runs/dram_fast_forward_poc_20261023_001/strict_v9_real_window/E_224896",
+        "binary_sha256": "8b9fbb9a5efbc32d805976382be5d35a4d1b025308ae5f858ded6f79e2674b49",
+        "scope": "Literal archived reference bytes and state, not reused benchmark timings"
+      }
+    }
+  ],
+  "differential_cases": 40,
+  "literal_symbolic_exit_states": 21977,
+  "fuzz_seeds": 20,
+  "fuzz_bulk_reads": 2166,
+  "artifacts_sha256": {
+    "strict_v10_10k/results.json": "879b800951f46c53529e84d337dacc26ecd1c8f3ea2d252a1c379bd19efb1100",
+    "strict_v10_100k/results.json": "5cb4c160ab7858db585d63549a61c955028d2329d577c9f9517f040202fd4a63",
+    "strict_v10_1m/results.json": "4e795e47a11fff346cd4a2da2ca7c10aff59b640f84a71daa55a4913ff5e67ae",
+    "strict_v10_real_window/results.json": "29d597b8d66f2daa07b99c21216024802c09ca577ce5d1281aab76be74d95495",
+    "fuzz_v10/results.json": "2ccd4a3c243c69486e82a749b6c8c5fa37aed627c4c07bb59b1394a6690fc1c3"
+  }
+}

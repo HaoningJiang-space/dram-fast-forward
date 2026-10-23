@@ -1,0 +1,60 @@
+{
+  "source_repository": "HaoningJiang-space/waferscale-carbon-jhn",
+  "source_commit": "fa18fb4f0961b05ab3eff64b074cb62143f7083b",
+  "scope": "Extracted PoC source and archived measurements; C++/hooks/driver bytes initially preserved. Historical result paths identify original runs, not new repository executions.",
+  "extracted_sources": {
+    "src/dram_fast_forward/__init__.py": {
+      "source": "astra/experiments/dram_fast_forward/__init__.py",
+      "sha256": "729c6b7e9a4980d72ba87992ffacdfe629a44485c5e4c96d48efd84fa8fba744"
+    },
+    "src/dram_fast_forward/analyze_commands.py": {
+      "source": "astra/experiments/dram_fast_forward/analyze_commands.py",
+      "sha256": "22733679d39e9ffe44454f79e6a1fd2c7b2e251e69f4cc17685856b1fa1b1240"
+    },
+    "src/dram_fast_forward/analyze_trace.py": {
+      "source": "astra/experiments/dram_fast_forward/analyze_trace.py",
+      "sha256": "bfe6b1cb8a7f4f491ddbaebb75e29b6b0a219e680de69836fe1f551169883222"
+    },
+    "src/dram_fast_forward/build.py": {
+      "source": "astra/experiments/dram_fast_forward/build.py",
+      "sha256": "8d787c762d177ed2b0bb222dfe4ecc7ab2c1e737a8b4ab913795b106cafa1182"
+    },
+    "src/dram_fast_forward/build_capture.py": {
+      "source": "astra/experiments/dram_fast_forward/build_capture.py",
+      "sha256": "6640b7de011af05c0cee45573a0ebef1f63db3dcb7d95e134146399fc9fc3592"
+    },
+    "src/dram_fast_forward/capture.py": {
+      "source": "astra/experiments/dram_fast_forward/capture.py",
+      "sha256": "7d29b20d709d0356e6f9ac02c037a60294481160dc7e1fc52b44b83c795eba02"
+    },
+    "src/dram_fast_forward/check_native_replay.py": {
+      "source": "astra/experiments/dram_fast_forward/check_native_replay.py",
+      "sha256": "731390644c2b9ed37d10a3946fe151a6808756dcb98162b9413463030af65e1b"
+    },
+    "src/dram_fast_forward/fuzz.py": {
+      "source": "astra/experiments/dram_fast_forward/fuzz.py",
+      "sha256": "3567192553255c87735ca5fd009c218c94c3b738cd494ae5ca269169be8a8792"
+    },
+    "src/dram_fast_forward/poc.cc": {
+      "source": "astra/experiments/dram_fast_forward/poc.cc",
+      "sha256": "7905ceb71f68e5370608ec3285f206cfc56a21d43adbcaf8ae74e9fcf66d4b11"
+    },
+    "src/dram_fast_forward/poc_hooks.hh": {
+      "source": "astra/experiments/dram_fast_forward/poc_hooks.hh",
+      "sha256": "c34b10efb8e239ceb0cbcf764385442e032d3bbee301843e41407b0a52eeaea6"
+    },
+    "src/dram_fast_forward/run.py": {
+      "source": "astra/experiments/dram_fast_forward/run.py",
+      "sha256": "0fcebcb546bf974711c4e8e904454b944766a54c591e5ddb8ae95541a9eb5536"
+    },
+    "src/dram_fast_forward/summarize.py": {
+      "source": "astra/experiments/dram_fast_forward/summarize.py",
+      "sha256": "d075dfd9adbf37d15bb042bbf2df05bd0bb3cb6cadd144447ce8109e2f88b237"
+    }
+  },
+  "maintained_changes": [
+    "Package root relocated to src/dram_fast_forward",
+    "build.py resolves a relocatable frozen-input manifest and exposes a CLI main; C++ and run.py remain unchanged",
+    "Documentation links adapted; historical evidence bytes unchanged"
+  ]
+}

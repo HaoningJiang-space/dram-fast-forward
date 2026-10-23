@@ -1,0 +1,6 @@
+{
+  "source": "/Orion/jian/jhn/astra/runs/dense_engine_full_20261022_001/runtime/dram.yaml",
+  "source_sha256": "0fe03a02d76187b4a9078227cbf0d014f29fcbc0efe74ae500aa2afdca08b0fd",
+  "scope": "Exact effective D32 endpoint: 8192 banks/layer /32domains /64cores *2layers=8 channels; bandwidth_scale2 gives nBL8.",
+  "effective_sha256": "02c80704816c4dc6d321df5b0ebfdc674d067ba61ed1e8a172ac693383e919ed"
+}

@@ -1,0 +1,34 @@
+Frontend:
+  impl: GEM5
+MemorySystem:
+  impl: GenericDRAM
+  clock_ratio: 1
+  DRAM:
+    impl: 3D_DRAM
+    org:
+      direct_bank_access: true
+      layers: 2
+      banks_per_layer: 4
+      channel: 8
+      pseudochannel: 1
+      bankgroup: 1
+      bank: 1
+      row: 65536
+      column: 64
+      dq: 128
+      density: 512
+      channel_width: 128
+      transaction_bytes: 256
+    timing:
+      preset: 3D_DRAM_Direct400
+      clock_mhz: 400
+      beats_per_cycle: 2
+      nBL: 8
+  Controller:
+    impl: Generic
+    Scheduler:
+      impl: FRFCFS
+    RefreshManager:
+      impl: AllBank
+  AddrMapper:
+    impl: DirectBankRow

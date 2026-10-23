@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dram-fast-forward"
+version = "0.1.0"
+description = "Exact DRAM simulation acceleration: guarded batching, event advancement and incremental scheduling"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+dram-ff-build = "dram_fast_forward.build:main"
+dram-ff-run = "dram_fast_forward.run:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+dram_fast_forward = ["*.cc", "*.hh"]

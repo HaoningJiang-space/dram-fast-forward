@@ -1,0 +1,12 @@
+{
+  "status": "pass",
+  "scope": "Check the full accepted-stream replay against the actual native capture.\n\nIndependent memory instances may be visited in a different host order at the\nsame cycle. Compare literal per-device event sequences; no timestamps, command\naddresses or admission/callback identities are relaxed within a device.\n",
+  "devices": 64,
+  "events": 757228,
+  "checks": [
+    "all commands/cycles/addresses",
+    "all accepted arrivals/cycles",
+    "all callback cycles/IDs"
+  ],
+  "limitation": "Host order between independent devices at equal cycles is canonicalized; this remains an open-loop replay."
+}

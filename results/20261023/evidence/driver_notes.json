@@ -1,0 +1,8 @@
+{
+  "scope": "Post-experiment reporting only",
+  "changes": [
+    "fuzz.py now writes final status=pass in addition to final results.json; completed original fuzz progress file finalized after verifying all 20 pass results and process exit",
+    "summarize.py and command-name analysis added after timing; no solver C++/hook/build changes"
+  ],
+  "measured_sources": "Receipts reference frozen source_final snapshots; code_sha256.json describes the committed maintained scripts"
+}

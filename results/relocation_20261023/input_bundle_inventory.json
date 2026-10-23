@@ -1,0 +1,401 @@
+{
+  "files": {
+    "3D_DRAM.cpp": {
+      "source": "/Orion/jian/jhn/astra/runs/dense_joint_008/build_v2/3D_DRAM.cpp",
+      "sha256": "d1258e82b088f56ed5abd46803d0bd2ad283b60877680060d57a1cbb156d56eb"
+    },
+    "ramulator/dram_controller/impl/generic_dram_controller.cpp": {
+      "source": "/Orion/jian/jhn/astra/runs/dram_fast_forward_poc_20261023_001/frozen_inputs/dram_controller/impl/generic_dram_controller.cpp",
+      "sha256": "7a80c7c5b6779adc0ffd188806c5eb49879230b262400ff53949a92d3f1a6795"
+    },
+    "ramulator/dram_controller/impl/scheduler/generic_scheduler.cpp": {
+      "source": "/Orion/jian/jhn/astra/runs/dram_fast_forward_poc_20261023_001/frozen_inputs/dram_controller/impl/scheduler/generic_scheduler.cpp",
+      "sha256": "85239e4a321538bc76965bafbe36b5737ffb1318d58e3ef7135ebdeac9d2a87a"
+    },
+    "ramulator/dram_controller/impl/refresh/all_bank_refresh.cpp": {
+      "source": "/Orion/jian/jhn/astra/runs/dram_fast_forward_poc_20261023_001/frozen_inputs/dram_controller/impl/refresh/all_bank_refresh.cpp",
+      "sha256": "d87e5ac262555b6e896dd4d10e6c0d9748af33f5193797a0b8f175cbfaa9273e"
+    },
+    "ramulator/memory_system/impl/generic_DRAM_system.cpp": {
+      "source": "/Orion/jian/jhn/astra/runs/dram_fast_forward_poc_20261023_001/frozen_inputs/memory_system/impl/generic_DRAM_system.cpp",
+      "sha256": "2c6ad71535125daf31eb5a27b55346cd43e7696fcc496eb38e86941ec2b3445f"
+    },
+    "include/1/base/base.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_0/base/base.h",
+      "sha256": "3319ae542abea98b0eeb7928447058c1e1e2c8255a6c0d6a12979e83fe5c9d15"
+    },
+    "include/1/base/type.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_0/base/type.h",
+      "sha256": "97a317fe6f7063553025234259d25e81df8874408e2bd3a86b2e359d232a910f"
+    },
+    "include/1/base/factory.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_0/base/factory.h",
+      "sha256": "b7fe0fce5e621a686fa500240723be82faf6436c514245fa7c48f5e8503cdf2a"
+    },
+    "include/1/base/logging.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_0/base/logging.h",
+      "sha256": "70009d33d755e4ddefae603205bad60e96f9d7a0d22fb51fb1148a13c32619cc"
+    },
+    "include/1/base/exception.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_0/base/exception.h",
+      "sha256": "cb94a0d2f558335f4fcddbece6946d4f516d81ad54c98ba465859c24126de0d5"
+    },
+    "include/1/base/debug.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_0/base/debug.h",
+      "sha256": "29dcc9a146fa9d28aeb162ab9d131198b784f84c5e1c82b8e9454a2d0767fe38"
+    },
+    "include/1/base/clocked.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_0/base/clocked.h",
+      "sha256": "0575e66b604eb8149bc0af1f09d84fbaee90266541f381924dfb3d4095b84621"
+    },
+    "include/1/base/param.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_0/base/param.h",
+      "sha256": "107dfef5c8c5e9e55058447a4d37521c4b424f52cabb7b333a618da813f6ae1a"
+    },
+    "include/1/base/request.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_0/base/request.h",
+      "sha256": "ed8965cfe3996bf1dc69b2522efb1674158abe6758c25deac30ba0f902044e9f"
+    },
+    "include/1/base/utils.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_0/base/utils.h",
+      "sha256": "95c6cff1cedd26f1023b1348d53c0bffbc2de4f7133cd09fb32bcf82afe0854b"
+    },
+    "include/1/base/stats.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_0/base/stats.h",
+      "sha256": "5892927523c7e1784a7c5179704f1c0e87a3ebb01815e9f47470abe560ba5cea"
+    },
+    "include/1/base/config.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_0/base/config.h",
+      "sha256": "3a78d9bad1db94d1e83a2cd00b0b652ed121563dd31dda26fbaab019b1220dae"
+    },
+    "include/1/frontend/frontend.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_0/frontend/frontend.h",
+      "sha256": "8725f6b9e7c5ab0c91e855ef407619f709f672bbba1f8924f4f3157250e49d3c"
+    },
+    "include/1/memory_system/memory_system.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_0/memory_system/memory_system.h",
+      "sha256": "256bef8169e565d856c0c17b918d4563a6bec87e2ee4bbb6993893cf9286acde"
+    },
+    "include/1/dram/dram.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_0/dram/dram.h",
+      "sha256": "8a410acc7638f3029cce2e47e31e6faa0a5b18250fc0d5802f21a4639700381c"
+    },
+    "include/1/dram/spec.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_0/dram/spec.h",
+      "sha256": "3520b7d096b272c1b7c0f4aac159785058ed6e985b756da78e20b31c602af69b"
+    },
+    "include/1/dram/node.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_0/dram/node.h",
+      "sha256": "e3b22f5c63fbb670ca3984f5e5fd1ee826fa8c95832c2f8f599ab48c2ff238e2"
+    },
+    "include/1/dram/lambdas.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_0/dram/lambdas.h",
+      "sha256": "d072d1cfd1a8483281d6be6b33a5c6e13bb858f65660aba6243351ca17d01fda"
+    },
+    "include/1/dram/lambdas/action.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_0/dram/lambdas/action.h",
+      "sha256": "cc325e7328efcaedb18feaf1a93bc7989af7d9b4e5fbf1642f2bda3a4c41f9ff"
+    },
+    "include/1/dram/lambdas/preq.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_0/dram/lambdas/preq.h",
+      "sha256": "f361c28e060ff9519221a93d2bea5b8bae2944813a97ba978d2d247d3de51dcd"
+    },
+    "include/1/dram/lambdas/rowhit.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_0/dram/lambdas/rowhit.h",
+      "sha256": "749f99b41d329a5425bb67548e79decf527e1f262df8a3bbad315d5560f0e16b"
+    },
+    "include/1/dram/lambdas/rowopen.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_0/dram/lambdas/rowopen.h",
+      "sha256": "4534d50a55c9046b541cc18a6748d5a387448054fd98bfe88d225e4c96489cc4"
+    },
+    "include/1/dram_controller/controller.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_0/dram_controller/controller.h",
+      "sha256": "19551d8096d2130b73ef4597a26aa36fce758203fbdeb3f54ce02a0237ca1aef"
+    },
+    "include/1/dram_controller/scheduler.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_0/dram_controller/scheduler.h",
+      "sha256": "875a966db1c219a7676b5bdaf6d008720c302d2e525b3390a9bd2020145e98be"
+    },
+    "include/1/dram_controller/plugin.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_0/dram_controller/plugin.h",
+      "sha256": "334448f98dff61108f46ef8e0c3a723a7d4afa1bad4273a9ea4f088241c2c78e"
+    },
+    "include/1/dram_controller/refresh.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_0/dram_controller/refresh.h",
+      "sha256": "1901efe332e7f47e1d2460c5592b9e7833307028e90112cf0c5d6aacbbc3cf47"
+    },
+    "include/1/translation/translation.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_0/translation/translation.h",
+      "sha256": "b1c46ee9931e85f3a632ebe0515f7e9593a5ae27b6009d804d775c4c9401cd04"
+    },
+    "include/1/dram_controller/addr_mapper.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_0/dram_controller/addr_mapper.h",
+      "sha256": "ba7705cc29b0359c719a75ccb2169684db1f30f56cfba7a97f367ec0fd2d03bc"
+    },
+    "include/2/json/json.hpp": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_95/json/json.hpp",
+      "sha256": "e832d339d9e0c042e7dff807754769d778cf5d6ae9730ce21eed56de99cb5e86"
+    },
+    "include/3/fmt/core.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_411/fmt/core.h",
+      "sha256": "143d591df63db5b20786eb8ca756012e0b7e2c6dab7f002488e2c701e897a91f"
+    },
+    "include/3/fmt/format.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_411/fmt/format.h",
+      "sha256": "63bd5a34d139bfca1727bfbaf941afbb5751c871adaaa91b77dce58a70723073"
+    },
+    "include/4/spdlog/spdlog.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_424/spdlog/spdlog.h",
+      "sha256": "89e27519fb7235632b9e84da958c95dcc179bfdaacb7651e64b36cd1700e3119"
+    },
+    "include/4/spdlog/common.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_424/spdlog/common.h",
+      "sha256": "57285cc9a6825a2a3b123dbcd5580524d26a51c37d45fb759269b0012ed2198a"
+    },
+    "include/4/spdlog/tweakme.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_424/spdlog/tweakme.h",
+      "sha256": "42f6dde0d4f85c6fbfdf36c38592c734063ea93b923c8422c48492db5c7270f9"
+    },
+    "include/4/spdlog/details/null_mutex.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_424/spdlog/details/null_mutex.h",
+      "sha256": "02edd271e232b7a69c0e37aab61246fcb4b31c1d43f1a20b5c2572ba7b730956"
+    },
+    "include/4/spdlog/fmt/fmt.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_424/spdlog/fmt/fmt.h",
+      "sha256": "a64eed6f71470419d08f1ee7b6cbe8b4cd0fa9759daee078c2f4603a45c0428e"
+    },
+    "include/4/spdlog/details/registry.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_424/spdlog/details/registry.h",
+      "sha256": "3ec9a11a47adc46c79b15676fb975ace534282032f152b678e36f513d67c0597"
+    },
+    "include/4/spdlog/details/periodic_worker.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_424/spdlog/details/periodic_worker.h",
+      "sha256": "2c46cc105d3b426fffa3fd5e4f14337d695e96f33c824c6cc47c3859e197d9d0"
+    },
+    "include/4/spdlog/logger.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_424/spdlog/logger.h",
+      "sha256": "592c2fd8da983f92f1b7742db5204c3996f09dbf74797cff014afcb2be02b204"
+    },
+    "include/4/spdlog/details/log_msg.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_424/spdlog/details/log_msg.h",
+      "sha256": "eda416f5e6d69541f0087c0d3dc3a2b19e06bb6378e044d3d106e0ae2289dcc4"
+    },
+    "include/4/spdlog/details/backtracer.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_424/spdlog/details/backtracer.h",
+      "sha256": "873974241bc91bdd1c120d8a9b72ef7b82fa8cf3b8f5e19013585b684f581a5c"
+    },
+    "include/4/spdlog/details/log_msg_buffer.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_424/spdlog/details/log_msg_buffer.h",
+      "sha256": "ee20038a4d8870893276e6dcacf72801511881a6cab65a58febc9f2d79f038f8"
+    },
+    "include/4/spdlog/details/circular_q.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_424/spdlog/details/circular_q.h",
+      "sha256": "2ee52f1fc702d53ba978eea7394df0cfe9d0e1cfdb2da256ce919b14543d3d91"
+    },
+    "include/4/spdlog/version.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_424/spdlog/version.h",
+      "sha256": "11ea5b570c7e7a0a1f213c50bf6df96342acbe67346469ad1b1197f3d19c98a4"
+    },
+    "include/4/spdlog/details/synchronous_factory.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_424/spdlog/details/synchronous_factory.h",
+      "sha256": "d2f742ffd54151670a8044922f4a0c501d125642906359b4f94d3a73f54e38b1"
+    },
+    "include/4/spdlog/sinks/stdout_color_sinks.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_424/spdlog/sinks/stdout_color_sinks.h",
+      "sha256": "afc08e03a7638ffa1758a1e3d4f0d4ad95dc72fc863ea678e0435c6baabf2287"
+    },
+    "include/4/spdlog/sinks/ansicolor_sink.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_424/spdlog/sinks/ansicolor_sink.h",
+      "sha256": "db1599443032f920270ce031c9309a8b0ff09db6cfaafc79e669b07832c9ac74"
+    },
+    "include/4/spdlog/details/console_globals.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_424/spdlog/details/console_globals.h",
+      "sha256": "eced1eda8e8abe003fb70b29be5df42e7b706b60d5292c1f3e842f3c888a5d66"
+    },
+    "include/4/spdlog/sinks/sink.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_424/spdlog/sinks/sink.h",
+      "sha256": "612eca39db380b957538cd2dc9eec82037aad45b24a0022f8e1773434afc6882"
+    },
+    "include/4/spdlog/formatter.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_424/spdlog/formatter.h",
+      "sha256": "48524fd1570012c2199c23a5cbd952d514e80ae76ec7075fee6a78cebb9f928e"
+    },
+    "include/5/yaml-cpp/yaml.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_528/yaml-cpp/yaml.h",
+      "sha256": "739f93fadb222a39a99e463c028d65d36c74d326f7349431853d1749605060a0"
+    },
+    "include/5/yaml-cpp/parser.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_528/yaml-cpp/parser.h",
+      "sha256": "a954930f86e865fcea885e1b65d35feb25f6d5fceb27cccb406425c354cda1af"
+    },
+    "include/5/yaml-cpp/dll.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_528/yaml-cpp/dll.h",
+      "sha256": "5abb040020b43f9c2a05fe4e92c0144b8135c6581107d56837d35f80c79169b2"
+    },
+    "include/5/yaml-cpp/emitter.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_528/yaml-cpp/emitter.h",
+      "sha256": "d8db8c0b68ec306ad150335ee384e92f93c9531672bfa40d2cb8cdb2ab24eef2"
+    },
+    "include/5/yaml-cpp/binary.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_528/yaml-cpp/binary.h",
+      "sha256": "1be5b37a45f0e1eb0c2dbd6aa3093363171d5149e89e0830c5a56e0eea0eac4a"
+    },
+    "include/5/yaml-cpp/emitterdef.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_528/yaml-cpp/emitterdef.h",
+      "sha256": "58d709085b46f31eef29fd8074d1c6d1657d3ebd4fb393b1c06a73cef69e6e48"
+    },
+    "include/5/yaml-cpp/emittermanip.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_528/yaml-cpp/emittermanip.h",
+      "sha256": "a40e08ab89d74171ec259e0dea7470ff29eacf9e5de90dd8b89042d0e47eb1d4"
+    },
+    "include/5/yaml-cpp/null.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_528/yaml-cpp/null.h",
+      "sha256": "56abe9189fdff525e045308a3bdc6bbfdcb7be890e0d905438c9df18802de94f"
+    },
+    "include/5/yaml-cpp/ostream_wrapper.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_528/yaml-cpp/ostream_wrapper.h",
+      "sha256": "43bd5094bdf5fb1bd64a3081e372336b2ea410effd86fd910fd5d96b91f586c6"
+    },
+    "include/5/yaml-cpp/fptostring.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_528/yaml-cpp/fptostring.h",
+      "sha256": "943f84847cb517d08d550ca8ad2e26cd88d6d9af1ed53abc741b8036359105e8"
+    },
+    "include/5/yaml-cpp/emitterstyle.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_528/yaml-cpp/emitterstyle.h",
+      "sha256": "d1c9b881ca7ad54a8994de649ae8da84b8b82c6cc0a7b95ae590b41ed7420519"
+    },
+    "include/5/yaml-cpp/stlemitter.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_528/yaml-cpp/stlemitter.h",
+      "sha256": "0757d307e863f57cee50b3bfc8d657b5fb49e9431918b4e38a433827a57ef68d"
+    },
+    "include/5/yaml-cpp/exceptions.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_528/yaml-cpp/exceptions.h",
+      "sha256": "f18a0d5350117f058ce86e82360b168f12831c59b60666fdc4db3d6bb074fe89"
+    },
+    "include/5/yaml-cpp/mark.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_528/yaml-cpp/mark.h",
+      "sha256": "069033be17c7a5875817102f3f77538431afdb7d1834a4673bad6a7267f0cab5"
+    },
+    "include/5/yaml-cpp/noexcept.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_528/yaml-cpp/noexcept.h",
+      "sha256": "67280724ff2528ac4cc9863db5770216a6bd467a35a2e8b067f43b92d7c278d7"
+    },
+    "include/5/yaml-cpp/traits.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_528/yaml-cpp/traits.h",
+      "sha256": "6dd18d6947e7b595b5649ac90915347043789f16070423abc58755d35b9d4d50"
+    },
+    "include/5/yaml-cpp/node/node.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_528/yaml-cpp/node/node.h",
+      "sha256": "a320b6461c1731e6e2b0f31ae22c71087fc39ff9109bffe5c50707df8f0dbfaa"
+    },
+    "include/5/yaml-cpp/node/detail/iterator_fwd.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_528/yaml-cpp/node/detail/iterator_fwd.h",
+      "sha256": "ce9bf893f38351d5e3e95f5b55a67765c721ba0e4c9f01e38ecba89d64722a6b"
+    },
+    "include/5/yaml-cpp/node/ptr.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_528/yaml-cpp/node/ptr.h",
+      "sha256": "d56a5edbfeeaa03d374afd970a39e3603ee72be98564382e0ab2aef29367d4b7"
+    },
+    "include/5/yaml-cpp/node/type.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_528/yaml-cpp/node/type.h",
+      "sha256": "2c50788c420533512e2de1782ec9ae40462073dca69885458a4b64ba11dad0ee"
+    },
+    "include/5/yaml-cpp/node/impl.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_528/yaml-cpp/node/impl.h",
+      "sha256": "2e18792aa5186aefaa7d042b43e199864bdb0d5a890b511d6ec61218b58ccbfc"
+    },
+    "include/5/yaml-cpp/node/detail/memory.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_528/yaml-cpp/node/detail/memory.h",
+      "sha256": "f1090a218c2784d3a78dfee51aa43300a2ebaab6dbfa2234b3a456428c220416"
+    },
+    "include/5/yaml-cpp/node/detail/node.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_528/yaml-cpp/node/detail/node.h",
+      "sha256": "b9e55e166b8d3168b88ebdc06506c4c2dc3a5f0bc046435ee4b04795dba34275"
+    },
+    "include/5/yaml-cpp/node/detail/node_ref.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_528/yaml-cpp/node/detail/node_ref.h",
+      "sha256": "26fbb939e32d5f4237ab1712eedb3d695820de004cee2a0b2bb2d394b8dbd70b"
+    },
+    "include/5/yaml-cpp/node/detail/node_data.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_528/yaml-cpp/node/detail/node_data.h",
+      "sha256": "53419f8984bce1e2d1d5aa15cba420e04918f8c665489dd5b4071793654f30f8"
+    },
+    "include/5/yaml-cpp/node/detail/node_iterator.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_528/yaml-cpp/node/detail/node_iterator.h",
+      "sha256": "a24d52b5a85d90fae0504ad444327bb7075b7a4a9200c490711a6a624cb66a59"
+    },
+    "include/5/yaml-cpp/node/iterator.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_528/yaml-cpp/node/iterator.h",
+      "sha256": "c09465516b6d854f476f08392aa730d08df63688b80f04cf49e1562eab3e0cfe"
+    },
+    "include/5/yaml-cpp/node/detail/iterator.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_528/yaml-cpp/node/detail/iterator.h",
+      "sha256": "3b7933bf6d08580644453273769b5d620a38837b4eaab6654944591adfde294a"
+    },
+    "include/5/yaml-cpp/node/convert.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_528/yaml-cpp/node/convert.h",
+      "sha256": "ef912b9268798d7c420c1797c1f482cf367e8195c9fb78a4b9ef1aff149ee2bf"
+    },
+    "include/5/yaml-cpp/node/detail/impl.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_528/yaml-cpp/node/detail/impl.h",
+      "sha256": "7ead18bfc864986262a4e9000aec9b4acdceaa9162e7741723ccba18e4e4177e"
+    },
+    "include/5/yaml-cpp/node/parse.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_528/yaml-cpp/node/parse.h",
+      "sha256": "eafa4476872ab20c176cf9f93341e57e7e24190a2c3864242c211bc536b97de2"
+    },
+    "include/5/yaml-cpp/node/emit.h": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/include_528/yaml-cpp/node/emit.h",
+      "sha256": "39f35d344ba0502e05449a935c5c9fa3a0179d72b9aa2b75ee964ddd1c4a26af"
+    },
+    "objects/4_723ab68b5671_external_frontend.cc.o": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/objects/723ab68b5671_external_frontend.cc.o",
+      "sha256": "2396f1233b2d059b6bec4514ca689ee57aa1513673c63898acba0e28b491c256"
+    },
+    "objects/5_61c90d7db883_config.cpp.o": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/objects/61c90d7db883_config.cpp.o",
+      "sha256": "123db9626fbc45b31af36ba026cd191d3371c746ab09b4d156150a533e39416c"
+    },
+    "objects/6_5e5bbe47bde4_factory.cpp.o": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/objects/5e5bbe47bde4_factory.cpp.o",
+      "sha256": "dd358269835e3398aed6d4aa4a4cdfc50b363bbceae2f0622d104878f4f40069"
+    },
+    "objects/7_676e52e431b0_logging.cpp.o": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/objects/676e52e431b0_logging.cpp.o",
+      "sha256": "c7911304a84e29e937d8c4e1a73d0675aa5c2c2ce910bb358e3973b42d9c0cd1"
+    },
+    "objects/8_dc3f393f1ba5_request.cpp.o": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/objects/dc3f393f1ba5_request.cpp.o",
+      "sha256": "9c50ff15e72222eb034ec28212169ca6d656bfa45e5545e1fb25a91cba1f61e8"
+    },
+    "objects/9_8a46521eea96_stats.cpp.o": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/objects/8a46521eea96_stats.cpp.o",
+      "sha256": "ead2e4f2f128981910147844c91e1026af66bdc9bb6fcdde5677e82fa6dfd7af"
+    },
+    "objects/10_5a4bf69ce549_utils.cpp.o": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/objects/5a4bf69ce549_utils.cpp.o",
+      "sha256": "afa39d02d48e9cb2a14aefc981540214c4ffbac9a3fe91c99cf1cd423813e51b"
+    },
+    "objects/11_e664f64e93d0_direct_bank_mapper.cpp.o": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/objects/e664f64e93d0_direct_bank_mapper.cpp.o",
+      "sha256": "1a5c0cfcd7ebb2cd5b32a55716c7d5a58cad81e193553317c9e5c7e3c5132c9b"
+    },
+    "objects/12_44b8c635c90b_libfmt.a": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/objects/44b8c635c90b_libfmt.a",
+      "sha256": "fed8b1ecde5178ae8a7708b3a592a7460118299ef1b6b53b791173dc0435fb78"
+    },
+    "objects/13_4d63d4a320b4_libspdlog.a": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/objects/4d63d4a320b4_libspdlog.a",
+      "sha256": "50ef96a7ace0c8c87a367531f75ac153c41ab143627ced36c303dec6a8a07d93"
+    },
+    "objects/14_2fc3da406b5b_libyaml-cpp.a": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/objects/2fc3da406b5b_libyaml-cpp.a",
+      "sha256": "dd31ff6a63af17cc56f47b1742c4e86bb25c4a44d8d9cbb32158c14077263bab"
+    },
+    "objects/15_44b8c635c90b_libfmt.a": {
+      "source": "/Orion/jian/jhn/astra/.runtime/build_inputs/objects/44b8c635c90b_libfmt.a",
+      "sha256": "fed8b1ecde5178ae8a7708b3a592a7460118299ef1b6b53b791173dc0435fb78"
+    }
+  },
+  "origin_manifest_sha256": "bcd3049f5f612d4d6606ed3a6d91e4dc98587e32acd053ef44c82eb6e61997db"
+}

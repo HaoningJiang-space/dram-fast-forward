@@ -1,0 +1,13 @@
+{
+  "root": "/Orion/jian/jhn/astra/runs/dram_fast_forward_poc_20261023_001",
+  "artifacts": {
+    "captured_ffn/dram_events.bin": {
+      "size": 72693888,
+      "sha256": "f3a87519bdc41b8f4571248167aef9f743bd8abf63c07351f88fd2996406b946"
+    },
+    "captured_ffn/accepted_requests.json": {
+      "size": 15738550,
+      "sha256": "3ba5b2386de0ffbc31bd29e1a36204506e65b772219165352e9411426db70d76"
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "status": "pass",
+  "local_repository": "/Users/haoning/project/dram-fast-forward",
+  "remote_repository_root": "/Orion/jian/jhn/dram-fast-forward",
+  "binary_sha256": "ccde090cb89f4faa8370ab216c9c663f166d680d5849ce8f9aceba0b7e699bb0",
+  "binary_byte_identical": true,
+  "all_non_system_build_dependencies_within_new_root": true,
+  "archive_original_cases": 40,
+  "new_relocation_cases": [
+    {
+      "pattern": "A",
+      "status": "pass",
+      "raw_trace_sha256": "b4636b15faf395a297e3dbc3f7741a8f75dbc8ce4bf84e2235d08e9330ca5acd",
+      "matches_original_trace": true,
+      "matches_original_final_state": true
+    },
+    {
+      "pattern": "B",
+      "status": "pass",
+      "raw_trace_sha256": "954836aa2c0fff90fc8ac9d7f4b43030ba57a5cd6bf64b300187f1df793c6d0c",
+      "matches_original_trace": true,
+      "matches_original_final_state": true
+    },
+    {
+      "pattern": "C",
+      "status": "pass",
+      "raw_trace_sha256": "43abf1904d7bbebf926a5551b77cc47dd64cb952f00ca1b83892797d087b8ef5",
+      "matches_original_trace": true,
+      "matches_original_final_state": true
+    },
+    {
+      "pattern": "D",
+      "status": "pass",
+      "raw_trace_sha256": "05163e98a29f2abe7645c2292a557d0c1c6a74e270c2e550235c2d52c3b50cb7",
+      "matches_original_trace": true,
+      "matches_original_final_state": true
+    },
+    {
+      "pattern": "E",
+      "status": "pass",
+      "raw_trace_sha256": "2c88c07802d370767019ca9ea1b51774de4adb5e5a8e4033da817e95e76a240e",
+      "matches_original_trace": true,
+      "matches_original_final_state": true
+    },
+    {
+      "pattern": "A_affine4",
+      "status": "pass",
+      "raw_trace_sha256": "664289836901eb292268f0b278ca22abed18e354bf3f31d7b4a754e5a3b7916f",
+      "matches_original_trace": true,
+      "matches_original_final_state": true
+    },
+    {
+      "pattern": "A_interrupt",
+      "status": "pass",
+      "raw_trace_sha256": "0fe45d64a4d8714c8df3eacbe472f8f8d86adc6621345f8bcab949b47183f845",
+      "matches_original_trace": true,
+      "matches_original_final_state": true
+    },
+    {
+      "pattern": "A_closed",
+      "status": "pass",
+      "raw_trace_sha256": "07e81650d092742e81fa01ee9ed3e3bd865d305345da3a7744ce3e5fff96799b",
+      "matches_original_trace": true,
+      "matches_original_final_state": true
+    },
+    {
+      "pattern": "A_pressure",
+      "status": "pass",
+      "raw_trace_sha256": "e7628e789136fb396e28b6f6f46872bbf58566141139f043a24490445a605f57",
+      "matches_original_trace": true,
+      "matches_original_final_state": true
+    }
+  ],
+  "scope": "Rebuilt solely from standalone package and exported frozen inputs; fresh reference executions in each case; identical literal event traces and final state against original 10k matrix. One timing repeat is a migration check, not a replacement performance study."
+}

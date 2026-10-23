@@ -1,0 +1,7 @@
+{
+  "trace_sha256": "3ba5b2386de0ffbc31bd29e1a36204506e65b772219165352e9411426db70d76",
+  "trace_original": "/Orion/jian/jhn/astra/runs/dram_fast_forward_poc_20261023_001/captured_ffn/accepted_requests.json",
+  "hardlinked_readonly": true,
+  "all_build_dependencies_within_new_root": true,
+  "binary_byte_identical": true
+}
