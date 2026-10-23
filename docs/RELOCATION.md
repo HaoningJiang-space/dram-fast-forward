@@ -1,5 +1,8 @@
 # 独立仓库迁移验证
 
+这是初次提取版本`e551fdc`的迁移记录。后续算法与代码整理见
+[干扰感知实验](INTERFERENCE_20261023.md)，不要求当前源码继续等同初次提取版本。
+
 2026-10-23，独立目录：`/Users/haoning/project/dram-fast-forward`。
 服务器独立目录：`/Orion/jian/jhn/dram-fast-forward`。
 

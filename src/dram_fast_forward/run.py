@@ -1,82 +1,19 @@
-"""Generate strict differential PoC cases and benchmark each guarded mode."""
+"""Original global-isolation PoC driver, retained for historical controls."""
 import argparse
 import gzip
-import hashlib
 import json
 import os
 from pathlib import Path
-import random
-import resource
 import shutil
 import statistics
-import subprocess
-import time
+if __package__:
+    from .common import save,load,sha,invoke,equal_files
+    from .workloads import synthetic,real_workload
+else:
+    from common import save,load,sha,invoke,equal_files
+    from workloads import synthetic,real_workload
 
 MODES=('reference','event','incremental','symbolic')
-
-
-def save(p,value):p.write_text(json.dumps(value,separators=(',',':'))+'\n')
-def load(p):return json.loads(p.read_text())
-def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
-
-
-def synthetic(label,count,channels=8):
-    rng=random.Random(28419);requests=[]
-    for i in range(count):
-        if label.startswith('A'):
-            cycle=1000+(i//64)*700;address=(i%4)*256 if label=='A_affine4' else 0;kind=0
-        elif label=='B':cycle=(i//64)*4000;address=(i%2)*channels*1024;kind=0
-        elif label=='C':cycle=(i//128)*1000;address=(i%channels)*1024+((i//channels)%4)*256;kind=0
-        elif label=='D':
-            cycle=(i//128)*1000;address=(rng.randrange(32)*channels+rng.randrange(channels))*1024+rng.randrange(4)*256;kind=int(i%4==0)
-        else:raise ValueError(label)
-        requests.append([cycle,address,kind,i])
-    if label=='A_pressure':
-        for row in requests:row[0]=0
-    if label=='A_interrupt':requests.append([1250,channels*1024,1,count])
-    requests.sort(key=lambda x:x[0])
-    followups={}
-    if label=='A_closed':
-        followups={str(i):[0,(i%channels)*1024,1,count+i] for i in range(min(count,64))}
-    # A paid, different-row/read-write suffix tests recovery and final timing.
-    start=requests[-1][0]+10000
-    for i in range(64):requests.append([start+i*80,(rng.randrange(64)*channels+rng.randrange(channels))*1024, i%2,count*3+1000+i])
-    return dict(requests=requests,closed_loop=label=='A_closed',followups=followups,
-                allow_symbolic=label.startswith('A'),workload_requests=count)
-
-
-def real_workload(path,count):
-    trace=load(path);source=trace['requests'];requests=[]
-    if not source:raise ValueError('Empty actual trace')
-    period=source[-1][0]-source[0][0]+1000
-    for i in range(count):
-        row=source[i%len(source)];cycle=row[0]+(i//len(source))*period
-        requests.append([cycle,row[1],row[2],i,row[4]])
-    return dict(requests=requests,devices=trace['devices'],allow_symbolic=True,
-                workload_requests=count,source_trace=str(path),source_trace_sha256=sha(path),
-                source_request_count=len(source),periodic_extension=count>len(source),
-                scope='Actual accelerator accepted request stream, open-loop; larger-than-source windows repeat the measured window, with no claim of a longer native workload. No synthetic recovery suffix.')
-
-
-def invoke(binary,config,mode,folder):
-    started=time.perf_counter();before=resource.getrusage(resource.RUSAGE_CHILDREN)
-    with folder.with_suffix('.log').open('w') as log:
-        p=subprocess.Popen([str(binary),str(config),mode,str(folder)],stdout=log,stderr=subprocess.STDOUT)
-        save(folder.with_suffix('.pid.json'),dict(pid=p.pid,owned=True))
-        if p.wait():raise RuntimeError(('PoC execution failed',folder.with_suffix('.log')))
-    after=resource.getrusage(resource.RUSAGE_CHILDREN)
-    result=load(folder/'summary.json');result['whole_process_wall_s']=time.perf_counter()-started
-    result['whole_process_cpu_s']=after.ru_utime+after.ru_stime-before.ru_utime-before.ru_stime
-    return result
-
-
-def equal_files(a,b):
-    opener=gzip.open if a.suffix=='.gz' else open
-    with opener(a,'rb') as x,b.open('rb') as y:
-        while True:
-            xx=x.read(1024*1024);yy=y.read(1024*1024)
-            if xx!=yy:raise AssertionError(('Trace byte mismatch',a,b))
-            if not xx:return
 
 
 def case(root,binary,yaml,label,count,bench_repeats,real_trace=None,workload=None,reference_root=None):

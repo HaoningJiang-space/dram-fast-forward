@@ -1,0 +1,1982 @@
+{
+  "status": "pass",
+  "root": "/Orion/jian/jhn/dram-fast-forward/runs/interference_001",
+  "scope": "Collect the frozen interference study; never scan unrelated experiment trees.",
+  "cases": [
+    {
+      "profile": "independent",
+      "group": "smoke",
+      "pattern": "A",
+      "count": 10000,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 519
+    },
+    {
+      "profile": "independent",
+      "group": "smoke",
+      "pattern": "B",
+      "count": 10000,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 0
+    },
+    {
+      "profile": "independent",
+      "group": "smoke",
+      "pattern": "C",
+      "count": 10000,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 3792
+    },
+    {
+      "profile": "independent",
+      "group": "smoke",
+      "pattern": "D",
+      "count": 10000,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 0
+    },
+    {
+      "profile": "independent",
+      "group": "smoke",
+      "pattern": "E",
+      "count": 10000,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 4196
+    },
+    {
+      "profile": "independent",
+      "group": "smoke",
+      "pattern": "A_affine4",
+      "count": 10000,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 2862
+    },
+    {
+      "profile": "independent",
+      "group": "smoke",
+      "pattern": "A_interrupt",
+      "count": 10000,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 519
+    },
+    {
+      "profile": "independent",
+      "group": "smoke",
+      "pattern": "A_closed",
+      "count": 10000,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 519
+    },
+    {
+      "profile": "independent",
+      "group": "smoke",
+      "pattern": "A_pressure",
+      "count": 10000,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 29754
+    },
+    {
+      "profile": "independent",
+      "group": "full",
+      "pattern": "E",
+      "count": 224896,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 193306
+    },
+    {
+      "profile": "independent",
+      "group": "fuzz",
+      "pattern": "seed0",
+      "count": 512,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 286
+    },
+    {
+      "profile": "independent",
+      "group": "fuzz",
+      "pattern": "seed1",
+      "count": 512,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 0
+    },
+    {
+      "profile": "independent",
+      "group": "fuzz",
+      "pattern": "seed2",
+      "count": 512,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 0
+    },
+    {
+      "profile": "independent",
+      "group": "fuzz",
+      "pattern": "seed3",
+      "count": 512,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 3
+    },
+    {
+      "profile": "independent",
+      "group": "fuzz",
+      "pattern": "seed4",
+      "count": 512,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 284
+    },
+    {
+      "profile": "independent",
+      "group": "fuzz",
+      "pattern": "seed5",
+      "count": 512,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 0
+    },
+    {
+      "profile": "independent",
+      "group": "fuzz",
+      "pattern": "seed6",
+      "count": 512,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 0
+    },
+    {
+      "profile": "independent",
+      "group": "fuzz",
+      "pattern": "seed7",
+      "count": 512,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 3
+    },
+    {
+      "profile": "independent",
+      "group": "fuzz",
+      "pattern": "seed8",
+      "count": 512,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 282
+    },
+    {
+      "profile": "independent",
+      "group": "fuzz",
+      "pattern": "seed9",
+      "count": 512,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 3
+    },
+    {
+      "profile": "independent",
+      "group": "fuzz",
+      "pattern": "seed10",
+      "count": 512,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 0
+    },
+    {
+      "profile": "independent",
+      "group": "fuzz",
+      "pattern": "seed11",
+      "count": 512,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 0
+    },
+    {
+      "profile": "independent",
+      "group": "fuzz",
+      "pattern": "seed12",
+      "count": 512,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 283
+    },
+    {
+      "profile": "independent",
+      "group": "fuzz",
+      "pattern": "seed13",
+      "count": 512,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 0
+    },
+    {
+      "profile": "independent",
+      "group": "fuzz",
+      "pattern": "seed14",
+      "count": 512,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 0
+    },
+    {
+      "profile": "independent",
+      "group": "fuzz",
+      "pattern": "seed15",
+      "count": 512,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 25
+    },
+    {
+      "profile": "independent",
+      "group": "fuzz",
+      "pattern": "seed16",
+      "count": 512,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 278
+    },
+    {
+      "profile": "independent",
+      "group": "fuzz",
+      "pattern": "seed17",
+      "count": 512,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 6
+    },
+    {
+      "profile": "independent",
+      "group": "fuzz",
+      "pattern": "seed18",
+      "count": 512,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 0
+    },
+    {
+      "profile": "independent",
+      "group": "fuzz",
+      "pattern": "seed19",
+      "count": 512,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 3
+    },
+    {
+      "profile": "independent",
+      "group": "guards",
+      "pattern": "watermark_write",
+      "count": 5000,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 261
+    },
+    {
+      "profile": "independent",
+      "group": "guards",
+      "pattern": "benign_read",
+      "count": 5000,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 264
+    },
+    {
+      "profile": "independent",
+      "group": "guards",
+      "pattern": "late_row_miss",
+      "count": 5000,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 1896
+    },
+    {
+      "profile": "shared",
+      "group": "smoke",
+      "pattern": "A",
+      "count": 10000,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 519
+    },
+    {
+      "profile": "shared",
+      "group": "smoke",
+      "pattern": "B",
+      "count": 10000,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 0
+    },
+    {
+      "profile": "shared",
+      "group": "smoke",
+      "pattern": "C",
+      "count": 10000,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 1580
+    },
+    {
+      "profile": "shared",
+      "group": "smoke",
+      "pattern": "D",
+      "count": 10000,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 0
+    },
+    {
+      "profile": "shared",
+      "group": "smoke",
+      "pattern": "E",
+      "count": 10000,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 2471
+    },
+    {
+      "profile": "shared",
+      "group": "smoke",
+      "pattern": "A_affine4",
+      "count": 10000,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 2862
+    },
+    {
+      "profile": "shared",
+      "group": "smoke",
+      "pattern": "A_interrupt",
+      "count": 10000,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 519
+    },
+    {
+      "profile": "shared",
+      "group": "smoke",
+      "pattern": "A_closed",
+      "count": 10000,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 519
+    },
+    {
+      "profile": "shared",
+      "group": "smoke",
+      "pattern": "A_pressure",
+      "count": 10000,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 501
+    },
+    {
+      "profile": "shared",
+      "group": "full",
+      "pattern": "E",
+      "count": 224896,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 31370
+    },
+    {
+      "profile": "shared",
+      "group": "fuzz",
+      "pattern": "seed0",
+      "count": 512,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 274
+    },
+    {
+      "profile": "shared",
+      "group": "fuzz",
+      "pattern": "seed1",
+      "count": 512,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 94
+    },
+    {
+      "profile": "shared",
+      "group": "fuzz",
+      "pattern": "seed2",
+      "count": 512,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 116
+    },
+    {
+      "profile": "shared",
+      "group": "fuzz",
+      "pattern": "seed3",
+      "count": 512,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 134
+    },
+    {
+      "profile": "shared",
+      "group": "fuzz",
+      "pattern": "seed4",
+      "count": 512,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 277
+    },
+    {
+      "profile": "shared",
+      "group": "fuzz",
+      "pattern": "seed5",
+      "count": 512,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 124
+    },
+    {
+      "profile": "shared",
+      "group": "fuzz",
+      "pattern": "seed6",
+      "count": 512,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 98
+    },
+    {
+      "profile": "shared",
+      "group": "fuzz",
+      "pattern": "seed7",
+      "count": 512,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 69
+    },
+    {
+      "profile": "shared",
+      "group": "fuzz",
+      "pattern": "seed8",
+      "count": 512,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 273
+    },
+    {
+      "profile": "shared",
+      "group": "fuzz",
+      "pattern": "seed9",
+      "count": 512,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 139
+    },
+    {
+      "profile": "shared",
+      "group": "fuzz",
+      "pattern": "seed10",
+      "count": 512,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 111
+    },
+    {
+      "profile": "shared",
+      "group": "fuzz",
+      "pattern": "seed11",
+      "count": 512,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 106
+    },
+    {
+      "profile": "shared",
+      "group": "fuzz",
+      "pattern": "seed12",
+      "count": 512,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 270
+    },
+    {
+      "profile": "shared",
+      "group": "fuzz",
+      "pattern": "seed13",
+      "count": 512,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 108
+    },
+    {
+      "profile": "shared",
+      "group": "fuzz",
+      "pattern": "seed14",
+      "count": 512,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 116
+    },
+    {
+      "profile": "shared",
+      "group": "fuzz",
+      "pattern": "seed15",
+      "count": 512,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 119
+    },
+    {
+      "profile": "shared",
+      "group": "fuzz",
+      "pattern": "seed16",
+      "count": 512,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 270
+    },
+    {
+      "profile": "shared",
+      "group": "fuzz",
+      "pattern": "seed17",
+      "count": 512,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 111
+    },
+    {
+      "profile": "shared",
+      "group": "fuzz",
+      "pattern": "seed18",
+      "count": 512,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 101
+    },
+    {
+      "profile": "shared",
+      "group": "fuzz",
+      "pattern": "seed19",
+      "count": 512,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 120
+    },
+    {
+      "profile": "shared",
+      "group": "guards",
+      "pattern": "watermark_write",
+      "count": 5000,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 264
+    },
+    {
+      "profile": "shared",
+      "group": "guards",
+      "pattern": "benign_read",
+      "count": 5000,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 261
+    },
+    {
+      "profile": "shared",
+      "group": "guards",
+      "pattern": "late_row_miss",
+      "count": 5000,
+      "binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+      "exact_comparisons": 3,
+      "exit_states": 799
+    }
+  ],
+  "logical_cases": 66,
+  "exact_plan_reference_comparisons": 198,
+  "compared_resource_exit_states": 284039,
+  "profiles": {
+    "independent": {
+      "loop_cpu_s": {
+        "reference": 1.001469,
+        "incremental": 0.6905,
+        "event": 0.95844,
+        "symbolic": 0.966289,
+        "bank_affine": 0.719517,
+        "bank_rowhit": 0.708771,
+        "bank_hybrid": 0.653507
+      },
+      "whole_cpu_s": {
+        "reference": 1.1251620000000018,
+        "incremental": 0.8141520000000022,
+        "event": 1.0803229999999977,
+        "symbolic": 1.0883210000000019,
+        "bank_affine": 0.8411340000000015,
+        "bank_rowhit": 0.8307960000000025,
+        "bank_hybrid": 0.775339999999999
+      },
+      "loop_speedups": {
+        "reference": 1.0,
+        "incremental": 1.4503533671252715,
+        "event": 1.044894829097283,
+        "symbolic": 1.0364073274144692,
+        "bank_affine": 1.39186287467843,
+        "bank_rowhit": 1.4129655417617255,
+        "bank_hybrid": 1.532453363162139
+      },
+      "whole_speedups": {
+        "reference": 1.0,
+        "incremental": 1.382004834478081,
+        "event": 1.0415051794694774,
+        "symbolic": 1.0338512258791293,
+        "bank_affine": 1.3376727132656625,
+        "bank_rowhit": 1.354318027530222,
+        "bank_hybrid": 1.4511852864549788
+      },
+      "variants": {
+        "bank_affine": {
+          "stats": {
+            "affine_only": true,
+            "exits": {
+              "local_arrival": 68285,
+              "prefix_end": 38669,
+              "refresh": 386
+            },
+            "lengths": [
+              [
+                1,
+                24736
+              ],
+              [
+                2,
+                31652
+              ],
+              [
+                3,
+                12611
+              ],
+              [
+                4,
+                1403
+              ],
+              [
+                6,
+                9
+              ],
+              [
+                7,
+                13
+              ],
+              [
+                8,
+                29
+              ],
+              [
+                9,
+                38
+              ],
+              [
+                10,
+                18
+              ],
+              [
+                11,
+                13
+              ],
+              [
+                12,
+                50
+              ],
+              [
+                13,
+                593
+              ],
+              [
+                14,
+                773
+              ]
+            ],
+            "peak_live_plans": 505,
+            "plan_attempts": 729396,
+            "reads": 151658,
+            "reads_in_segments_ge2": 126922,
+            "reads_while_plans_coexist": 151637,
+            "retained_arrival_attempts": 0,
+            "segments": 71938
+          },
+          "request_read_coverage": 0.6002288892251816,
+          "mean_segment_ge2": 2.688911486801407,
+          "exit_states": 71938
+        },
+        "bank_rowhit": {
+          "stats": {
+            "affine_only": false,
+            "exits": {
+              "local_arrival": 69637,
+              "prefix_end": 21739,
+              "refresh": 406
+            },
+            "lengths": [
+              [
+                1,
+                22501
+              ],
+              [
+                2,
+                21542
+              ],
+              [
+                3,
+                13370
+              ],
+              [
+                4,
+                1067
+              ],
+              [
+                5,
+                595
+              ],
+              [
+                6,
+                253
+              ],
+              [
+                7,
+                121
+              ],
+              [
+                8,
+                124
+              ],
+              [
+                9,
+                63
+              ],
+              [
+                10,
+                17
+              ],
+              [
+                11,
+                5
+              ],
+              [
+                12,
+                9
+              ],
+              [
+                13,
+                16
+              ],
+              [
+                14,
+                31
+              ],
+              [
+                15,
+                32
+              ],
+              [
+                16,
+                15
+              ],
+              [
+                17,
+                34
+              ],
+              [
+                18,
+                36
+              ],
+              [
+                19,
+                22
+              ],
+              [
+                20,
+                47
+              ],
+              [
+                21,
+                53
+              ],
+              [
+                22,
+                80
+              ],
+              [
+                23,
+                38
+              ],
+              [
+                24,
+                23
+              ],
+              [
+                25,
+                7
+              ],
+              [
+                26,
+                10
+              ],
+              [
+                27,
+                11
+              ],
+              [
+                28,
+                17
+              ],
+              [
+                29,
+                42
+              ],
+              [
+                30,
+                60
+              ],
+              [
+                31,
+                32
+              ],
+              [
+                32,
+                14
+              ],
+              [
+                33,
+                10
+              ],
+              [
+                34,
+                2
+              ],
+              [
+                35,
+                1
+              ],
+              [
+                47,
+                9
+              ],
+              [
+                48,
+                13
+              ],
+              [
+                49,
+                28
+              ],
+              [
+                50,
+                39
+              ],
+              [
+                51,
+                18
+              ],
+              [
+                52,
+                15
+              ],
+              [
+                53,
+                24
+              ],
+              [
+                54,
+                66
+              ],
+              [
+                55,
+                172
+              ]
+            ],
+            "peak_live_plans": 512,
+            "plan_attempts": 713345,
+            "reads": 151902,
+            "reads_in_segments_ge2": 129401,
+            "reads_while_plans_coexist": 151881,
+            "retained_arrival_attempts": 0,
+            "segments": 60684
+          },
+          "request_read_coverage": 0.6119523683414043,
+          "mean_segment_ge2": 3.3889689128669827,
+          "exit_states": 60684
+        },
+        "bank_hybrid": {
+          "stats": {
+            "affine_only": false,
+            "exits": {
+              "local_arrival": 69637,
+              "prefix_end": 21739,
+              "refresh": 406
+            },
+            "lengths": [
+              [
+                1,
+                22501
+              ],
+              [
+                2,
+                21542
+              ],
+              [
+                3,
+                13370
+              ],
+              [
+                4,
+                1067
+              ],
+              [
+                5,
+                595
+              ],
+              [
+                6,
+                253
+              ],
+              [
+                7,
+                121
+              ],
+              [
+                8,
+                124
+              ],
+              [
+                9,
+                63
+              ],
+              [
+                10,
+                17
+              ],
+              [
+                11,
+                5
+              ],
+              [
+                12,
+                9
+              ],
+              [
+                13,
+                16
+              ],
+              [
+                14,
+                31
+              ],
+              [
+                15,
+                32
+              ],
+              [
+                16,
+                15
+              ],
+              [
+                17,
+                34
+              ],
+              [
+                18,
+                36
+              ],
+              [
+                19,
+                22
+              ],
+              [
+                20,
+                47
+              ],
+              [
+                21,
+                53
+              ],
+              [
+                22,
+                80
+              ],
+              [
+                23,
+                38
+              ],
+              [
+                24,
+                23
+              ],
+              [
+                25,
+                7
+              ],
+              [
+                26,
+                10
+              ],
+              [
+                27,
+                11
+              ],
+              [
+                28,
+                17
+              ],
+              [
+                29,
+                42
+              ],
+              [
+                30,
+                60
+              ],
+              [
+                31,
+                32
+              ],
+              [
+                32,
+                14
+              ],
+              [
+                33,
+                10
+              ],
+              [
+                34,
+                2
+              ],
+              [
+                35,
+                1
+              ],
+              [
+                47,
+                9
+              ],
+              [
+                48,
+                13
+              ],
+              [
+                49,
+                28
+              ],
+              [
+                50,
+                39
+              ],
+              [
+                51,
+                18
+              ],
+              [
+                52,
+                15
+              ],
+              [
+                53,
+                24
+              ],
+              [
+                54,
+                66
+              ],
+              [
+                55,
+                172
+              ]
+            ],
+            "peak_live_plans": 512,
+            "plan_attempts": 713345,
+            "reads": 151902,
+            "reads_in_segments_ge2": 129401,
+            "reads_while_plans_coexist": 151881,
+            "retained_arrival_attempts": 0,
+            "segments": 60684
+          },
+          "request_read_coverage": 0.6119523683414043,
+          "mean_segment_ge2": 3.3889689128669827,
+          "exit_states": 60684
+        }
+      },
+      "full_raw_trace_sha256": "77670200f1ea946844ef878c9f66ca444d317fa222413975d0ea3326929dd74f"
+    },
+    "shared": {
+      "loop_cpu_s": {
+        "reference": 2.487353,
+        "incremental": 1.673256,
+        "event": 2.470219,
+        "symbolic": 2.484178,
+        "bank_affine": 2.192281,
+        "bank_rowhit": 2.080832,
+        "bank_hybrid": 1.625892
+      },
+      "whole_cpu_s": {
+        "reference": 2.5978390000000013,
+        "incremental": 1.783548999999999,
+        "event": 2.581036999999999,
+        "symbolic": 2.594281999999999,
+        "bank_affine": 2.302403000000001,
+        "bank_rowhit": 2.192689999999993,
+        "bank_hybrid": 1.7381000000000004
+      },
+      "loop_speedups": {
+        "reference": 1.0,
+        "incremental": 1.486534636660499,
+        "event": 1.0069362271118472,
+        "symbolic": 1.0012780887681962,
+        "bank_affine": 1.1345958843779609,
+        "bank_rowhit": 1.1953646426044968,
+        "bank_hybrid": 1.529839005296785
+      },
+      "whole_speedups": {
+        "reference": 1.0,
+        "incremental": 1.4565560015452352,
+        "event": 1.0065097865702826,
+        "symbolic": 1.0013710922713885,
+        "bank_affine": 1.1283163720686606,
+        "bank_rowhit": 1.1847725852719762,
+        "bank_hybrid": 1.49464300097808
+      },
+      "variants": {
+        "bank_affine": {
+          "stats": {
+            "affine_only": true,
+            "exits": {
+              "local_arrival": 2200,
+              "prefix_end": 24567,
+              "refresh": 122
+            },
+            "lengths": [
+              [
+                1,
+                787
+              ],
+              [
+                2,
+                20468
+              ],
+              [
+                3,
+                1438
+              ],
+              [
+                4,
+                1352
+              ],
+              [
+                5,
+                203
+              ],
+              [
+                6,
+                273
+              ],
+              [
+                7,
+                91
+              ],
+              [
+                8,
+                122
+              ],
+              [
+                9,
+                104
+              ],
+              [
+                10,
+                66
+              ],
+              [
+                11,
+                59
+              ],
+              [
+                12,
+                143
+              ],
+              [
+                13,
+                273
+              ],
+              [
+                14,
+                651
+              ]
+            ],
+            "peak_live_plans": 64,
+            "plan_attempts": 94224,
+            "reads": 72335,
+            "reads_in_segments_ge2": 71548,
+            "reads_while_plans_coexist": 72310,
+            "retained_arrival_attempts": 75701,
+            "segments": 26030
+          },
+          "request_read_coverage": 0.3383588075060533,
+          "mean_segment_ge2": 2.8343699243354594,
+          "exit_states": 26030
+        },
+        "bank_rowhit": {
+          "stats": {
+            "affine_only": false,
+            "exits": {
+              "local_arrival": 2276,
+              "prefix_end": 522,
+              "refresh": 122
+            },
+            "lengths": [
+              [
+                1,
+                102
+              ],
+              [
+                2,
+                109
+              ],
+              [
+                3,
+                82
+              ],
+              [
+                4,
+                59
+              ],
+              [
+                5,
+                42
+              ],
+              [
+                6,
+                56
+              ],
+              [
+                7,
+                34
+              ],
+              [
+                8,
+                50
+              ],
+              [
+                9,
+                46
+              ],
+              [
+                10,
+                57
+              ],
+              [
+                11,
+                56
+              ],
+              [
+                12,
+                45
+              ],
+              [
+                13,
+                36
+              ],
+              [
+                14,
+                43
+              ],
+              [
+                15,
+                34
+              ],
+              [
+                16,
+                37
+              ],
+              [
+                17,
+                46
+              ],
+              [
+                18,
+                51
+              ],
+              [
+                19,
+                50
+              ],
+              [
+                20,
+                33
+              ],
+              [
+                21,
+                37
+              ],
+              [
+                22,
+                47
+              ],
+              [
+                23,
+                45
+              ],
+              [
+                24,
+                67
+              ],
+              [
+                25,
+                67
+              ],
+              [
+                26,
+                50
+              ],
+              [
+                27,
+                41
+              ],
+              [
+                28,
+                45
+              ],
+              [
+                29,
+                85
+              ],
+              [
+                30,
+                76
+              ],
+              [
+                31,
+                58
+              ],
+              [
+                32,
+                54
+              ],
+              [
+                33,
+                39
+              ],
+              [
+                34,
+                25
+              ],
+              [
+                35,
+                28
+              ],
+              [
+                36,
+                21
+              ],
+              [
+                37,
+                17
+              ],
+              [
+                38,
+                22
+              ],
+              [
+                39,
+                26
+              ],
+              [
+                40,
+                18
+              ],
+              [
+                41,
+                27
+              ],
+              [
+                42,
+                25
+              ],
+              [
+                43,
+                37
+              ],
+              [
+                44,
+                26
+              ],
+              [
+                45,
+                36
+              ],
+              [
+                46,
+                41
+              ],
+              [
+                47,
+                36
+              ],
+              [
+                48,
+                37
+              ],
+              [
+                49,
+                35
+              ],
+              [
+                50,
+                61
+              ],
+              [
+                51,
+                39
+              ],
+              [
+                52,
+                42
+              ],
+              [
+                53,
+                32
+              ],
+              [
+                54,
+                43
+              ],
+              [
+                55,
+                15
+              ],
+              [
+                56,
+                20
+              ],
+              [
+                57,
+                38
+              ],
+              [
+                58,
+                38
+              ],
+              [
+                59,
+                30
+              ],
+              [
+                60,
+                27
+              ],
+              [
+                61,
+                14
+              ],
+              [
+                62,
+                16
+              ],
+              [
+                63,
+                8
+              ],
+              [
+                64,
+                4
+              ],
+              [
+                65,
+                7
+              ]
+            ],
+            "peak_live_plans": 64,
+            "plan_attempts": 70255,
+            "reads": 72335,
+            "reads_in_segments_ge2": 72233,
+            "reads_while_plans_coexist": 72311,
+            "retained_arrival_attempts": 78984,
+            "segments": 2670
+          },
+          "request_read_coverage": 0.3415982521186441,
+          "mean_segment_ge2": 28.128115264797508,
+          "exit_states": 2670
+        },
+        "bank_hybrid": {
+          "stats": {
+            "affine_only": false,
+            "exits": {
+              "local_arrival": 2276,
+              "prefix_end": 522,
+              "refresh": 122
+            },
+            "lengths": [
+              [
+                1,
+                102
+              ],
+              [
+                2,
+                109
+              ],
+              [
+                3,
+                82
+              ],
+              [
+                4,
+                59
+              ],
+              [
+                5,
+                42
+              ],
+              [
+                6,
+                56
+              ],
+              [
+                7,
+                34
+              ],
+              [
+                8,
+                50
+              ],
+              [
+                9,
+                46
+              ],
+              [
+                10,
+                57
+              ],
+              [
+                11,
+                56
+              ],
+              [
+                12,
+                45
+              ],
+              [
+                13,
+                36
+              ],
+              [
+                14,
+                43
+              ],
+              [
+                15,
+                34
+              ],
+              [
+                16,
+                37
+              ],
+              [
+                17,
+                46
+              ],
+              [
+                18,
+                51
+              ],
+              [
+                19,
+                50
+              ],
+              [
+                20,
+                33
+              ],
+              [
+                21,
+                37
+              ],
+              [
+                22,
+                47
+              ],
+              [
+                23,
+                45
+              ],
+              [
+                24,
+                67
+              ],
+              [
+                25,
+                67
+              ],
+              [
+                26,
+                50
+              ],
+              [
+                27,
+                41
+              ],
+              [
+                28,
+                45
+              ],
+              [
+                29,
+                85
+              ],
+              [
+                30,
+                76
+              ],
+              [
+                31,
+                58
+              ],
+              [
+                32,
+                54
+              ],
+              [
+                33,
+                39
+              ],
+              [
+                34,
+                25
+              ],
+              [
+                35,
+                28
+              ],
+              [
+                36,
+                21
+              ],
+              [
+                37,
+                17
+              ],
+              [
+                38,
+                22
+              ],
+              [
+                39,
+                26
+              ],
+              [
+                40,
+                18
+              ],
+              [
+                41,
+                27
+              ],
+              [
+                42,
+                25
+              ],
+              [
+                43,
+                37
+              ],
+              [
+                44,
+                26
+              ],
+              [
+                45,
+                36
+              ],
+              [
+                46,
+                41
+              ],
+              [
+                47,
+                36
+              ],
+              [
+                48,
+                37
+              ],
+              [
+                49,
+                35
+              ],
+              [
+                50,
+                61
+              ],
+              [
+                51,
+                39
+              ],
+              [
+                52,
+                42
+              ],
+              [
+                53,
+                32
+              ],
+              [
+                54,
+                43
+              ],
+              [
+                55,
+                15
+              ],
+              [
+                56,
+                20
+              ],
+              [
+                57,
+                38
+              ],
+              [
+                58,
+                38
+              ],
+              [
+                59,
+                30
+              ],
+              [
+                60,
+                27
+              ],
+              [
+                61,
+                14
+              ],
+              [
+                62,
+                16
+              ],
+              [
+                63,
+                8
+              ],
+              [
+                64,
+                4
+              ],
+              [
+                65,
+                7
+              ]
+            ],
+            "peak_live_plans": 64,
+            "plan_attempts": 70255,
+            "reads": 72335,
+            "reads_in_segments_ge2": 72233,
+            "reads_while_plans_coexist": 72311,
+            "retained_arrival_attempts": 78984,
+            "segments": 2670
+          },
+          "request_read_coverage": 0.3415982521186441,
+          "mean_segment_ge2": 28.128115264797508,
+          "exit_states": 2670
+        }
+      },
+      "full_raw_trace_sha256": "60b514e91f85482cfff8d39586a6ac37c1663c5d2e12d6f05aa5b6da78061690"
+    }
+  },
+  "oracle_graphs": {
+    "independent": {
+      "scope": "Compile a fixed-order diagnostic DAG, never an online speedup claim.\n\nInputs: reference-selected command order, admissions, refresh injection, optional\nobserved policy branches, and pending enqueue order. Actual command/callback\ntimestamps are verification targets only, not graph release constraints.\n",
+      "results": {
+        "timing_only": {
+          "command_nodes": 307436,
+          "callback_nodes": 224896,
+          "release_sources": {
+            "request_admission": 305391,
+            "refresh_injection": 2045
+          },
+          "edge_kinds": {
+            "controller_serial": 306924,
+            "timing_level_0_window_1": 799266,
+            "data_latency": 224896,
+            "callback_fifo": 224384
+          },
+          "compile_cpu_seconds": 3.227110391,
+          "oracle_inputs": [
+            "command and pending-append order",
+            "reference admissions",
+            "refresh injection",
+            "no policy branches"
+          ],
+          "actual_command_cycles_used_as_release": false,
+          "serialize_cpu_seconds": 0.006270315000000082,
+          "nodes": 532332,
+          "edges": 1248546,
+          "solve_median_seconds": 0.000904099,
+          "process_cpu_seconds": 0.017265,
+          "mismatches": 0,
+          "max_absolute_cycle_error": 0,
+          "first_mismatch_node": 532332,
+          "checksum": 67473,
+          "driver_cpu_after_compile": 0.0003093039999999547
+        },
+        "with_policy": {
+          "command_nodes": 307436,
+          "callback_nodes": 224896,
+          "release_sources": {
+            "request_admission": 305391,
+            "policy_write_low": 246467,
+            "policy_read_empty": 17210,
+            "refresh_injection": 2045
+          },
+          "edge_kinds": {
+            "controller_serial": 306924,
+            "timing_level_0_window_1": 799266,
+            "policy_read_empty": 17210,
+            "policy_write_low": 69919,
+            "data_latency": 224896,
+            "callback_fifo": 224384
+          },
+          "compile_cpu_seconds": 3.24457657,
+          "oracle_inputs": [
+            "command and pending-append order",
+            "reference admissions",
+            "refresh injection",
+            "policy branches/queue IDs"
+          ],
+          "actual_command_cycles_used_as_release": false,
+          "serialize_cpu_seconds": 0.006285441000000169,
+          "nodes": 532332,
+          "edges": 1255659,
+          "solve_median_seconds": 0.00103632,
+          "process_cpu_seconds": 0.019073,
+          "mismatches": 0,
+          "max_absolute_cycle_error": 0,
+          "first_mismatch_node": 532332,
+          "checksum": 67473,
+          "driver_cpu_after_compile": 0.0003235329999995429
+        }
+      }
+    },
+    "shared": {
+      "scope": "Compile a fixed-order diagnostic DAG, never an online speedup claim.\n\nInputs: reference-selected command order, admissions, refresh injection, optional\nobserved policy branches, and pending enqueue order. Actual command/callback\ntimestamps are verification targets only, not graph release constraints.\n",
+      "results": {
+        "timing_only": {
+          "command_nodes": 471344,
+          "callback_nodes": 224896,
+          "release_sources": {
+            "request_admission": 470448,
+            "refresh_injection": 896
+          },
+          "edge_kinds": {
+            "controller_serial": 471280,
+            "timing_level_3_window_1": 1079660,
+            "timing_level_0_window_1": 968874,
+            "timing_level_0_window_4": 129619,
+            "data_latency": 214176,
+            "callback_fifo": 224832
+          },
+          "compile_cpu_seconds": 4.748241233000001,
+          "oracle_inputs": [
+            "command and pending-append order",
+            "reference admissions",
+            "refresh injection",
+            "no policy branches"
+          ],
+          "actual_command_cycles_used_as_release": false,
+          "serialize_cpu_seconds": 0.010584258000000624,
+          "nodes": 696240,
+          "edges": 2760329,
+          "solve_median_seconds": 0.00371166,
+          "process_cpu_seconds": 0.043309,
+          "mismatches": 1384,
+          "max_absolute_cycle_error": 7,
+          "first_mismatch_node": 364568,
+          "checksum": 192486,
+          "driver_cpu_after_compile": 0.00032755799999950597
+        },
+        "with_policy": {
+          "command_nodes": 471344,
+          "callback_nodes": 224896,
+          "release_sources": {
+            "request_admission": 470448,
+            "policy_write_low": 308486,
+            "refresh_injection": 896,
+            "policy_write_high": 23315,
+            "policy_read_empty": 960
+          },
+          "edge_kinds": {
+            "controller_serial": 471280,
+            "timing_level_3_window_1": 1079660,
+            "timing_level_0_window_1": 968874,
+            "timing_level_0_window_4": 129619,
+            "policy_write_low": 65575,
+            "policy_read_empty": 960,
+            "data_latency": 214176,
+            "callback_fifo": 224832
+          },
+          "compile_cpu_seconds": 4.857425329000001,
+          "oracle_inputs": [
+            "command and pending-append order",
+            "reference admissions",
+            "refresh injection",
+            "policy branches/queue IDs"
+          ],
+          "actual_command_cycles_used_as_release": false,
+          "serialize_cpu_seconds": 0.010675860999999287,
+          "nodes": 696240,
+          "edges": 2775947,
+          "solve_median_seconds": 0.00372151,
+          "process_cpu_seconds": 0.043638,
+          "mismatches": 0,
+          "max_absolute_cycle_error": 0,
+          "first_mismatch_node": 696240,
+          "checksum": 192486,
+          "driver_cpu_after_compile": 0.0003222919999998908
+        }
+      }
+    }
+  },
+  "shared_bus_check": {
+    "status": "pass",
+    "checks": {
+      "commands": 471344,
+      "data_commands": 214176,
+      "window1_checks": 968874,
+      "cross_bank_data_transitions": 161786,
+      "window4_checks": 129619,
+      "refreshes": 448,
+      "read_write_turnarounds": 448
+    },
+    "scope": "Independent trace check for command/data bus, turnarounds and rank windows.",
+    "events_file": "/Orion/jian/jhn/dram-fast-forward/runs/interference_001/shared_full_v4/E_224896/bank_affine_events.bin.gz",
+    "events_file_sha256": "e7574c6205ca6927641f27bd30f147d7cc12ed5a83ffbb0465841757d4ec7816",
+    "timing_file_sha256": "aca9045c7a994e4145eb9e25977100a95895a1a83b4a566b7d2843502702e16c"
+  },
+  "artifacts_sha256": {
+    "independent_smoke_v4/results.json": "501c1113c0c3f14c8bae8523734f68d89b14926c4bbe07f1bf1b3ef7fedf58d6",
+    "independent_full_v4/results.json": "63bc9c244d0f41b2c1511b5142231ce4b9621863bf2173982c40a29c47123663",
+    "independent_fuzz_v4/results.json": "3e4a566ea4399afae64b63b95292b978ba6968e27c61ecf1e4803a9fbcb56928",
+    "independent_guards_v4/results.json": "040c4339c0c6facb786cb9b14d3419c3b5f023a2b6dfa0e746ba034698d83998",
+    "shared_smoke_v4/results.json": "9eba7121dc978201a771f152875241cc7cd4a4099970898e3ce28b585951b9bb",
+    "shared_full_v4/results.json": "6fbad92f1ba1ae3ee59aa73a6479e159e4bb8d4fab533fd58df29e1090b30ee4",
+    "shared_fuzz_v4/results.json": "9e7177625dd738dbcf180beab52d61462f1d62f6ccf0a543652ab93eb8f0e953",
+    "shared_guards_v4/results.json": "600489b8c12803affa9f953ab027d3c21aa0d70242d612e0b1ef89eb655e30ac",
+    "graph_independent_full_v1/results.json": "a991e753ba9f5cfeeeb1a2c248fba0b932c0c12e06c473e6f556155513153dd2",
+    "graph_shared_full_v1/results.json": "d47af0e830525642d849fd7c40306f196f3ee4492af0b8388aa103e7234e0cc1",
+    "shared_full_bus_check_v4.json": "fa30ec167e9e9a9ea0e54c0cfacda93ef5c5db08b244c0056951264aee1674a3"
+  }
+}

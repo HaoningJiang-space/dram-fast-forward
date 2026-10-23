@@ -1,0 +1,33 @@
+{
+  "pid": 1194484,
+  "owned": true,
+  "command": [
+    "/home/jian/miniconda3/envs/pytorchsim_env/bin/python",
+    "-u",
+    "-m",
+    "dram_fast_forward.interference",
+    "--binary",
+    "/Orion/jian/jhn/dram-fast-forward/runs/interference_001/build_v4/dram_poc",
+    "--dram-yaml",
+    "/Orion/jian/jhn/dram-fast-forward/configs/direct-bank-d32.yaml",
+    "--output",
+    "/Orion/jian/jhn/dram-fast-forward/runs/interference_001/independent_smoke_v4",
+    "--patterns",
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "A_affine4",
+    "A_interrupt",
+    "A_closed",
+    "A_pressure",
+    "--counts",
+    "10000",
+    "--real-trace",
+    "/Orion/jian/jhn/dram-fast-forward/dependencies/traces/accepted_requests.json",
+    "--repeats",
+    "1"
+  ],
+  "cpu": 0
+}

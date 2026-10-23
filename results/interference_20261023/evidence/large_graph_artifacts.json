@@ -1,0 +1,29 @@
+{
+  "root": "/Orion/jian/jhn/dram-fast-forward/runs/interference_001",
+  "files": {
+    "graph_shared_full_ablation_v2/with_policy.bin": {
+      "size": 33347440,
+      "sha256": "b7fe8616aec74bf645c12be5529ed634aff338abacb2e03673d901f1dbd3fc14"
+    },
+    "graph_shared_full_ablation_v2/with_policy.expected.bin": {
+      "size": 5569920,
+      "sha256": "b270e33582ac5aaa86f1b24d48f44eabf5614025a5721555dac06c4eafe38bc1"
+    },
+    "graph_shared_full_ablation_v2/timing_only.bin": {
+      "size": 33222496,
+      "sha256": "b58cbecbe6b2e5a267dadb209c4b0a2bac122944c2aef3b018fc823d142cf11c"
+    },
+    "graph_shared_full_ablation_v2/timing_only.expected.bin": {
+      "size": 5569920,
+      "sha256": "b270e33582ac5aaa86f1b24d48f44eabf5614025a5721555dac06c4eafe38bc1"
+    },
+    "graph_shared_full_ablation_v2/bus_omitted_negative_control.bin": {
+      "size": 32273536,
+      "sha256": "e6613950b86b7e8046f7b22e0402e7fb7c9abe4495da80178b2ca6ca3934a554"
+    },
+    "graph_shared_full_ablation_v2/bus_omitted_negative_control.expected.bin": {
+      "size": 5569920,
+      "sha256": "b270e33582ac5aaa86f1b24d48f44eabf5614025a5721555dac06c4eafe38bc1"
+    }
+  }
+}

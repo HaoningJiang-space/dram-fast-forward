@@ -1,0 +1,13 @@
+{
+  "case": "independent_smoke_v1/A_closed_10000",
+  "status": "rejected prototype",
+  "first_wrong_exit_cycle": 1034,
+  "reference_read_history": 1034,
+  "prototype_read_history": 1026,
+  "reason": "Audit materialized an inactive canceled plan after ordinary execution had already advanced history",
+  "fix": "Materialize only still-active plans at observation; canceled plans are flushed once before fallback",
+  "validated_final_matrix": {
+    "cases": 66,
+    "comparisons": 198
+  }
+}

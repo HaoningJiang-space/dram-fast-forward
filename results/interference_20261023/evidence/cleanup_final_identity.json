@@ -1,0 +1,14 @@
+{
+  "status": "pass",
+  "measured_binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+  "final_binary_sha256": "3c3586dec51a20411037f8c25d06dd6a64af868d23cdbe8b614ddee81cd2ae06",
+  "current_build_sources_sha256": {
+    "src/dram_fast_forward/build.py": "68c47305308ee4bed87cc22c7f1a7d528f8d0d5c3fcbde2d9123d95ac9faca66",
+    "src/dram_fast_forward/native/poc_hooks.hh": "284946e70752afc3b06c57923c2299cece5d6654dd7bd62dada6353ec3af5814",
+    "src/dram_fast_forward/native/poc.cc": "0ce576f124d4c3bf017499c4eac8b621408ee804b2b3c7085980e098faf3d8ad",
+    "src/dram_fast_forward/native/bank_symbolic.hh": "c7de1ede44c1d7f4eef42d8cf0197b240cd8ef702ab0822b0485bad5b56a51f0",
+    "src/dram_fast_forward/native/shared_mapper.hh": "3c08bbfc41ee9346918a0be877b646084646accfd4a202393fb7faf3ba8f9d0d",
+    "src/dram_fast_forward/profile_patch.py": "ce3d6a6efa0436f2a01a88eb836e286b7194f8498e0e69318982304d25f7ecd0"
+  },
+  "scope": "Exact current native/build sources rebuilt after directory cleanup; identical measured executable"
+}

@@ -1,0 +1,17 @@
+{
+  "pid": 1194487,
+  "owned": true,
+  "command": [
+    "/home/jian/miniconda3/envs/pytorchsim_env/bin/python",
+    "-u",
+    "-m",
+    "dram_fast_forward.guard_regressions",
+    "--binary",
+    "/Orion/jian/jhn/dram-fast-forward/runs/interference_001/build_v4/dram_poc",
+    "--dram-yaml",
+    "/Orion/jian/jhn/dram-fast-forward/configs/direct-bank-d32.yaml",
+    "--output",
+    "/Orion/jian/jhn/dram-fast-forward/runs/interference_001/independent_guards_v4"
+  ],
+  "cpu": 12
+}

@@ -1,0 +1,19 @@
+{
+  "pid": 1194490,
+  "owned": true,
+  "command": [
+    "/home/jian/miniconda3/envs/pytorchsim_env/bin/python",
+    "-u",
+    "-m",
+    "dram_fast_forward.fuzz_interference",
+    "--binary",
+    "/Orion/jian/jhn/dram-fast-forward/runs/interference_001/build_v4/dram_poc",
+    "--dram-yaml",
+    "/Orion/jian/jhn/dram-fast-forward/configs/shared-bus-8bank.yaml",
+    "--output",
+    "/Orion/jian/jhn/dram-fast-forward/runs/interference_001/shared_fuzz_v4",
+    "--seeds",
+    "20"
+  ],
+  "cpu": 10
+}

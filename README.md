@@ -1,41 +1,49 @@
 # DRAM Fast-Forward
 
-独立研究 **如何更快地、精确地模拟 DRAM**。本地目录为
-`/Users/haoning/project/dram-fast-forward`，与 LeanWafer 仓库分开维护。
+公开研究：**存在并发、共享总线和动态请求时，用符号执行与依赖图加速精确DRAM模拟。**
+本地独立目录：`/Users/haoning/project/dram-fast-forward`。
 
-比较三条路线：跳过无变化周期的 event-driven、按状态失效的 incremental prerequisite
-更新，以及带充分安全守卫的同 row READ 数学批量执行。基准是冻结的 Ramulator
-FR-FCFS、地址映射和刷新；不改变被模拟硬件来制造主机加速。
+当前入口：[方法论](docs/RESEARCH_METHOD.md)、[第二轮实验](docs/INTERFERENCE_20261023.md)。
+首轮隔离守卫的0%不能否定多面体路线；固定顺序oracle图求值也不能当成在线加速。
 
-## 已有证据
+## 最新完整捕获窗口
 
-2026-10-23 PoC：40 个差分 case、21,977 次 fast-exit 状态比较通过，覆盖命令顺序/周期、
-请求接纳回压、callback、刷新恢复与合成闭环。下表为循环 CPU 加速，不是芯片 token/s：
+224,896项局部FFN请求，三次新进程循环CPU中位数；不是整模型或芯片token/s：
 
-| 输入 | event | incremental | symbolic |
-|---|---:|---:|---:|
-| 最规则同 row READ，100万请求 | 2.00× | 1.92× | 5.82× |
-| 真实 FFN 完整224,896项窗口 | 1.04× | 1.29× | 1.01×，批量覆盖0% |
+| 参考配置 | 增量更新 | 符号计划 | 符号＋增量 | 符号READ覆盖 |
+|---|---:|---:|---:|---:|
+| 原独立TSV bank | 1.45× | 1.41× | 1.53× | 61.20% |
+| 8bank共享总线 | 1.49× | 1.20× | 1.53× | 34.16% |
 
-计入初始化等成本，前者 symbolic 为4.39×，后者 incremental 为1.25×。
-真实地址同 row 局部性81.56%并不等于可以安全批量。完整说明、负结果与适用边界：
-[研究报告](docs/POC_20261023.md)、[全部实测](results/20261023/MEASUREMENTS.md)、
-[实现和严格守卫](docs/IMPLEMENTATION.md)。
+共享组合的整进程CPU加速为1.49×。66案例、198次计划/参考比较、284,039次资源退出
+状态比较通过。高压到达存在负结果，不能全局默认启用新策略。
 
-这些是从原仓库提取的历史测量，不能改标成新仓库新跑的结果。来源提交和原始文件哈希见
-[ORIGIN.json](docs/ORIGIN.json)。当前源码中 C++ solver、hooks 与差分 driver 保持原字节。
+固定顺序图加入队列策略后精确重现696,240个命令/回调节点；Python建图数秒，遍历数毫秒，
+尚未解决低成本在线依赖发现。[全部测量](results/interference_20261023/MEASUREMENTS.md)。
 
-## 布局
+## 代码布局
 
 ```text
-src/dram_fast_forward/  C++ solver、构建、差分、捕获和分析工具
-configs/               冻结物理配置
-docs/                  方法、实验与来源
-results/20261023/      小型原始证据、配置及二进制身份
-tools/                 独立输入导出和证据检查
-dependencies/          忽略的、平台相关的冻结输入包
-build/、runs/          忽略的新构建与实验输出
+src/dram_fast_forward/
+  native/                 C++引擎、符号计划、共享映射、CSR求值器
+  build.py                固定输入构建；profile_patch.py定义共享fixture
+  common.py               公共IO、子进程与CPU计时
+  workloads.py            合成模式与真实请求窗口
+  interference.py         当前在线方案的差分和计时入口
+  oracle_graph.py          固定顺序诊断，在线路径不读取它
+  check_bus.py            独立总线、ACT窗口和刷新检查
+  fuzz_interference.py     混合/闭环压力测试
+  guard_regressions.py     写阈值、读到达和row-miss检查
+configs/                  独立TSV和共享总线两个显式配置
+docs/                     方法、报告、来源与迁移说明
+results/                  按实验冻结的小型证据
+tools/                    输入导出与归档核对
+dependencies/,build/,runs/ 大型本地生成物，不进入Git
 ```
+
+`run.py`、`fuzz.py`、`summarize.py`保留首轮控制；捕获工具是可选LeanWafer适配，
+不是核心模拟器的Python依赖。原40案例及[来源](docs/ORIGIN.json)保持冻结。
+源码已演进；整理后的二进制与本轮测量版本相同，不再声称源码仍等同初次提取版本。
 
 ## 使用现有环境
 
@@ -85,11 +93,28 @@ $PY -m dram_fast_forward.run \
 [large_artifacts.json](results/20261023/evidence/large_artifacts.json)。使用 trace 时显式传
 `--patterns E --real-trace PATH --counts 224896`；百万请求 E 只能标为周期扩展。
 
-## 研究边界和后续
+## 当前实验入口
 
-优先提高真实闭环下的增量调度效率，再评估每 controller 的事件维护；规则段批量先保留为
-机制证明。不预设完整多面体编译或 GPU。每项新机制须保持完整事件和状态差分，计时需
-区分循环 CPU、整进程 CPU、wall，以及真实负载覆盖率。
+同一构建支持两个配置。对`interference`显式提供`--binary`、`--dram-yaml`、全新
+`--output`，可用`--patterns E --counts 224896 --real-trace PATH --repeats 3`测试完整窗口。
+共享配置为`configs/shared-bus-8bank.yaml`，是竞争验证fixture，不是已校准商业DDR器件。
 
-历史证据中的绝对路径用于追溯，不是当前 Python 导入依赖。迁移后的实际构建/运行验证
-另列于 [RELOCATION.md](docs/RELOCATION.md)。原 LeanWafer 快照保留用于历史复现。
+```sh
+export PYTHONPATH="$PWD/src"
+python3 -m dram_fast_forward.interference --help
+c++ -O3 -std=c++20 src/dram_fast_forward/native/graph_solve.cc -o build/graph_solve
+python3 -m dram_fast_forward.oracle_graph --help
+python3 -m dram_fast_forward.check_bus --help
+```
+
+`fuzz_interference --seeds 20`与`guard_regressions`也要求显式binary/YAML/output。
+图分析使用case中的`bank_affine_reference`及`bank_affine_events.bin.gz`；
+`--ablate-shared-bus`是故意漏算总线的负对照，不参与在线性能表。
+
+## 观察接口与后续
+
+严格比较命令、接纳回压、callback和恢复状态。当前计划不读取oracle日志，不提前提交
+未来事件；若调用方要求N次独立callback，反馈成本至少为Ω(N)。不靠少发事件获得加速。
+
+继续研究低成本依赖发现、按资源安排事件和更一般的符号区间，不因一次守卫失败放弃
+多面体。当前窗口是三次局部Up/Gate的捕获请求，不能替代全加速器闭环验证。

@@ -1,0 +1,78 @@
+{
+  "scope": "Compile a fixed-order diagnostic DAG, never an online speedup claim.\n\nInputs: reference-selected command order, admissions, refresh injection, optional\nobserved policy branches, and pending enqueue order. Actual command/callback\ntimestamps are verification targets only, not graph release constraints.\n",
+  "results": {
+    "timing_only": {
+      "command_nodes": 471344,
+      "callback_nodes": 224896,
+      "release_sources": {
+        "request_admission": 470448,
+        "refresh_injection": 896
+      },
+      "edge_kinds": {
+        "controller_serial": 471280,
+        "timing_level_3_window_1": 1079660,
+        "timing_level_0_window_1": 968874,
+        "timing_level_0_window_4": 129619,
+        "data_latency": 214176,
+        "callback_fifo": 224832
+      },
+      "compile_cpu_seconds": 4.748241233000001,
+      "oracle_inputs": [
+        "command and pending-append order",
+        "reference admissions",
+        "refresh injection",
+        "no policy branches"
+      ],
+      "actual_command_cycles_used_as_release": false,
+      "serialize_cpu_seconds": 0.010584258000000624,
+      "nodes": 696240,
+      "edges": 2760329,
+      "solve_median_seconds": 0.00371166,
+      "process_cpu_seconds": 0.043309,
+      "mismatches": 1384,
+      "max_absolute_cycle_error": 7,
+      "first_mismatch_node": 364568,
+      "checksum": 192486,
+      "driver_cpu_after_compile": 0.00032755799999950597
+    },
+    "with_policy": {
+      "command_nodes": 471344,
+      "callback_nodes": 224896,
+      "release_sources": {
+        "request_admission": 470448,
+        "policy_write_low": 308486,
+        "refresh_injection": 896,
+        "policy_write_high": 23315,
+        "policy_read_empty": 960
+      },
+      "edge_kinds": {
+        "controller_serial": 471280,
+        "timing_level_3_window_1": 1079660,
+        "timing_level_0_window_1": 968874,
+        "timing_level_0_window_4": 129619,
+        "policy_write_low": 65575,
+        "policy_read_empty": 960,
+        "data_latency": 214176,
+        "callback_fifo": 224832
+      },
+      "compile_cpu_seconds": 4.857425329000001,
+      "oracle_inputs": [
+        "command and pending-append order",
+        "reference admissions",
+        "refresh injection",
+        "policy branches/queue IDs"
+      ],
+      "actual_command_cycles_used_as_release": false,
+      "serialize_cpu_seconds": 0.010675860999999287,
+      "nodes": 696240,
+      "edges": 2775947,
+      "solve_median_seconds": 0.00372151,
+      "process_cpu_seconds": 0.043638,
+      "mismatches": 0,
+      "max_absolute_cycle_error": 0,
+      "first_mismatch_node": 696240,
+      "checksum": 192486,
+      "driver_cpu_after_compile": 0.0003222919999998908
+    }
+  }
+}

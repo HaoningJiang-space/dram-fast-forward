@@ -1,0 +1,14 @@
+{
+  "status": "pass",
+  "functions_identical_as_ast": [
+    "save",
+    "load",
+    "sha",
+    "invoke",
+    "equal_files",
+    "synthetic",
+    "real_workload"
+  ],
+  "source_reference": "e551fdc",
+  "scope": "Shared IO/workload extraction; current algorithm changes are validated separately"
+}

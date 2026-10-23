@@ -1,0 +1,120 @@
+{
+  "scope": "Compile a fixed-order diagnostic DAG, never an online speedup claim.\n\nInputs: reference-selected command order, admissions, refresh injection, optional\nobserved policy branches, and pending enqueue order. Actual command/callback\ntimestamps are verification targets only, not graph release constraints.\n",
+  "results": {
+    "timing_only": {
+      "command_nodes": 471344,
+      "callback_nodes": 224896,
+      "release_sources": {
+        "request_admission": 470448,
+        "refresh_injection": 896
+      },
+      "edge_kinds": {
+        "controller_serial": 471280,
+        "timing_level_3_window_1": 1079660,
+        "timing_level_0_window_1": 968874,
+        "timing_level_0_window_4": 129619,
+        "data_latency": 214176,
+        "callback_fifo": 224832
+      },
+      "compile_cpu_seconds": 5.05022736,
+      "oracle_inputs": [
+        "command and pending-append order",
+        "reference admissions",
+        "refresh injection",
+        "no policy branches"
+      ],
+      "deliberately_omitted_shared_data_bus": false,
+      "actual_command_cycles_used_as_release": false,
+      "serialize_cpu_seconds": 0.012625744999999355,
+      "nodes": 696240,
+      "edges": 2760329,
+      "solve_median_seconds": 0.00438989,
+      "process_cpu_seconds": 0.052802,
+      "mismatches": 1384,
+      "max_absolute_cycle_error": 7,
+      "first_mismatch_node": 364568,
+      "checksum": 192486,
+      "driver_cpu_after_compile": 0.0004313240000000107
+    },
+    "with_policy": {
+      "command_nodes": 471344,
+      "callback_nodes": 224896,
+      "release_sources": {
+        "request_admission": 470448,
+        "policy_write_low": 308486,
+        "refresh_injection": 896,
+        "policy_write_high": 23315,
+        "policy_read_empty": 960
+      },
+      "edge_kinds": {
+        "controller_serial": 471280,
+        "timing_level_3_window_1": 1079660,
+        "timing_level_0_window_1": 968874,
+        "timing_level_0_window_4": 129619,
+        "policy_write_low": 65575,
+        "policy_read_empty": 960,
+        "data_latency": 214176,
+        "callback_fifo": 224832
+      },
+      "compile_cpu_seconds": 5.216254299,
+      "oracle_inputs": [
+        "command and pending-append order",
+        "reference admissions",
+        "refresh injection",
+        "policy branches/queue IDs"
+      ],
+      "deliberately_omitted_shared_data_bus": false,
+      "actual_command_cycles_used_as_release": false,
+      "serialize_cpu_seconds": 0.011937362999999479,
+      "nodes": 696240,
+      "edges": 2775947,
+      "solve_median_seconds": 0.00418383,
+      "process_cpu_seconds": 0.050641,
+      "mismatches": 0,
+      "max_absolute_cycle_error": 0,
+      "first_mismatch_node": 696240,
+      "checksum": 192486,
+      "driver_cpu_after_compile": 0.00038369099999968626
+    },
+    "bus_omitted_negative_control": {
+      "command_nodes": 471344,
+      "callback_nodes": 224896,
+      "release_sources": {
+        "request_admission": 470448,
+        "policy_write_low": 308486,
+        "refresh_injection": 896,
+        "policy_write_high": 23315,
+        "policy_read_empty": 960
+      },
+      "edge_kinds": {
+        "controller_serial": 471280,
+        "timing_level_3_window_1": 1079660,
+        "timing_level_0_window_1": 679983,
+        "timing_level_0_window_4": 129619,
+        "policy_write_low": 65575,
+        "policy_read_empty": 960,
+        "data_latency": 214176,
+        "callback_fifo": 224832
+      },
+      "compile_cpu_seconds": 4.756991791000001,
+      "oracle_inputs": [
+        "command and pending-append order",
+        "reference admissions",
+        "refresh injection",
+        "policy branches/queue IDs"
+      ],
+      "deliberately_omitted_shared_data_bus": true,
+      "actual_command_cycles_used_as_release": false,
+      "serialize_cpu_seconds": 0.011582355999999905,
+      "nodes": 696240,
+      "edges": 2641709,
+      "solve_median_seconds": 0.00362416,
+      "process_cpu_seconds": 0.046309,
+      "mismatches": 669600,
+      "max_absolute_cycle_error": 519,
+      "first_mismatch_node": 231,
+      "checksum": 191968,
+      "driver_cpu_after_compile": 0.0004104179999995239
+    }
+  }
+}

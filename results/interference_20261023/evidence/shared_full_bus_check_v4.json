@@ -1,0 +1,16 @@
+{
+  "status": "pass",
+  "checks": {
+    "commands": 471344,
+    "data_commands": 214176,
+    "window1_checks": 968874,
+    "cross_bank_data_transitions": 161786,
+    "window4_checks": 129619,
+    "refreshes": 448,
+    "read_write_turnarounds": 448
+  },
+  "scope": "Independent trace check for command/data bus, turnarounds and rank windows.",
+  "events_file": "/Orion/jian/jhn/dram-fast-forward/runs/interference_001/shared_full_v4/E_224896/bank_affine_events.bin.gz",
+  "events_file_sha256": "e7574c6205ca6927641f27bd30f147d7cc12ed5a83ffbb0465841757d4ec7816",
+  "timing_file_sha256": "aca9045c7a994e4145eb9e25977100a95895a1a83b4a566b7d2843502702e16c"
+}

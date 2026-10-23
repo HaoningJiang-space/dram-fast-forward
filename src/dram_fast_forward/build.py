@@ -5,6 +5,10 @@ import json
 from pathlib import Path
 import shutil
 import subprocess
+if __package__:
+    from .profile_patch import patch as profile_patch
+else:
+    from profile_patch import patch as profile_patch
 
 
 def sha(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()
@@ -46,18 +50,27 @@ def build(source,ramulator,output):
             text=text[:first]+body+text[last:]
             old='      is_success = m_priority_buffer.enqueue(req);'
             if old not in text:old='      bool is_success = m_priority_buffer.enqueue(req);'
-            text=change(text,old,old+'if(is_success)poc::changed(dynamic_cast<void*>(m_dram),m_channel_id);')
+            text=change(text,old,old+'if(is_success){poc::changed(dynamic_cast<void*>(m_dram),m_channel_id);if(poc::priority_observer)poc::priority_observer(dynamic_cast<void*>(m_dram),m_channel_id,m_clk,req);}')
+            text=change(text,'        m_dram->issue_command(req_it->command, req_it->addr_vec);',
+                        '        if(poc::selected_observer)poc::selected_observer(dynamic_cast<void*>(m_dram),m_channel_id,m_clk,*req_it,buffer==&m_active_buffer?0:buffer==&m_priority_buffer?1:buffer==&m_read_buffer?2:3);\n        m_dram->issue_command(req_it->command, req_it->addr_vec);')
+            start=text.index('    void set_write_mode() {');stop=text.index('\n    };',start)
+            body=text[start:stop]
+            body=body.replace('    void set_write_mode() {','    void set_write_mode() {\n      const bool poc_old_mode=m_is_write_mode;',1)
+            body+='\n      if(poc::policy_observer && poc_old_mode!=m_is_write_mode){std::vector<int> reads,writes;for(auto& q:m_read_buffer)reads.push_back(q.trace_core_id);for(auto& q:m_write_buffer)writes.push_back(q.trace_core_id);poc::policy_observer(dynamic_cast<void*>(m_dram),m_channel_id,m_clk,m_is_write_mode,reads,writes);}\n'
+            text=text[:start]+body+text[stop:]
         if name=='scheduler.cpp':
             text=change(text,'    IDRAM* m_dram;','    IDRAM* m_dram;\n    int poc_channel=-1;\n    std::map<ReqBuffer*,uint64_t> poc_versions;')
             text=change(text,'      m_dram = cast_parent<IDRAMController>()->m_dram;',
                         '      m_dram = cast_parent<IDRAMController>()->m_dram;poc_channel=cast_parent<IDRAMController>()->m_channel_id;')
             text=change(text,'      for (auto& req : buffer) {\n        req.command = m_dram->get_preq_command(req.final_command, req.addr_vec);\n      }',
                         '      auto generation=poc::incremental?poc::generation(dynamic_cast<void*>(m_dram),poc_channel):0;\n      if(!poc::incremental||poc_versions[&buffer]!=generation) {\n        for(auto& req:buffer)req.command=m_dram->get_preq_command(req.final_command,req.addr_vec);\n        if(poc::incremental)poc_versions[&buffer]=generation;++poc::preq_scans;\n      }else ++poc::preq_skips;')
+        text=profile_patch(name,text,change)
         (output/name).write_text(text)
     here=Path(__file__).parent
     shutil.copy2(__file__,output/'build_generator.py');dependencies[str(Path(__file__).resolve())]=sha(__file__)
-    for name in ('poc_hooks.hh','poc.cc'):
-        shutil.copy2(here/name,output/name);dependencies[str((here/name).resolve())]=sha(here/name)
+    for name in ('poc_hooks.hh','poc.cc','bank_symbolic.hh','shared_mapper.hh','profile_patch.py'):
+        source_file=here/name if name.endswith('.py') else here/'native'/name
+        shutil.copy2(source_file,output/name);dependencies[str(source_file.resolve())]=sha(source_file)
     cmd=prior['commands'][0];prefix=cmd[:cmd.index('-c')]
     prefix=[x for x in prefix if not (x.startswith('-I') and x[2:]==str(source))]
     command=prefix+['-I'+str(output),'-MMD','-MF',str(output/'dependencies.d'),'-c',str(output/'poc.cc'),'-o',str(output/'poc.o')]

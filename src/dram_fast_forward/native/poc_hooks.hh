@@ -19,6 +19,10 @@ inline uint64_t generation(void* p,int channel){return generations[{p,channel}];
 inline void changed(void* p,int channel){++version;if(incremental)++generations[{p,channel}];}
 inline uint64_t preq_scans=0,preq_skips=0;
 inline std::function<void(void*,Ramulator::Clk_t,int,const Ramulator::AddrVec_t&)> observer;
+// Optional oracle diagnostics: never used as input by the online bank planner.
+inline std::function<void(void*,int,Ramulator::Clk_t,const Ramulator::Request&,int)> selected_observer;
+inline std::function<void(void*,int,Ramulator::Clk_t,const Ramulator::Request&)> priority_observer;
+inline std::function<void(void*,int,Ramulator::Clk_t,bool,const std::vector<int>&,const std::vector<int>&)> policy_observer;
 inline unsigned device(const void* p) {
   auto [it,inserted]=devices.emplace(p,devices.size());return it->second;
 }

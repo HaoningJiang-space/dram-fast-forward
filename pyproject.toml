@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "dram-fast-forward"
-version = "0.1.0"
+version = "0.2.0a1"
 description = "Exact DRAM simulation acceleration: guarded batching, event advancement and incremental scheduling"
 requires-python = ">=3.10"
 dependencies = []
@@ -12,9 +12,12 @@ dependencies = []
 [project.scripts]
 dram-ff-build = "dram_fast_forward.build:main"
 dram-ff-run = "dram_fast_forward.run:main"
+dram-ff-interference = "dram_fast_forward.interference:main"
+dram-ff-check-bus = "dram_fast_forward.check_bus:main"
+dram-ff-oracle-graph = "dram_fast_forward.oracle_graph:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
 
 [tool.setuptools.package-data]
-dram_fast_forward = ["*.cc", "*.hh"]
+dram_fast_forward = ["native/*.cc", "native/*.hh"]

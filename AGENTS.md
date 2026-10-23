@@ -1,5 +1,14 @@
 # Research contract
 
+- 2026-10-23: Repository is explicitly public at the user's request. New research
+  is on `research/interference-aware-symbolic`; keep original result archives.
+- Current study must include shared command/data bus contention, read/write
+  turnaround, activation windows and refresh, not only independent-bank speedups.
+- Keep fixed-order oracle graph diagnostics separate from online certification.
+  Actual issue/completion timestamps must never be used as release constraints.
+- After experiments freeze, organize native C++, shared Python IO/workloads,
+  drivers and analysis, and verify rebuilding/relocation does not change results.
+
 - This repository owns DRAM host-simulator acceleration research. Its root is
   `/Users/haoning/project/dram-fast-forward`, separate from LeanWafer.
 - Preserve frozen physical configuration, FR-FCFS decisions, refresh, addresses,

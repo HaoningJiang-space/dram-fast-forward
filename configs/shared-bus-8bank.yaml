@@ -1,0 +1,36 @@
+# Explicit validation fixture, not a calibrated commercial DDR part.
+# One FR-FCFS queue and command/data bus shared by eight banks.
+Frontend:
+  impl: GEM5
+MemorySystem:
+  impl: GenericDRAM
+  clock_ratio: 1
+  DRAM:
+    impl: 3D_DRAM
+    org:
+      direct_bank_access: false
+      shared_bus_validation: true
+      channel: 1
+      pseudochannel: 1
+      bankgroup: 1
+      bank: 8
+      row: 65536
+      column: 64
+      dq: 128
+      density: 4096
+      channel_width: 128
+    timing:
+      preset: 3D_DRAM_Direct400
+      nBL: 8
+      nRRDS: 4
+      nFAW: 24
+      nRFC: 64
+      nREFI: 3900
+  Controller:
+    impl: Generic
+    Scheduler:
+      impl: FRFCFS
+    RefreshManager:
+      impl: AllBank
+  AddrMapper:
+    impl: PoCSharedBank

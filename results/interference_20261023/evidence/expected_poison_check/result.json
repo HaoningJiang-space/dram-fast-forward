@@ -1,0 +1,16 @@
+{
+  "status": "pass",
+  "scope": "Changing only expected timestamps by +17 leaves every predicted timestamp unchanged",
+  "node_count": 696240,
+  "solver": {
+    "nodes": 696240,
+    "edges": 2775947,
+    "solve_median_seconds": 0.00647112,
+    "process_cpu_seconds": 0.03563,
+    "mismatches": 696240,
+    "max_absolute_cycle_error": 17,
+    "first_mismatch_node": 0,
+    "checksum": 27498
+  },
+  "prediction_sha256": "b270e33582ac5aaa86f1b24d48f44eabf5614025a5721555dac06c4eafe38bc1"
+}

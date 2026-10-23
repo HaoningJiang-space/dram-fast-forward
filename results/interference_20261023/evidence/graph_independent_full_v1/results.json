@@ -1,0 +1,73 @@
+{
+  "scope": "Compile a fixed-order diagnostic DAG, never an online speedup claim.\n\nInputs: reference-selected command order, admissions, refresh injection, optional\nobserved policy branches, and pending enqueue order. Actual command/callback\ntimestamps are verification targets only, not graph release constraints.\n",
+  "results": {
+    "timing_only": {
+      "command_nodes": 307436,
+      "callback_nodes": 224896,
+      "release_sources": {
+        "request_admission": 305391,
+        "refresh_injection": 2045
+      },
+      "edge_kinds": {
+        "controller_serial": 306924,
+        "timing_level_0_window_1": 799266,
+        "data_latency": 224896,
+        "callback_fifo": 224384
+      },
+      "compile_cpu_seconds": 3.227110391,
+      "oracle_inputs": [
+        "command and pending-append order",
+        "reference admissions",
+        "refresh injection",
+        "no policy branches"
+      ],
+      "actual_command_cycles_used_as_release": false,
+      "serialize_cpu_seconds": 0.006270315000000082,
+      "nodes": 532332,
+      "edges": 1248546,
+      "solve_median_seconds": 0.000904099,
+      "process_cpu_seconds": 0.017265,
+      "mismatches": 0,
+      "max_absolute_cycle_error": 0,
+      "first_mismatch_node": 532332,
+      "checksum": 67473,
+      "driver_cpu_after_compile": 0.0003093039999999547
+    },
+    "with_policy": {
+      "command_nodes": 307436,
+      "callback_nodes": 224896,
+      "release_sources": {
+        "request_admission": 305391,
+        "policy_write_low": 246467,
+        "policy_read_empty": 17210,
+        "refresh_injection": 2045
+      },
+      "edge_kinds": {
+        "controller_serial": 306924,
+        "timing_level_0_window_1": 799266,
+        "policy_read_empty": 17210,
+        "policy_write_low": 69919,
+        "data_latency": 224896,
+        "callback_fifo": 224384
+      },
+      "compile_cpu_seconds": 3.24457657,
+      "oracle_inputs": [
+        "command and pending-append order",
+        "reference admissions",
+        "refresh injection",
+        "policy branches/queue IDs"
+      ],
+      "actual_command_cycles_used_as_release": false,
+      "serialize_cpu_seconds": 0.006285441000000169,
+      "nodes": 532332,
+      "edges": 1255659,
+      "solve_median_seconds": 0.00103632,
+      "process_cpu_seconds": 0.019073,
+      "mismatches": 0,
+      "max_absolute_cycle_error": 0,
+      "first_mismatch_node": 532332,
+      "checksum": 67473,
+      "driver_cpu_after_compile": 0.0003235329999995429
+    }
+  }
+}
